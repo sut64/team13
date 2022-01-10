@@ -2,9 +2,13 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/sut64/team13/entity"
 )
 
 func main() {
+
+	entity.SetupDatabase()
+
 	r := gin.Default()
 	r.Use(CORSMiddleware())
 
