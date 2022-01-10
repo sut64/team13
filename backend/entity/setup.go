@@ -25,17 +25,18 @@ func SetupDatabase() {
 	database.AutoMigrate(
 		&Role{},
 		&User{},
+		&Treatment{},
 	)
 
 	db = database
 
-	// ทดสอบก่อน
+	// ทดสอบเบื้องต้น
 	// add new role
 	dentist := addRole("Dentist")
 	pharmacist := addRole("Pharmacist")
 
 	// add new user
-	addUser(
+	mydentist := addUser(
 		User{
 			Firstname: "ฟันดี", Lastname: "ฟันน้ำนม",
 			Username: "yesimadoctor", Password: "1234",
@@ -46,6 +47,10 @@ func SetupDatabase() {
 			Firstname: "ฟันทน", Lastname: "คงนาน",
 			Username: "notdoc", Password: "secret",
 		}, pharmacist)
+
+	// test for treatment with user entity
+	treatment := Treatment{ToothNumber: 1, Dentist: mydentist}
+	db.Create(&treatment)
 }
 
 func addRole(name string) Role {
