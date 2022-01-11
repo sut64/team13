@@ -11,7 +11,7 @@ type Treatment struct {
 
 	PrescriptionRaw  string
 	PrescriptionNote string
-	ToothNumber      uint
+	ToothNumber      int
 	ToothFilling     string
 	Date             time.Time
 
