@@ -7,9 +7,23 @@ import (
 	"github.com/sut64/team13/entity"
 )
 
+// available tooth filling
+var tooth_filling = map[string]bool{
+	"Gold":          true,
+	"Silver":        true,
+	"Composites":    true,
+	"Ceramics":      true,
+	"Glass ionomer": true,
+}
+
 // tooth number validation
 func tooth_number_validation(number int) bool {
 	return number >= 0 && number <= 32
+}
+
+// toorh fillling calidation
+func tooth_filling_validation(filling string) bool {
+	return tooth_filling[filling]
 }
 
 // POST /treatment
@@ -33,6 +47,7 @@ func CreateTreatment(c *gin.Context) {
 
 	entity.DB().Joins("Role").Find(&user)
 	if user.Role.Name != "Dentist" {
+
 		c.JSON(http.StatusForbidden, gin.H{"error": "user have no authoize"})
 		return
 	}
@@ -42,9 +57,19 @@ func CreateTreatment(c *gin.Context) {
 	// find remedytype with given id
 
 	// validation:
-	// tooth number
+	// tooth number (int)
 	if tooth_number_validation(treatment.ToothNumber) != true {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "unable to validate data --> ToothNumber"})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "unable to validate data --> ToothNumber [allow int 0-32]"})
+		return
+	}
+	// tooth filling (string) actually!
+	if tooth_filling_validation(treatment.ToothFilling) != true {
+		allow_string := ""
+		for key := range tooth_filling {
+			allow_string += "\"" + key + "\", "
+		}
+		c.JSON(http.StatusBadRequest, gin.H{"error": "unable to validate data --> ToothFilling [allow one of " +
+			allow_string[:len(allow_string)-2] + "]"})
 		return
 	}
 
