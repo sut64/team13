@@ -80,7 +80,7 @@ func CreateTreatment(c *gin.Context) {
 			allow_string[:len(allow_string)-2] + "]"})
 		return
 	}
-	// date (date time)
+	// date (date time) untest
 	if trm_date_validation(treatment.Date) != true {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "unable to validate data --> Date [allow " +
 			time.Now().Add(-24*time.Hour).String() + "to" + time.Now().String() + "]"})
