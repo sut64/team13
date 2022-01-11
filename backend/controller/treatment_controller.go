@@ -7,6 +7,11 @@ import (
 	"github.com/sut64/team13/entity"
 )
 
+// tooth number validation
+func tooth_number_validation(number int) bool {
+	return number >= 0 && number <= 32
+}
+
 // POST /treatment
 func CreateTreatment(c *gin.Context) {
 	var treatment entity.Treatment
@@ -36,10 +41,18 @@ func CreateTreatment(c *gin.Context) {
 	// find screening with given id
 	// find remedytype with given id
 
+	// validation:
+	// tooth number
+	if tooth_number_validation(treatment.ToothNumber) != true {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "unable to validate data --> ToothNumber"})
+		return
+	}
+
 	data := entity.Treatment{
 		PrescriptionRaw:  treatment.PrescriptionRaw,
 		PrescriptionNote: treatment.PrescriptionNote,
 		ToothNumber:      treatment.ToothNumber,
+		ToothFilling:     treatment.ToothFilling,
 		Date:             treatment.Date,
 		// create with assosiation ---
 		// TODO:
