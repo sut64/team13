@@ -2,6 +2,7 @@ package controller
 
 import (
 	"net/http"
+	"time"
 
 	"github.com/gin-gonic/gin"
 	"github.com/sut64/team13/entity"
@@ -17,13 +18,20 @@ var tooth_filling = map[string]bool{
 }
 
 // tooth number validation
-func tooth_number_validation(number int) bool {
+func trm_tooth_number_validation(number int) bool {
 	return number >= 0 && number <= 32
 }
 
-// toorh fillling calidation
-func tooth_filling_validation(filling string) bool {
+// tooth fillling validation
+func trm_tooth_filling_validation(filling string) bool {
 	return tooth_filling[filling]
+}
+
+// date validation
+func trm_date_validation(date time.Time) bool {
+	current_time := time.Now()
+	check_time := current_time.Add(-24 * time.Hour)
+	return date.After(check_time) && date.Before(current_time)
 }
 
 // POST /treatment
@@ -58,18 +66,24 @@ func CreateTreatment(c *gin.Context) {
 
 	// validation:
 	// tooth number (int)
-	if tooth_number_validation(treatment.ToothNumber) != true {
+	if trm_tooth_number_validation(treatment.ToothNumber) != true {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "unable to validate data --> ToothNumber [allow int 0-32]"})
 		return
 	}
 	// tooth filling (string) actually!
-	if tooth_filling_validation(treatment.ToothFilling) != true {
+	if trm_tooth_filling_validation(treatment.ToothFilling) != true {
 		allow_string := ""
 		for key := range tooth_filling {
 			allow_string += "\"" + key + "\", "
 		}
 		c.JSON(http.StatusBadRequest, gin.H{"error": "unable to validate data --> ToothFilling [allow one of " +
 			allow_string[:len(allow_string)-2] + "]"})
+		return
+	}
+	// date (date time)
+	if trm_date_validation(treatment.Date) != true {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "unable to validate data --> Date [allow " +
+			time.Now().Add(-24*time.Hour).String() + "to" + time.Now().String() + "]"})
 		return
 	}
 
