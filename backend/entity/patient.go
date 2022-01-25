@@ -40,8 +40,8 @@ type Patient struct {
 	Height	  float32
 	Time      time.Time
 
-	UserNurseID *uint
-	UserNurse   User
+	NurseID *uint
+	Nurse   User
 
 	JobID *uint
 	Job   Job
