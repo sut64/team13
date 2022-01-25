@@ -18,8 +18,8 @@ type Appoint struct {
 	AppointTime time.Time
 	Todo        string
 
-	UserDentistID *uint
-	UserDentist   User
+	DentistID *uint
+	Dentist   User
 
 	PatientID *uint
 	Patient   Patient

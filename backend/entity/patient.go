@@ -40,8 +40,8 @@ type Patient struct {
 	Height    float32
 	Time      time.Time
 
-	UserNurseID *uint
-	UserNurse   User
+	NurseID *uint
+	Nurse   User
 
 	JobID *uint
 	Job   Job
@@ -52,6 +52,6 @@ type Patient struct {
 	SexID *uint
 	Sex   Sex
 
-	Payments []Payment `gorm:"foreignKey:PatientID"`
+	Payments   []Payment   `gorm:"foreignKey:PatientID"`
 	Appoints []Appoint `gorm:"foreignKey:PatientID"`
 }
