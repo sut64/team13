@@ -8,4 +8,5 @@ type MedicalProduct struct {
 	gorm.Model
 	Name       string
 	MedRecords []MedRecord `gorm:"foreignKey:MedicalProductID"`
+	Screenings []Screening `gorm:"foreignKey:MedicalProductID"`
 }

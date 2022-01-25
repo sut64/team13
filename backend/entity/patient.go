@@ -51,7 +51,9 @@ type Patient struct {
 
 	SexID *uint
 	Sex   Sex
-  
+
 	Payments   []Payment   `gorm:"foreignKey:PatientID"`
-	Appoints []Appoint `gorm:"foreignKey:PatientID"`
+	Appoints   []Appoint   `gorm:"foreignKey:PatientID"`
+	Screenings []Screening `gorm:"foreignKey:PatientID"`
+
 }
