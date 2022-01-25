@@ -23,4 +23,5 @@ type User struct {
 	MedRecords []MedRecord `gorm:"foreignKey:PharmacistID"`
 	Appoints   []Appoint   `gorm:"foreignKey:DentistID"`
 	Payments   []Payment   `gorm:"foreignKey:FinancialID"`
+	Screenings []Screening `gorm:"foreignKey:DentistassID"`
 }

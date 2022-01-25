@@ -12,13 +12,13 @@ type Screening struct {
 	PatientID *uint
 	Patient   Patient
 
-	UserDentistassID *uint
-	UserDentistass   User
+	DentistassID *uint
+	Dentistass   User
 
 	MedicalProductID *uint
 	MedicalProduct   MedicalProduct
 	//3 type diff
 	Illnesses string
-	Queue     *uint
+	Queue     uint
 	Date      time.Time
 }
