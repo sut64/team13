@@ -51,6 +51,8 @@ type Patient struct {
 
 	SexID *uint
 	Sex   Sex
+
+	Payments   []Payment   `gorm:"foreignKey:PatientID"`
   
 }
 

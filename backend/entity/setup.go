@@ -26,6 +26,7 @@ func SetupDatabase() {
 		&Role{},
 		&User{},
 		&Treatment{},
+		&Payment{},
 	)
 
 	db = database
