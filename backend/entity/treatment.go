@@ -16,6 +16,8 @@ type Treatment struct {
 	Date             time.Time
 
 	// Sreening entity
+	ScreeningID *uint
+	Screening   Screening
 
 	DentistID *uint
 	Dentist   User `gorm:"foreignKey:DentistID"`
