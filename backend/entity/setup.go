@@ -2,7 +2,6 @@ package entity
 
 import (
 	"time"
-	"fmt"
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
