@@ -2,9 +2,9 @@ package entity
 
 import (
 	"time"
+
 	"gorm.io/gorm"
 )
-
 
 //ระบบย่อย ระบบบันทึกเวชระเบียน
 type Job struct {
@@ -36,8 +36,8 @@ type Patient struct {
 	Birthday  time.Time
 	IDcard    string `gorm:"uniqueIndex"`
 	Tel       string
-	Wight	  float32
-	Height	  float32
+	Wight     float32
+	Height    float32
 	Time      time.Time
 
 	UserNurseID *uint
@@ -51,9 +51,6 @@ type Patient struct {
 
 	SexID *uint
 	Sex   Sex
-  
+
+	Appoints []Appoint `gorm:"foreignKey:PatientID"`
 }
-
-
-
-

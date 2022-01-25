@@ -21,5 +21,6 @@ type Treatment struct {
 	Dentist   User `gorm:"foreignKey:DentistID"`
 
 	// Remedy Type entity
-
+	RemedyTypeID *uint
+	RemedyType   RemedyType
 }
