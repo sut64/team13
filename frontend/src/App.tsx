@@ -1,7 +1,61 @@
 import React, { useEffect } from "react";
+import { BrowserRouter as 
+        BrowserRouter,
+        Router, 
+        Route, 
+        Routes, Link 
+} from "react-router-dom";
 
-export default function Apps() {
+import './App.css';
+import Navbar from "./components/Navbar";
+import PatientCreate from "./components/PatientCreate";
+import PatientList from "./components/PatientList";
+import SignIn from "./components/SignIns";
+import Home from "./components/Home";
+
+
+function App() {
+  const [token, setToken] = React.useState<String>("");
+
+  useEffect(() => {
+    const getToken = localStorage.getItem("token");
+    if (getToken) {
+      setToken(getToken);
+    }
+  }, []);
+  console.log("Token", token)
+
+  if (!token) {
+    return <SignIn />
+  }
+
   return (
-	  <div>BoilerPlate G13</div>
-  )
+
+    <BrowserRouter>
+      
+        <>
+          <div>
+
+            <Navbar />
+
+            <Routes>
+
+              <Route path="/" element={<Home />} />
+
+              <Route path="/create" element={<PatientCreate />} />
+
+              <Route path="/list" element={<PatientList />} />
+
+            </Routes>
+
+          </div>
+          
+        </>
+
+    </BrowserRouter>
+
+  );
+
 }
+
+export default App;

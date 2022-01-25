@@ -16,8 +16,8 @@ type Payment struct {
 	PatientID *uint
 	Patient   Patient
 
-	UserFinancialID *uint
-	UserFinancial   User
+	FinancialID *uint
+	Financial   User
 	
    // remedytype entity
 	
