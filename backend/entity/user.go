@@ -20,4 +20,5 @@ type User struct {
 
 	Treatments []Treatment `gorm:"foreignKey:DentistID"`
 	Appoints   []Appoint   `gorm:"foreignKey:DentistID"`
+	Payments   []Payment   `gorm:"foreignKey:FinancialID"`
 }
