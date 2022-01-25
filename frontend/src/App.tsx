@@ -12,6 +12,8 @@ import PatientCreate from "./components/PatientCreate";
 import PatientList from "./components/PatientList";
 import SignIn from "./components/SignIns";
 import Home from "./components/Home";
+import AppointtList from "./components/AppointList";
+import AppointCreate from "./components/AppointCreate";
 
 
 function App() {
@@ -45,6 +47,10 @@ function App() {
               <Route path="/create" element={<PatientCreate />} />
 
               <Route path="/list" element={<PatientList />} />
+
+              <Route path="/appointcreate" element={<AppointCreate />} />
+
+              <Route path="/appointlist" element={<AppointtList />} />
 
             </Routes>
 
