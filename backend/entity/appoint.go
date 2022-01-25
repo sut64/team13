@@ -17,6 +17,7 @@ type RemedyType struct {
 type Appoint struct {
 	gorm.Model
 	AppointTime time.Time
+	Room        int
 	Todo        string
 
 	DentistID *uint
