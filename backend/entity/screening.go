@@ -17,7 +17,7 @@ type Screening struct {
 
 	MedicalProductID *uint
 	MedicalProduct   MedicalProduct
-
+	//3 type diff
 	Illnesses string
 	Queue     *uint
 	Date      time.Time
