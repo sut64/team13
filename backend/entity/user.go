@@ -18,6 +18,7 @@ type User struct {
 	RoleID *uint
 	Role   Role `gorm:"foreignKey:RoleID"`
 
+	Patients   []Patient   `gorm:"foreignKey:UserNurseID"`
 	Treatments []Treatment `gorm:"foreignKey:DentistID"`
 	MedRecords []MedRecord `gorm:"foreignKey:PharmacistID"`
 	Appoints   []Appoint   `gorm:"foreignKey:DentistID"`

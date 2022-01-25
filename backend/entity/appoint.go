@@ -11,11 +11,13 @@ type RemedyType struct {
 	Name      string
 	Appoints  []Appoint   `gorm:"foreignKey:RemedyTypeID"`
 	Treatment []Treatment `gorm:"foreignKey:RemedyTypeID"`
+	Payments  []Payment   `gorm:"foreignKey:RemedyTypeID"`
 }
 
 type Appoint struct {
 	gorm.Model
 	AppointTime time.Time
+	Room        int
 	Todo        string
 
 	DentistID *uint

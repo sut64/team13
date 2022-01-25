@@ -97,7 +97,7 @@ export default function ButtonAppBar() {
           </Menu>
 
           <Typography variant="h5" className={classes.title}>
-            เวชระเบียน
+            G13 คลินิกทันตกรรมฟันดี
           </Typography>
 
           <Button style={{ float: "right" }}
