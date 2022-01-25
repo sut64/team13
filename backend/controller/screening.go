@@ -9,6 +9,7 @@ import (
 
 	"time"
 )
+
 // POST /screening
 func CreateScreening(c *gin.Context) {
 
@@ -23,7 +24,7 @@ func CreateScreening(c *gin.Context) {
 		return
 	}
 	//:ค้นหา User ด้วย id
-	if tx := entity.DB().Where("id = ?", screening_record.UserDentistassID).First(&dentistass); tx.RowsAffected == 0 {
+	if tx := entity.DB().Where("id = ?", screening_record.DentistassID).First(&dentistass); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Dentist assistant not found"})
 		return
 	}
@@ -52,13 +53,12 @@ func CreateScreening(c *gin.Context) {
 		//โยงความสัมพันธ์กับ Entity User
 		Patient:        patient,
 		MedicalProduct: medical_product,
-		UserDentistass: dentistass,
-		
-		// 3 type
-		Illnesses:      screening_record.Illnesses, 	//อาการที่พบเบื้ิองต้น
-		Queue:          screening_record.Queue, 		//ลำดับการเข้ารับการรักษา
-		Time:			time.Now(),						//ดึงเวลาปัจจุบัน
+		Dentistass:     dentistass,
 
+		// 3 type
+		Illnesses: screening_record.Illnesses, //อาการที่พบเบื้ิองต้น
+		Queue:     screening_record.Queue,     //ลำดับการเข้ารับการรักษา
+		Date:      time.Now(),                 //ดึงเวลาปัจจุบัน
 
 	}
 	//13:บันทึก()
@@ -91,30 +91,31 @@ func ListScreening(c *gin.Context) {
 }
 
 //DELETE /users/:id
-unc DeleteScreening(c *gin.Context) {
+func DeleteScreening(c *gin.Context) {
 	id := c.Param("id")
 	if tx := entity.DB().Exec("DELETE FROM screenings WHERE id = ?", id); tx.RowsAffected == 0 {
-			c.JSON(http.StatusBadRequest, gin.H{"error": "user not found"})
-			return
+		c.JSON(http.StatusBadRequest, gin.H{"error": "user not found"})
+		return
 
 	}
 	c.JSON(http.StatusOK, gin.H{"data": id})
 
 }
+
 //PATH /users
 func UpdateScreening(c *gin.Context) {
 	var pat entity.Screening
 	if err := c.ShouldBindJSON(&pat); err != nil {
-			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
-			return
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 	if tx := entity.DB().Where("id = ?", pat.ID).First(&pat); tx.RowsAffected == 0 {
-			c.JSON(http.StatusBadRequest, gin.H{"error": "user not found"})
-			return
+		c.JSON(http.StatusBadRequest, gin.H{"error": "user not found"})
+		return
 	}
 	if err := entity.DB().Save(&pat).Error; err != nil {
-			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
-			return
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 	c.JSON(http.StatusOK, gin.H{"data": pat})
 
