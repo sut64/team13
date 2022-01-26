@@ -14,7 +14,8 @@ import SignIn from "./components/SignIns";
 import Home from "./components/Home";
 import AppointtList from "./components/AppointList";
 import AppointCreate from "./components/AppointCreate";
-
+import Paid from "./components/Paid";
+import PaymentCreate from "./components/PaymentCreate";
 
 function App() {
   const [token, setToken] = React.useState<String>("");
@@ -51,6 +52,10 @@ function App() {
               <Route path="/appointcreate" element={<AppointCreate />} />
 
               <Route path="/appointlist" element={<AppointtList />} />
+
+              <Route path="/paid" element={<Paid />} />
+
+              <Route path="/paymentcreate" element={<PaymentCreate />} />
 
             </Routes>
 
