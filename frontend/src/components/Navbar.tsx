@@ -59,6 +59,14 @@ const AppointCreate = () => {
   window.location.href = "/appointcreate";
 };
 
+const Paid = () => {
+  window.location.href = "/paid";
+};
+
+const PaymentCreate = () => {
+  window.location.href = "/paymentcreate";
+};
+
 export default function ButtonAppBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -106,6 +114,8 @@ export default function ButtonAppBar() {
             <MenuItem onClick={AppointCreate}><CreateIcon/>บันทึกการนัดหมาย</MenuItem>
             <MenuItem onClick={()=>{window.location.href = "/TreatmentList"}}>
 				<ListIcon/>ประวัติใบวินิจฉัย</MenuItem>
+            <MenuItem onClick={Paid}><ListIcon/>ประวัติการชำระเงิน</MenuItem>
+            <MenuItem onClick={PaymentCreate}><CreateIcon/>บันทึกการชำระเงิน</MenuItem>
           </Menu>
 
           <Typography variant="h5" className={classes.title}>
