@@ -64,10 +64,16 @@ func main() {
 			protected.GET("/remedy_types", controller.ListRemedyType)
 			protected.POST("/remedy_type", controller.CreateRemedyType)
 
+			// Screenings
+			protected.POST("/screening", controller.CreateScreening)
+			protected.GET("/screenings", controller.ListScreening)
+
+
 			// Treatments
 			protected.POST("/treatment", controller.CreateTreatment)
 			protected.GET("/treatments", controller.ListTreatments)
 
+			// Payments
 			protected.GET("/payments", controller.ListPayment)
 			protected.GET("/payment/:id", controller.GetPayment)
 			protected.POST("/payments", controller.CreatePayment)

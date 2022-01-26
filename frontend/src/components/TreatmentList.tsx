@@ -3,12 +3,20 @@ import { Link as RouterLink } from "react-router-dom";
 import {
 	TableContainer, Table, TableHead, TableRow, TableCell, TableBody,
 	Paper, Divider, Typography, Container, FormControl, InputLabel, 
-	Select, MenuItem, Grid, TextField, Button
+	Select, MenuItem, Grid, TextField, Button, Snackbar
 } from "@mui/material/"
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import { LocalizationProvider, DateTimePicker } from '@mui/lab/'
 import { TreatmentInteface, ScreeningInterface, RemedyInterface, UserInterface } from "../models";
 import { SelectChangeEvent } from '@mui/material/Select';
+import MuiAlert, { AlertProps, AlertColor } from '@mui/material/Alert'
+
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+	props,
+	ref,
+  ) {
+	return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
 
 interface treatmentFields {
 	rawPrescription	: string;
@@ -17,10 +25,26 @@ interface treatmentFields {
 	toothFilling	: string;
 }
 
+interface AlertInfo {
+	message : string;
+	level	: AlertColor;
+}
+
+
 export default function TreatmentList() {
+	const [notify, setNotify] = React.useState(false);
+	const notifyClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+		if (reason === 'clickaway') {
+		  return;
+		}
+	
+		setNotify(false);
+	};
+	const [message, setMessage] = React.useState<AlertInfo>({message:'',level: 'warning'});
+	
 	const [treatments, setTreatments] = React.useState<TreatmentInteface[]>([]);
 	const [time, setTime] = React.useState<Date | null>(new Date());
-
+	
 	const [data,setData] = React.useState<treatmentFields>({
 		rawPrescription: "",
 		prescriptionInfo: "",
@@ -30,7 +54,6 @@ export default function TreatmentList() {
 
 	const handleDataChange = (prop: keyof treatmentFields ) => (event : React.ChangeEvent<HTMLInputElement|HTMLTextAreaElement>) => {
 		setData( { ...data, [prop]:event.target.value} )
-		console.log(data)
 	} 
 
 	// current user
@@ -41,6 +64,10 @@ export default function TreatmentList() {
 		Username: "",
 		Password: "",
 		RoleID : 0,
+		Role : {
+			ID: 0,
+			Name: "",
+		}
 	})
 
 	const getUser = async () => {
@@ -65,7 +92,7 @@ export default function TreatmentList() {
 	const [screenings, setScreenings ] = React.useState<ScreeningInterface[]>([])
 	const [selectedScreening, setScreening] = React.useState("");
 	const handleScreeningChange = ( event: SelectChangeEvent ) =>{
-		setScreening(event.target.value as string);
+		setScreening(event.target.value);
 	};
 
 	const getScreening = async () => {
@@ -129,6 +156,62 @@ export default function TreatmentList() {
 		});
 	}
 	
+	function submit() {
+
+		if ( _user.Role.Name !== "Dentist" ) {
+			setNotify(true);
+			setMessage( { message:'You have no authorize to make this action', level:'error'} );
+			return;
+		}
+
+		let payload = {
+			PrescriptionRaw		: data.rawPrescription, 
+			PrescriptionNote	: data.prescriptionInfo,
+			ToothNumber			: +data.toothNumber,
+			ToothFilling		: data.toothFilling,
+			Date				: time,
+			ScreeningID			: selectedScreening,
+			DentistID			: _user.RoleID,
+			RemedyTypeID		: selectedRemedy
+		};
+
+		console.log(payload)
+
+		if ( payload.ScreeningID === "" ) {
+			setNotify(true);
+			setMessage( { message:'Screening cannot be blank', level:'error'} );
+			return;
+		}
+
+		if ( payload.RemedyTypeID === "" ) {
+			setNotify(true);
+			setMessage( { message:'Remedy Type cannot be blank', level:'error'} );
+			return;
+		}
+
+		const apiUrl = "http://localhost:8080/treatment";
+		const requestOption = {
+			method : "POST",
+			headers : {
+				Authorization: `Bearer ${localStorage.getItem("token")}`, 
+				"Content-Type" : "application/json" 
+			},
+			body : JSON.stringify(payload)
+		};
+		
+		fetch(apiUrl, requestOption)
+		.then((response) => response.json())
+		.then((res) => {
+			console.log(res.data);
+			setNotify(true)
+			if (res.data) setMessage( { message:'Succesfully saved', level:'success' } );
+			else {
+				setMessage( { message:`Failed to save\n${res.error}`, level:'error' } );
+				console.log(res.error)
+			}
+		});
+	}
+
 	useEffect( () => {
 		getTreatments()
 		getRemedyTypes()
@@ -138,6 +221,11 @@ export default function TreatmentList() {
 
 	return (
 		<React.Fragment>
+		<Snackbar open={notify} autoHideDuration={6000} onClose={notifyClose}>
+			<Alert onClose={notifyClose} severity={message.level} sx={{ width: '100%' }}>
+			{message.message}
+			</Alert>
+		</Snackbar>
 		<Container sx={{ display:'flex', marginTop:'2vh' }}>
 		<Paper sx={{margin:'0px 10px'}}>
 			<Typography component="h2" sx={{padding:'10px 5px 5px 15px', 
@@ -177,7 +265,8 @@ export default function TreatmentList() {
 			<Divider></Divider>
 		<Grid container padding={'0px 10px 10px'}>
 			<Grid item xs={12} sx={{padding:'5px'}}>
-			<FormControl variant="standard" sx={{ width: '100%' }}>
+			<FormControl variant="standard" sx={{ width: '100%' }}
+			error={ _user.Role.Name !== "Dentist"}>
 			<InputLabel id="demo-simple-select-filled-label">ทันตแพทย์</InputLabel>
 			<Select
 			labelId="demo-simple-select-filled-label"
@@ -195,13 +284,13 @@ export default function TreatmentList() {
 			<Select
 			labelId="demo-simple-select-filled-label"
 			id="demo-simple-select-filled"
-			value={selectedRemedy}
-			onChange={handleRemedyTypeChange}
+			value={selectedScreening}
+			onChange={handleScreeningChange}
 			>
-			<MenuItem value=""> <em>None</em> </MenuItem>
-			<MenuItem value={10}>Ten</MenuItem>
-			<MenuItem value={20}>Twenty</MenuItem>
-			<MenuItem value={30}>Thirty</MenuItem>
+			{screenings.map((scr:ScreeningInterface)=>(
+				<MenuItem value={scr.ID}> 
+				{scr.Queue+" "+scr.Patient.Firstname+" "+scr.Patient.Lastname} </MenuItem>
+			))}
 			</Select>
 			</FormControl>
 			</Grid>
@@ -214,10 +303,9 @@ export default function TreatmentList() {
 			value={selectedRemedy}
 			onChange={handleRemedyTypeChange}
 			>
-			<MenuItem value=""> <em>None</em> </MenuItem>
-			<MenuItem value={10}>Ten</MenuItem>
-			<MenuItem value={20}>Twenty</MenuItem>
-			<MenuItem value={30}>Thirty</MenuItem>
+			{remedyTypes.map((rmd:RemedyInterface)=>(
+				<MenuItem value={rmd.ID}> {rmd.Name} </MenuItem>
+			))}
 			</Select>
 			</FormControl>
 			</Grid>
@@ -247,7 +335,9 @@ export default function TreatmentList() {
 			/>
 			</LocalizationProvider> </Grid>
 			<Grid item xs={12}>
-				<Button variant="contained" sx={{width:'25%', float:'right'}}>Save</Button>
+				<Button variant="contained" sx={{width:'25%', float:'right'}}
+				onClick={submit}
+				>Save</Button>
 			</Grid>
 		</Grid>
 		</Paper>

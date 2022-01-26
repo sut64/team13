@@ -7,4 +7,5 @@ export interface UserInterface {
     Username: string;
     Password: string;
     RoleID : number;
+	Role: RoleInterface;
 }
