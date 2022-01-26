@@ -104,6 +104,8 @@ export default function ButtonAppBar() {
             <MenuItem onClick={UserCreate}><CreateIcon/>บันทึกผู้ป่วยใหม่</MenuItem>
             <MenuItem onClick={AppointList}><ListIcon/>ประวัติการนัดหมาย</MenuItem>
             <MenuItem onClick={AppointCreate}><CreateIcon/>บันทึกการนัดหมาย</MenuItem>
+            <MenuItem onClick={()=>{window.location.href = "/TreatmentList"}}>
+				<ListIcon/>ประวัติใบวินิจฉัย</MenuItem>
           </Menu>
 
           <Typography variant="h5" className={classes.title}>

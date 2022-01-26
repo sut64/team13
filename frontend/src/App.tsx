@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as 
         BrowserRouter,
-        Router, 
         Route, 
-        Routes, Link 
+        Routes, 
 } from "react-router-dom";
 
 import './App.css';
@@ -14,7 +13,7 @@ import SignIn from "./components/SignIns";
 import Home from "./components/Home";
 import AppointtList from "./components/AppointList";
 import AppointCreate from "./components/AppointCreate";
-
+import TreatmentList from "./components/TreatmentList";
 
 function App() {
   const [token, setToken] = React.useState<String>("");
@@ -51,6 +50,8 @@ function App() {
               <Route path="/appointcreate" element={<AppointCreate />} />
 
               <Route path="/appointlist" element={<AppointtList />} />
+
+			  <Route path="/TreatmentList" element={<TreatmentList/>} />
 
             </Routes>
 
