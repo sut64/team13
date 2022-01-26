@@ -5,7 +5,6 @@ import { InsuranceInterface } from "./IIns";
 import { UserInterface } from "./IUser";
 
 export interface PatientInterface {
-
     ID: number,
     Firstname: string;
     Lastname: string;
@@ -23,5 +22,4 @@ export interface PatientInterface {
     Job: JobInterface;
     Insurance: InsuranceInterface;
     Nurse: UserInterface;
-
-   }
+}
