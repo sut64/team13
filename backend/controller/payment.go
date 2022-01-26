@@ -67,7 +67,7 @@ func CreatePayment(c *gin.Context) {
 func GetPayment(c *gin.Context) {
 	var payment entity.Payment
 	id := c.Param("id")
-	if err := entity.DB().Preload("UserFinancial").Preload("Patient").Preload("RemedyType").Raw("SELECT * FROM payments WHERE id = ?", id).Find(&payment).Error; err != nil {
+	if err := entity.DB().Preload("Financial").Preload("Patient").Preload("RemedyType").Raw("SELECT * FROM payments WHERE id = ?", id).Find(&payment).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
@@ -77,7 +77,7 @@ func GetPayment(c *gin.Context) {
 // GET /payments
 func ListPayment(c *gin.Context) {
 	var payments []entity.Payment
-	if err := entity.DB().Preload("UserFinancial").Preload("Patient").Preload("RemedyType").Raw("SELECT * FROM payments").Find(&payments).Error; err != nil {
+	if err := entity.DB().Preload("Financial").Preload("Patient").Preload("RemedyType").Raw("SELECT * FROM payments").Find(&payments).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
