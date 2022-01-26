@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as 
         BrowserRouter,
-        Router, 
         Route, 
-        Routes, Link 
+        Routes, 
 } from "react-router-dom";
 
 import './App.css';
@@ -14,6 +13,7 @@ import SignIn from "./components/SignIns";
 import Home from "./components/Home";
 import AppointtList from "./components/AppointList";
 import AppointCreate from "./components/AppointCreate";
+import TreatmentList from "./components/TreatmentList";
 import Paid from "./components/Paid";
 import PaymentCreate from "./components/PaymentCreate";
 
@@ -53,6 +53,7 @@ function App() {
 
               <Route path="/appointlist" element={<AppointtList />} />
 
+			  <Route path="/TreatmentList" element={<TreatmentList/>} />
               <Route path="/paid" element={<Paid />} />
 
               <Route path="/paymentcreate" element={<PaymentCreate />} />
