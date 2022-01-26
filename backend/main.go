@@ -64,6 +64,9 @@ func main() {
 			protected.GET("/remedy_types", controller.ListRemedyType)
 			protected.POST("/remedy_type", controller.CreateRemedyType)
 
+			// Treatments
+			protected.POST("/treatment", controller.CreateTreatment)
+			protected.GET("/treatments", controller.ListTreatments)
 		}
 	}
 

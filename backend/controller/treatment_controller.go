@@ -121,7 +121,7 @@ func CreateTreatment(c *gin.Context) {
 }
 
 // GET /treatment
-func ListTreatmentRecord(c *gin.Context) {
+func ListTreatments(c *gin.Context) {
 	var treatments []entity.Treatment
 
 	// preload association
