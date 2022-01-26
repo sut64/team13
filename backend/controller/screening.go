@@ -83,7 +83,7 @@ func GetScreening(c *gin.Context) {
 //GET /screenings
 func ListScreening(c *gin.Context) {
 	var screening_records []entity.Screening
-	if err := entity.DB().Preload("Patient").Preload("MedicalProduct").Preload("UserDentistass").Raw("SELECT * FROM screenings").Find(&screening_records).Error; err != nil {
+	if err := entity.DB().Preload("Patient").Preload("MedicalProduct").Preload("Dentistass").Raw("SELECT * FROM screenings").Find(&screening_records).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}

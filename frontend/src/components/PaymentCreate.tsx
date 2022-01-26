@@ -187,7 +187,7 @@ export default function Body() {
     let data = {
       PatientID: typeof pats.PatientID === "string" ? parseInt(pats.PatientID) : NaN,
       FinancialID:  Number(localStorage.getItem("uid")),
-      RemedytypeID: typeof pats.RemedyTypeID === "string" ? parseInt(pats.RemedyTypeID) : NaN,
+      RemedyTypeID: typeof pats.RemedyTypeID === "string" ? parseInt(pats.RemedyTypeID) : NaN,
       Note: pats.Note ?? "",
       PayTime: AddedTime,
       Price: typeof pats.Price === "string" ? parseInt(pats.Price) : NaN,
