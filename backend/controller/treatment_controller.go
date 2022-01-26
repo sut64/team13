@@ -1,3 +1,7 @@
+/***********************************
+ *	THIS IS UNTESTED CONTROLLER    *
+ ***********************************/
+
 package controller
 
 import (
@@ -36,12 +40,10 @@ func trm_date_validation(date time.Time) bool {
 
 // POST /treatment
 func CreateTreatment(c *gin.Context) {
-	var treatment entity.Treatment
-
-	// TODO:
-	// var screening
-	// var remedytype
+	var treatment entity.Treatment // payload
 	var user entity.User
+	var screening entity.Screening
+	var remedytype entity.RemedyType
 
 	if err := c.ShouldBindJSON(&treatment); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
@@ -55,15 +57,22 @@ func CreateTreatment(c *gin.Context) {
 
 	entity.DB().Joins("Role").Find(&user)
 	if user.Role.Name != "Dentist" {
-
 		c.JSON(http.StatusForbidden, gin.H{"error": "user have no authoize"})
 		return
 	}
 
-	// TODO:
 	// find screening with given id
+	if tx := entity.DB().Where("id = ?", treatment.ScreeningID).First(&screening); tx.RowsAffected == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "No Screening found with association ID"})
+		return
+	}
 	// find remedytype with given id
+	if tx := entity.DB().Where("id = ?", treatment.RemedyTypeID).First(&remedytype); tx.RowsAffected == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "No RemedyType found with association ID"})
+		return
+	}
 
+	// TODO: change validation to go playground validation or something
 	// validation:
 	// tooth number (int)
 	if trm_tooth_number_validation(treatment.ToothNumber) != true {
@@ -96,7 +105,10 @@ func CreateTreatment(c *gin.Context) {
 		// create with assosiation ---
 		// TODO:
 		// screening entity
+		Screening: screening,
 		// remedytype entity
+		RemedyType: remedytype,
+		// user w/Role dentist entity
 		Dentist: user,
 	}
 
@@ -112,9 +124,9 @@ func CreateTreatment(c *gin.Context) {
 func ListTreatmentRecord(c *gin.Context) {
 	var treatments []entity.Treatment
 
-	// TODO:
-	// preload other association
-	if err := entity.DB().Find(&treatments).Error; err != nil {
+	// preload association
+	if err := entity.DB().Preload("Screening.Patient").Preload("RemedyType").
+		Preload("Dentist").Find(&treatments).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
