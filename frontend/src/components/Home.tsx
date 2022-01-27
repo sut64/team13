@@ -80,18 +80,60 @@ function Home() {
                 <Grid item xs={12}
                     container
                     justifyContent="center"
-                    alignItems="center"> 
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={PatientCreate} loading={loadingPatient}>เวชระเบียน</LoadingButton>
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={() => { window.location.href = "/" }} >คัดกรองข้อมูล</LoadingButton>
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={TreatmentList} loading={loadingTreatment}>วินิจฉัย</LoadingButton>
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={appointcreate} loading={loadingappoint}>การนัดหมาย</LoadingButton>
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={CreateMecRecord} loading={loadingMecRecord} >ยาและเวชภัณฑ์</LoadingButton>
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={paymentcreate} loading={loadingpayment}>ชำระเงิน</LoadingButton>
+                    alignItems="center">
+
+                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }}
+                        variant="contained" onClick={PatientCreate}
+                        loading={loadingPatient}>
+                        <img style={{ width: "55px" }}
+                            src="./patient.png" />
+                        เวชระเบียน
+                    </LoadingButton>
+
+                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }}
+                        variant="contained"
+                        onClick={() => { window.location.href = "/" }} >
+                        <img style={{ width: "55px" }}
+                            src="./screening.png" />
+                        คัดกรองข้อมูล
+                    </LoadingButton>
+
+                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }}
+                        variant="contained"
+                        onClick={TreatmentList}
+                        loading={loadingTreatment}>
+                        <img style={{ width: "55px" }} src="./treatment.png" />
+                        วินิจฉัย
+                    </LoadingButton>
+
+                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }}
+                        variant="contained"
+                        onClick={appointcreate}
+                        loading={loadingappoint}>
+                        <img style={{ width: "55px" }} src="./appoint.png" />
+                        การนัดหมาย
+                    </LoadingButton>
+
+                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }}
+                        variant="contained"
+                        onClick={CreateMecRecord}
+                        loading={loadingMecRecord} >
+                        <img style={{ width: "55px" }}src="./medical.png" />
+                        ยาและเวชภัณฑ์
+                    </LoadingButton>
+
+                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }}
+                        variant="contained"
+                        onClick={paymentcreate} loading={loadingpayment} >
+                        <img style={{ width: "55px" }} src="./payment.png" />
+                        ชำระเงิน
+                    </LoadingButton>
+
                 </Grid>
 
                 <Paper className={classes.paper} >
                     <Grid className={classes.grids}>
-                    <h1 style={{ textAlign: "center", color: "#0B3C83" }}>ระบบทันตกรรม</h1>
+                        <h1 style={{ textAlign: "center", color: "#0B3C83" }}>ระบบทันตกรรม</h1>
                         <h3>เป้าหมายของการรีลิส</h3>
                         <h4>
                             &nbsp;
