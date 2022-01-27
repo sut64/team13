@@ -8,7 +8,7 @@ import Paper from "@material-ui/core/Paper";
 import LoadingButton from '@mui/lab/LoadingButton';
 import React from "react";
 import { CleaningServicesSharp } from "@mui/icons-material";
-
+import MedicationIcon from '@mui/icons-material/Medication';
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         //alignItems: "center", display: "flex",
@@ -28,11 +28,11 @@ const useStyles = makeStyles((theme: Theme) =>
 function Home() {
     const classes = useStyles();
     const [loadingPatient, setLoadingPatient] = React.useState(false);
+    //const [loading, setLoading] = React.useState(false);
     const [loadingTreatment, setLoadingTreatment] = React.useState(false);
-    /*const [loading, setLoading] = React.useState(false);
-    const [loading, setLoading] = React.useState(false);
-    const [loading, setLoading] = React.useState(false);
-    const [loading, setLoading] = React.useState(false);*/
+    const [loadingappoint, setLoadingappoint] = React.useState(false);
+    const [loadingMecRecord, setLoadingMecRecord] = React.useState(false);
+    const [loadingpayment, setLoadingpayment] = React.useState(false);
 
 
     const PatientCreate = () => {
@@ -40,9 +40,29 @@ function Home() {
         setLoadingPatient(true);
     };
 
+    /*const TreatmentList = () => {
+        window.location.href = "/TreatmentList";
+        setLoadingTreatment(true);
+    };*/
+
     const TreatmentList = () => {
         window.location.href = "/TreatmentList";
         setLoadingTreatment(true);
+    };
+
+    const appointcreate = () => {
+        window.location.href = "/appointcreate";
+        setLoadingappoint(true);
+    };
+
+    const CreateMecRecord = () => {
+        window.location.href = "/CreateMecRecord";
+        setLoadingMecRecord(true);
+    };
+
+    const paymentcreate = () => {
+        window.location.href = "/paymentcreate";
+        setLoadingpayment(true);
     };
 
     return (
@@ -64,9 +84,9 @@ function Home() {
                     <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={PatientCreate} loading={loadingPatient}>เวชระเบียน</LoadingButton>
                     <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={() => { window.location.href = "/" }} >คัดกรองข้อมูล</LoadingButton>
                     <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={TreatmentList} loading={loadingTreatment}>วินิจฉัย</LoadingButton>
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={() => { window.location.href = "/appointcreate" }} >การนัดหมาย</LoadingButton>
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={() => { window.location.href = "/" }} >ยาและเวชภัณฑ์</LoadingButton>
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={() => { window.location.href = "/paymentcreate" }} >ชำระเงิน</LoadingButton>
+                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={appointcreate} loading={loadingappoint}>การนัดหมาย</LoadingButton>
+                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={CreateMecRecord} loading={loadingMecRecord} >ยาและเวชภัณฑ์</LoadingButton>
+                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={paymentcreate} loading={loadingpayment}>ชำระเงิน</LoadingButton>
                 </Grid>
 
                 <Paper className={classes.paper} >
