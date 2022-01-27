@@ -26,6 +26,7 @@ import { MuiPickersUtilsProvider, KeyboardDatePicker, } from "@material-ui/picke
 import ListIcon from "@material-ui/icons/ListAltOutlined";
 import SaveIcon from "@material-ui/icons/SaveAltOutlined";
 import CleaningServicesIcon from '@mui/icons-material/CleaningServices';
+import LoadingButton from '@mui/lab/LoadingButton';
 
 function Alert(props: AlertProps): JSX.Element {
 
@@ -55,6 +56,7 @@ export default function PatientCreate(this: any) {
   const [success, setSuccess] = React.useState(false);
   const [error, setError] = React.useState(false);
   const [ErrorMessage, setErrorMessage] = React.useState<String>();
+  const [loading, setLoading] = React.useState(false);
 
 
   const ClearInputChange = () => {
@@ -76,6 +78,7 @@ export default function PatientCreate(this: any) {
     }
     setSuccess(false);
     setError(false);
+    setLoading(false)
   };
 
   const handleInputChange = (
@@ -203,6 +206,10 @@ export default function PatientCreate(this: any) {
       });
   }
 
+  function setLoadings(){
+    setLoading(false)
+  }
+
   //ดึงข้อมูล ใส่ combobox
   useEffect(() => {
 
@@ -215,6 +222,7 @@ export default function PatientCreate(this: any) {
 
 
   function submit() {
+    setLoading(true)
     let data = {
 
       Firstname: pats.Firstname ?? "",
@@ -303,7 +311,7 @@ export default function PatientCreate(this: any) {
             }
             setError(true)
           }
-
+          
         });
     }
 
@@ -556,12 +564,18 @@ export default function PatientCreate(this: any) {
           </Grid>
 
           <Grid item xs={12}>
+
             <Button style={{ float: "right" }}
               variant="contained"
               color="primary"
-              onClick={submit} >
+              onClick={submit} 
+              >
               <SaveIcon />บันทึก
             </Button>
+            <LoadingButton style={{ float: "right" , marginTop:12}}
+              loading={loading}
+              >
+            </LoadingButton>
             <Button style={{ float: "left" }}
               variant="contained"
               color="primary"

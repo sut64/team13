@@ -37,6 +37,9 @@ const useStyles = makeStyles((theme: Theme) =>
       width: theme.spacing(5),
       height: theme.spacing(5),
     },
+    Signouticons:{
+      width: '180px', height:'50px'
+    },
   }),
 );
 
@@ -71,6 +74,10 @@ const Paid = () => {
 
 const PaymentCreate = () => {
   window.location.href = "/paymentcreate";
+};
+
+const CreateMecRecord = () => {
+  window.location.href = "/CreateMecRecord";
 };
 
 export default function ButtonAppBar() {
@@ -115,14 +122,15 @@ export default function ButtonAppBar() {
           >
             <MenuItem onClick={Home}><HomeIcon/>หน้าหลัก</MenuItem>
 
-            <MenuItem onClick={UserList}><ListIcon/>รายชื่อผู้ป่วย</MenuItem>
-            <MenuItem onClick={UserCreate}><CreateIcon/>บันทึกผู้ป่วยใหม่</MenuItem>
+            <MenuItem onClick={PatientList}><ListIcon/>รายชื่อผู้ป่วย</MenuItem>
+            <MenuItem onClick={PatientCreate}><CreateIcon/>บันทึกผู้ป่วยใหม่</MenuItem>
             <MenuItem onClick={AppointList}><AssignmentOutlinedIcon/>ประวัติการนัดหมาย</MenuItem>
             <MenuItem onClick={AppointCreate}><BookmarkAddOutlinedIcon/>บันทึกการนัดหมาย</MenuItem>
             <MenuItem onClick={()=>{window.location.href = "/TreatmentList"}}>
 				<ContentPasteSearchOutlinedIcon/>ประวัติใบวินิจฉัย</MenuItem>
             <MenuItem onClick={Paid}><PaidIcon/>ประวัติการชำระเงิน</MenuItem>
             <MenuItem onClick={PaymentCreate}><PointOfSaleIcon/>บันทึกการชำระเงิน</MenuItem>
+            <MenuItem onClick={CreateMecRecord}><PointOfSaleIcon/>ssss</MenuItem>
 
           </Menu>
 
@@ -138,6 +146,7 @@ export default function ButtonAppBar() {
         </Grid>
 
           <Button style={{ float: "right" }}
+            className={classes.Signouticons}
             endIcon={<LogoutIcon />}
             onClick={signout}
             variant="outlined"

@@ -165,6 +165,7 @@ export default function CreateMecRecord() {
     const getuser = async () => {
         let uid = localStorage.getItem("uid")
         const apiUrl = `http://localhost:8080/user/pharmacist/${uid}`;
+        console.log("apiUrl", apiUrl)
         const requestOptions = {
             method: "GET",
             headers: {
@@ -183,6 +184,7 @@ export default function CreateMecRecord() {
                 }
             });
     }
+    
     function submit() {
         let data = {
             Datetime: selectedDate,
