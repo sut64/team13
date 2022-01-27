@@ -74,7 +74,7 @@ function Home() {
                     container
                     justifyContent="center"
                     alignItems="center">
-                    <img style={{ width: "180px" }} src="./logo.png" />
+                    <img style={{ width: "185px" }} src="./logohome.png" />
                 </Grid>
                 <h1 style={{ textAlign: "center", color: "#0B3C83" }}>คลินิกทันตกรรมฟันดี</h1>
                 <Grid item xs={12}
