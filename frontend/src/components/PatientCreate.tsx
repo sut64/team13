@@ -60,7 +60,7 @@ export default function PatientCreate(this: any) {
 
 
   const ClearInputChange = () => {
-    window.location.href = "/create";
+    window.location.href = "/Patientcreate";
   };
 
   const [selectedDate, setSelectedDate] = React.useState<Date | null>(
