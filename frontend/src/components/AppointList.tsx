@@ -33,15 +33,15 @@ import moment from 'moment';
 
 const useStyles = makeStyles((theme: Theme) =>
 
- createStyles({
+  createStyles({
 
-   container: {marginTop: theme.spacing(2)},
+    container: { marginTop: theme.spacing(2) },
 
-   table: { minWidth: 650},
+    table: { minWidth: 650 },
 
-   tableSpace: {marginTop: 20},
+    tableSpace: { marginTop: 20 },
 
- })
+  })
 
 );
 
@@ -52,172 +52,179 @@ const useStyles = makeStyles((theme: Theme) =>
 
 
 function WatchAppointtList() {
-    const classes = useStyles();
+  const classes = useStyles();
 
-    const [pats, setWatchAppoint] = React.useState<AppointInterface[]>([]);
+  const [pats, setWatchAppoint] = React.useState<AppointInterface[]>([]);
 
-    const getWatchAppoint = async () => {
+  const getWatchAppoint = async () => {
 
-      const apiUrl = "http://localhost:8080/appoints";
-    
-      const requestOptions = {
-    
-        method: "GET",
-    
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-          "Content-Type": "application/json",
+    const apiUrl = "http://localhost:8080/appoints";
+
+    const requestOptions = {
+
+      method: "GET",
+
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "application/json",
       },
-    
-      };
-  
-      fetch(apiUrl, requestOptions)
-    
-        .then((response) => response.json())
-    
-        .then((res) => {
-    
-          console.log(res.data);
-    
-          if (res.data) {
-    
-            setWatchAppoint(res.data);
-    
-          } else {
-    
-            console.log("else");
-    
-          }
-    
-        });
-    
+
     };
-    
-    
-    
-    useEffect(() => {
-    
-      getWatchAppoint();
-    
-    }, []);
-   
-    
 
-    return (
-   
-      <div>
-   
-        <Container className={classes.container} maxWidth="md" >
-            
-          <Box display="flex">
-   
-            <Box flexGrow={1}>
-   
-              <Typography
-   
-                component="h2"
-   
-                variant="h6"
-   
-                color="primary"
-   
-                gutterBottom
-   
-              >
-   
-                ประวัติการนัดหมาย
-   
-              </Typography>
-   
-            </Box>
-   
-            <Box>
-   
-              <Button
-   
-                component={RouterLink}
-   
-                to="/appointcreate"
-   
-                variant="contained"
-   
-                color="primary"
-   
-              >
-   
-                เพิ่มบันทึกการนัดหมาย
-   
-              </Button>
-   
-            </Box>
-   
+    fetch(apiUrl, requestOptions)
+
+      .then((response) => response.json())
+
+      .then((res) => {
+
+        console.log(res.data);
+
+        if (res.data) {
+
+          setWatchAppoint(res.data);
+
+        } else {
+
+          console.log("else");
+
+        }
+
+      });
+
+  };
+
+
+
+  useEffect(() => {
+
+    getWatchAppoint();
+
+  }, []);
+
+
+
+  return (
+
+    <div>
+
+      <Container className={classes.container} maxWidth="md" >
+
+        <Box display="flex">
+
+          <Box flexGrow={1}>
+
+            <Typography
+
+              component="h2"
+
+              variant="h6"
+
+              color="primary"
+
+              gutterBottom
+
+            >
+
+              ประวัติการนัดหมาย
+
+            </Typography>
+
           </Box>
-   
-          <TableContainer component={Paper} className={classes.tableSpace}>
-   
-            <Table className={classes.table} aria-label="simple table">
-   
-              <TableHead>
-   
-                <TableRow>
-   
-                  <TableCell align="left" width="25%">
-   
-                    ผู้ป่วย
-   
-                  </TableCell>
-   
-   
-                  <TableCell align="left" width="25%">
-   
-                    ทันตแพทย์
-   
-                  </TableCell>
-   
-                  <TableCell align="left" width="25%">
-   
-                    วันที่นัด
-   
-                  </TableCell>
-   
-                  <TableCell align="left" width="25%">
-   
-                    เหตุที่นัด
-   
-                  </TableCell>
-   
+
+          <Box>
+
+            <Button
+
+              component={RouterLink}
+
+              to="/appointcreate"
+
+              variant="contained"
+
+              color="primary"
+
+            >
+
+              เพิ่มบันทึกการนัดหมาย
+
+            </Button>
+
+          </Box>
+
+        </Box>
+
+        <TableContainer component={Paper} className={classes.tableSpace}>
+
+          <Table className={classes.table} aria-label="simple table">
+
+            <TableHead>
+
+              <TableRow>
+
+                <TableCell align="left" width="25%">
+
+                  ผู้ป่วย
+
+                </TableCell>
+
+
+                <TableCell align="left" width="20%">
+
+                  ทันตแพทย์
+
+                </TableCell>
+
+                <TableCell align="left" width="25%">
+
+                  วันที่นัด
+
+                </TableCell>
+
+                <TableCell align="left" width="20%">
+
+                  เหตุที่นัด
+
+                </TableCell>
+                <TableCell align="left" width="10%">
+
+                  ห้อง
+
+                </TableCell>
+
+              </TableRow>
+
+            </TableHead>
+
+            <TableBody>
+
+              {pats.map((pats: AppointInterface) => (
+
+                <TableRow key={pats.ID}>
+
+                  <TableCell align="left">{pats.Patient.Firstname} {pats.Patient.Lastname}</TableCell>
+
+                  <TableCell align="left">{pats.Dentist.Firstname} {pats.Dentist.Lastname}</TableCell>
+
+                  <TableCell align="left">{moment(pats.AppointTime).format("YYYY-MM-DDTHH:mm")}</TableCell>
+
+                  <TableCell align="left">{pats.RemedyType.Name}</TableCell>
+
+                  <TableCell align="left">{pats.Room}</TableCell>
+
                 </TableRow>
-   
-              </TableHead>
-   
-              <TableBody>
-   
-                {pats.map((pats: AppointInterface) => (
-   
-                  <TableRow key={pats.ID}>
 
-                    <TableCell align="left">{pats.Patient.Firstname} {pats.Patient.Lastname}</TableCell>
+              ))}
 
-                    <TableCell align="left">{pats.Dentist.Firstname} {pats.Dentist.Lastname}</TableCell>
+            </TableBody>
 
-                    <TableCell align="left">{moment(pats.AppointTime).format("YYYY-MM-DDTHH:mm")}</TableCell>
+          </Table>
 
-                    <TableCell align="left">{pats.Todo}</TableCell>
-   
-                  </TableRow>
-   
-                ))}
-   
-              </TableBody>
-   
-            </Table>
-   
-          </TableContainer>
+        </TableContainer>
 
-        </Container>
-   
-      </div>
-   
-    );
+      </Container>
+
+    </div>
+
+  );
 }
 export default WatchAppointtList;
