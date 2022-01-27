@@ -31,7 +31,6 @@ import { AppointInterface } from "../models/IAppoint";
 import moment from 'moment';
 
 
-
 const useStyles = makeStyles((theme: Theme) =>
 
  createStyles({
@@ -52,7 +51,6 @@ const useStyles = makeStyles((theme: Theme) =>
 
 
 
-
 function WatchAppointtList() {
     const classes = useStyles();
 
@@ -66,7 +64,10 @@ function WatchAppointtList() {
     
         method: "GET",
     
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          "Content-Type": "application/json",
+      },
     
       };
   
