@@ -61,12 +61,12 @@ function Home() {
                     container
                     justifyContent="center"
                     alignItems="center"> 
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={PatientCreate} loading={loadingPatient}>เวชระเบียน</LoadingButton>
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={() => { window.location.href = "/" }} >คัดกรองข้อมูล</LoadingButton>
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={TreatmentList} loading={loadingTreatment}>วินิจฉัย</LoadingButton>
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={() => { window.location.href = "/appointcreate" }} >การนัดหมาย</LoadingButton>
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={() => { window.location.href = "/" }} >ยาและเวชภัณฑ์</LoadingButton>
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={() => { window.location.href = "/paymentcreate" }} >ชำระเงิน</LoadingButton>
+                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={PatientCreate} loading={loadingPatient}><img style={{ width: "55px" }} src="./patient.png" />เวชระเบียน</LoadingButton>
+                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={() => { window.location.href = "/" }} ><img style={{ width: "55px" }} src="./screening.png" />คัดกรองข้อมูล</LoadingButton>
+                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={TreatmentList} loading={loadingTreatment}><img style={{ width: "55px" }} src="./treatment.png" />วินิจฉัย</LoadingButton>
+                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={() => { window.location.href = "/appointcreate" }} ><img style={{ width: "55px" }} src="./appoint.png" />การนัดหมาย</LoadingButton>
+                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={() => { window.location.href = "/" }} ><img style={{ width: "55px" }} src="./medical.png" />ยาและเวชภัณฑ์</LoadingButton>
+                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }} variant="contained" onClick={() => { window.location.href = "/paymentcreate" }} ><img style={{ width: "55px" }} src="./payment.png" />ชำระเงิน</LoadingButton>
                 </Grid>
 
                 <Paper className={classes.paper} >
