@@ -158,7 +158,7 @@ function WatchPatientList(this: any) {
                                             Birthday={pats.Birthday}
                                             IDcard={pats.IDcard}
                                             Tel={pats.Tel}
-                                            Wight={pats.Wight}
+                                            Weight={pats.Weight}
                                             Height={pats.Height}
                                             Time={pats.Time}
                                             SexID={pats.SexID}

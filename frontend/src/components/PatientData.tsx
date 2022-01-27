@@ -50,7 +50,7 @@ export default function DataPatient(pats: PatientInterface ) {
     }
 
     function getBMI() {
-        setBMI( pats.Wight/((pats.Height*pats.Height)/10000) ) ;
+        setBMI( pats.Weight/((pats.Height*pats.Height)/10000) ) ;
     }
 
     useEffect(() => {
@@ -80,7 +80,7 @@ export default function DataPatient(pats: PatientInterface ) {
                 <DialogContent sx={{ m: 1, p: 0 }} >
 
                     <div>ชื่อ : {pats.Firstname} &emsp; นามสกุล : {pats.Lastname} &emsp; อายุ : {Age} &emsp; เพศ : {pats.Sex?.Name}</div><br/>
-                    <div>น้ำหนัก : {pats.Wight.toFixed(1)} กก.&emsp;  ส่วนสูง : {pats.Height.toFixed(1)} ซม. &emsp; BMI : {BMI.toFixed(2)} </div><br/>
+                    <div>น้ำหนัก : {pats.Weight.toFixed(1)} กก.&emsp;  ส่วนสูง : {pats.Height.toFixed(1)} ซม. &emsp; BMI : {BMI.toFixed(2)} </div><br/>
                     <div>วันเกิด : {moment(pats.Birthday).format("YYYY-MM-DD")}</div><br/>
                     <div>เบอร์โทร : {pats.Tel}</div><br/>
                     <div>รหัสบัตรประชาชน : {pats.IDcard}</div><br/>

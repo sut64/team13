@@ -36,7 +36,7 @@ type Patient struct {
 	Birthday  time.Time
 	IDcard    string `gorm:"uniqueIndex"`
 	Tel       string
-	Wight     float32
+	Weight     float32
 	Height    float32
 	Time      time.Time
 
