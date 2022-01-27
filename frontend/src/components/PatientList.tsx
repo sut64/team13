@@ -117,7 +117,7 @@ function WatchPatientList(this: any) {
                     <Box>
                         <Button
                             component={RouterLink}
-                            to="/Patientcreat"
+                            to="/Patientcreate"
                             variant="contained"
                             color="primary"
                         >

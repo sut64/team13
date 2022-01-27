@@ -54,7 +54,8 @@ function App() {
 
               <Route path="/appointlist" element={<AppointtList />} />
 
-			  <Route path="/TreatmentList" element={<TreatmentList/>} />
+			        <Route path="/TreatmentList" element={<TreatmentList/>} />
+              
               <Route path="/paid" element={<Paid />} />
 
               <Route path="/paymentcreate" element={<PaymentCreate />} />
