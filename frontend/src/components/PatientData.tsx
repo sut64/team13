@@ -87,7 +87,7 @@ export default function DataPatient(pats: PatientInterface ) {
                     <div>อาชีพ : {pats.Job?.Name}</div><br/>
                     <div>สิทธิในการรักษา : {pats.Insurance?.Name}</div><br/>
                     <div>ผู้บันทึก : {pats.Nurse?.Firstname} {pats.Nurse?.Lastname} </div>< br/>     
-                    <div>บันทึกวันที่ : {moment(pats.Time).format("YYYY-MM-DD HH:mm")}</div>
+                    <div>บันทึกวันที่ : {moment(pats.Time).format("YYYY-MM-DD HH:mm:ss")}</div>
                 
                 </DialogContent >
 
