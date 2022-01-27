@@ -16,7 +16,8 @@ import AppointCreate from "./components/AppointCreate";
 import TreatmentList from "./components/TreatmentList";
 import Paid from "./components/Paid";
 import PaymentCreate from "./components/PaymentCreate";
-
+import CreateMecRecord from "./components/CreateMecRec";
+import MedRecord from "./components/MecRec";
 function App() {
   const [token, setToken] = React.useState<String>("");
 
@@ -57,7 +58,9 @@ function App() {
               <Route path="/paid" element={<Paid />} />
 
               <Route path="/paymentcreate" element={<PaymentCreate />} />
-
+             
+              <Route path="/MedRecord" element={<MedRecord />} />
+              <Route path="/CreateMecRecord" element={<CreateMecRecord />} />
             </Routes>
 
           </div>

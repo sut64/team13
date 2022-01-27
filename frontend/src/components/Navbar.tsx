@@ -13,7 +13,13 @@ import LogoutIcon from "@material-ui/icons/ExitToAppOutlined";
 import HomeIcon from "@material-ui/icons/HomeOutlined";
 import ListIcon from "@material-ui/icons/ListAltOutlined";
 import CreateIcon from "@material-ui/icons/AddCircleOutlineOutlined";
+
 import Grid from "@material-ui/core/Grid";
+import PaidIcon from '@mui/icons-material/Paid';
+import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
+import AssignmentOutlinedIcon from '@mui/icons-material/AssignmentOutlined';
+import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
+import ContentPasteSearchOutlinedIcon from '@mui/icons-material/ContentPasteSearchOutlined';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -108,14 +114,16 @@ export default function ButtonAppBar() {
             TransitionComponent={Fade}
           >
             <MenuItem onClick={Home}><HomeIcon/>หน้าหลัก</MenuItem>
-            <MenuItem onClick={PatientList}><ListIcon/>รายชื่อผู้ป่วย</MenuItem>
-            <MenuItem onClick={PatientCreate}><CreateIcon/>บันทึกผู้ป่วยใหม่</MenuItem>
-            <MenuItem onClick={AppointList}><ListIcon/>ประวัติการนัดหมาย</MenuItem>
-            <MenuItem onClick={AppointCreate}><CreateIcon/>บันทึกการนัดหมาย</MenuItem>
+
+            <MenuItem onClick={UserList}><ListIcon/>รายชื่อผู้ป่วย</MenuItem>
+            <MenuItem onClick={UserCreate}><CreateIcon/>บันทึกผู้ป่วยใหม่</MenuItem>
+            <MenuItem onClick={AppointList}><AssignmentOutlinedIcon/>ประวัติการนัดหมาย</MenuItem>
+            <MenuItem onClick={AppointCreate}><BookmarkAddOutlinedIcon/>บันทึกการนัดหมาย</MenuItem>
             <MenuItem onClick={()=>{window.location.href = "/TreatmentList"}}>
-				    <ListIcon/>ประวัติใบวินิจฉัย</MenuItem>
-            <MenuItem onClick={Paid}><ListIcon/>ประวัติการชำระเงิน</MenuItem>
-            <MenuItem onClick={PaymentCreate}><CreateIcon/>บันทึกการชำระเงิน</MenuItem>
+				<ContentPasteSearchOutlinedIcon/>ประวัติใบวินิจฉัย</MenuItem>
+            <MenuItem onClick={Paid}><PaidIcon/>ประวัติการชำระเงิน</MenuItem>
+            <MenuItem onClick={PaymentCreate}><PointOfSaleIcon/>บันทึกการชำระเงิน</MenuItem>
+
           </Menu>
 
          <Grid item xs={12}>
@@ -134,7 +142,7 @@ export default function ButtonAppBar() {
             onClick={signout}
             variant="outlined"
             color="inherit">
-            Signout
+            ออกจากระบบ
           </Button>
         </Toolbar>
       </AppBar>

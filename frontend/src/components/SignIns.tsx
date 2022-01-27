@@ -96,14 +96,12 @@ function SignIn() {
       </Snackbar>
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
+      <img style={{width:"125px"}} src="./logo.png"/>
         <Typography component="h1" variant="h5">
-          Sign in
+        คลินิกทันตกรรมฟันดี
 
         </Typography>
-        *username:few, password:1234*
+        
 
         <form className={classes.form} noValidate>
           <TextField
@@ -139,7 +137,7 @@ function SignIn() {
             className={classes.submit}
             onClick={login}
           >
-            Sign In
+            เข้าสู่ระบบ
           </Button>
         </form>
       </div>
