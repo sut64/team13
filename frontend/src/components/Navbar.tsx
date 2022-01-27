@@ -13,8 +13,8 @@ import LogoutIcon from "@material-ui/icons/ExitToAppOutlined";
 import HomeIcon from "@material-ui/icons/HomeOutlined";
 import ListIcon from "@material-ui/icons/ListAltOutlined";
 import CreateIcon from "@material-ui/icons/AddCircleOutlineOutlined";
-
-
+import PaidIcon from '@mui/icons-material/Paid';
+import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -114,8 +114,8 @@ export default function ButtonAppBar() {
             <MenuItem onClick={AppointCreate}><CreateIcon/>บันทึกการนัดหมาย</MenuItem>
             <MenuItem onClick={()=>{window.location.href = "/TreatmentList"}}>
 				<ListIcon/>ประวัติใบวินิจฉัย</MenuItem>
-            <MenuItem onClick={Paid}><ListIcon/>ประวัติการชำระเงิน</MenuItem>
-            <MenuItem onClick={PaymentCreate}><CreateIcon/>บันทึกการชำระเงิน</MenuItem>
+            <MenuItem onClick={Paid}><PaidIcon/>ประวัติการชำระเงิน</MenuItem>
+            <MenuItem onClick={PaymentCreate}><PointOfSaleIcon/>บันทึกการชำระเงิน</MenuItem>
           </Menu>
 
           <Typography variant="h5" className={classes.title}>

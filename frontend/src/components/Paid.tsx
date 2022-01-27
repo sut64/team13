@@ -14,6 +14,8 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import { PaymentInterface } from "../models/IPayment";
 import moment from 'moment';
+import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
+
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: { marginTop: theme.spacing(2) },
@@ -68,7 +70,7 @@ function WatchPaidList() {
                             variant="contained"
                             color="primary"
                         >
-                            บันทึกการชำระเงิน
+                            บันทึกการชำระเงิน <PointOfSaleIcon/>
                         </Button>
                     </Box>
                 </Box>
