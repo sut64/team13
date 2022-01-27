@@ -22,6 +22,9 @@ import { FormControl, Select } from "@material-ui/core";
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import { KeyboardDateTimePicker } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
+import PaidIcon from '@mui/icons-material/Paid';
+import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
+
 function Alert(props: AlertProps): JSX.Element {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
@@ -190,7 +193,7 @@ export default function Body() {
       RemedyTypeID: typeof pats.RemedyTypeID === "string" ? parseInt(pats.RemedyTypeID) : NaN,
       Note: pats.Note ?? "",
       PayTime: AddedTime,
-      Price: typeof pats.Price === "string" ? parseInt(pats.Price) : NaN,
+      Price: typeof pats.Price === "string" ? parseFloat(pats.Price) : NaN,
       Pricetext: pats.Pricetext ?? "",
     };
     console.log("Data", data)
@@ -370,7 +373,7 @@ export default function Body() {
           variant="contained"
           color="primary"
           onClick={submit} >
-          บันทึก
+          บันทึก <PointOfSaleIcon/>
         </Button>
         <Grid item xs={3} >
         <Button style={{ float: "left" }}
@@ -379,7 +382,7 @@ export default function Body() {
               variant="contained"
               color="primary"
               >
-            ประวัติการชำระเงิน
+            ประวัติการชำระเงิน <PaidIcon/>
             </Button>
             </Grid>
       </Grid>

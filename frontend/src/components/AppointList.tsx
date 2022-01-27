@@ -170,6 +170,7 @@ function WatchAppointtList() {
 
                 <TableCell align="left" width="20%">
 
+
                   ทันตแพทย์
 
                 </TableCell>
@@ -180,16 +181,20 @@ function WatchAppointtList() {
 
                 </TableCell>
 
+
                 <TableCell align="left" width="20%">
+
 
                   เหตุที่นัด
 
                 </TableCell>
+
                 <TableCell align="left" width="10%">
 
                   ห้อง
 
                 </TableCell>
+
 
               </TableRow>
 
