@@ -7,6 +7,7 @@ import CreateIcon from '@mui/icons-material/CreateTwoTone';
 import Paper from "@material-ui/core/Paper";
 import LoadingButton from '@mui/lab/LoadingButton';
 import React from "react";
+import { CleaningServicesSharp } from "@mui/icons-material";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -24,14 +25,22 @@ const useStyles = makeStyles((theme: Theme) =>
 
 function Home() {
     const classes = useStyles();
+    const [loadingPatient, setLoadingPatient] = React.useState(false);
+    const [loadingTreatment, setLoadingTreatment] = React.useState(false);
+    /*const [loading, setLoading] = React.useState(false);
     const [loading, setLoading] = React.useState(false);
-    function handleClick() {
-        setLoading(true);
-      }
-    
+    const [loading, setLoading] = React.useState(false);
+    const [loading, setLoading] = React.useState(false);*/
+
+
     const PatientCreate = () => {
         window.location.href = "/Patientcreate";
-        setLoading(true);
+        setLoadingPatient(true);
+    };
+
+    const TreatmentList = () => {
+        window.location.href = "/TreatmentList";
+        setLoadingTreatment(true);
     };
     
     return (
@@ -40,16 +49,13 @@ function Home() {
 
                 <h1 style={{ textAlign: "center" }}>คลินิกทันตกรรมฟันดี</h1>
 
-                <LoadingButton sx={{width: '280px', height:'200px', backgroundColor: '#FFFFFF', fontSize:"20px", color : "#1536CC", margin: 10,}} variant="contained" onClick={PatientCreate}
+                <LoadingButton sx={{width: '280px', height:'200px', backgroundColor: '#FFFFFF', fontSize:"20px", color : "#1536CC", margin: 1,}} variant="contained" onClick={PatientCreate} loading={loadingPatient}>เวชระเบียน</LoadingButton>
+                <LoadingButton sx={{width: '280px', height:'200px', backgroundColor: '#FFFFFF', fontSize:"20px", color : "#1536CC", margin: 1,}} variant="contained" onClick={()=>{window.location.href = "/"}} >คัดกรองข้อมูล</LoadingButton>
+                <LoadingButton sx={{width: '280px', height:'200px', backgroundColor: '#FFFFFF', fontSize:"20px", color : "#1536CC", margin: 1,}} variant="contained" onClick={TreatmentList} loading={loadingTreatment}>วินิจฉัย</LoadingButton>
+                <LoadingButton sx={{width: '280px', height:'200px', backgroundColor: '#FFFFFF', fontSize:"20px", color : "#1536CC", margin: 1,}} variant="contained" onClick={()=>{window.location.href = "/appointcreate"}} >การนัดหมาย</LoadingButton>
+                <LoadingButton sx={{width: '280px', height:'200px', backgroundColor: '#FFFFFF', fontSize:"20px", color : "#1536CC", margin: 1,}} variant="contained" onClick={()=>{window.location.href = "/"}} >ยาและเวชภัณฑ์</LoadingButton>
+                <LoadingButton sx={{width: '280px', height:'200px', backgroundColor: '#FFFFFF', fontSize:"20px", color : "#1536CC", margin: 1,}} variant="contained" onClick={()=>{window.location.href = "/paymentcreate"}} >ชำระเงิน</LoadingButton>
 
-                    loading={loading}>
-                    เวชระเบียน    
-                </LoadingButton>
-                <Button className={classes.buttonsize} variant="contained" onClick={()=>{window.location.href = "/"}}>คัดกรองข้อมูล</Button>
-                <Button className={classes.buttonsize} variant="contained" onClick={()=>{window.location.href = "/TreatmentList"}}>วินิจฉัย</Button>
-                <Button className={classes.buttonsize} variant="contained" onClick={()=>{window.location.href = "/appointcreate"}}>การนัดหมาย</Button>
-                <Button className={classes.buttonsize} variant="contained" onClick={()=>{window.location.href = "/"}}>ยาและเวชภัณฑ์</Button>
-                <Button className={classes.buttonsize} variant="contained" onClick={()=>{window.location.href = "/paymentcreate"}}>ชำระเงิน</Button>
                 
                 <Paper className={classes.paper}>
                 <h1 style={{ textAlign: "center" }}>ระบบทันตกรรม</h1>
