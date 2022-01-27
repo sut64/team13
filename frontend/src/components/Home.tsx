@@ -82,8 +82,9 @@ function Home() {
                     justifyContent="center"
                     alignItems="center">
 
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }}
-                        variant="contained" onClick={PatientCreate}
+                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2,}}
+                        variant="text" 
+                        onClick={PatientCreate}
                         loading={loadingPatient}>
                         <img style={{ width: "55px" }}
                             src="./patient.png" />
@@ -91,7 +92,7 @@ function Home() {
                     </LoadingButton>
 
                     <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }}
-                        variant="contained"
+                        variant="text"
                         onClick={() => { window.location.href = "/" }} >
                         <img style={{ width: "55px" }}
                             src="./screening.png" />
@@ -99,7 +100,7 @@ function Home() {
                     </LoadingButton>
 
                     <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }}
-                        variant="contained"
+                        variant="text"
                         onClick={TreatmentList}
                         loading={loadingTreatment}>
                         <img style={{ width: "55px" }} src="./treatment.png" />
@@ -107,7 +108,7 @@ function Home() {
                     </LoadingButton>
 
                     <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }}
-                        variant="contained"
+                        variant="text"
                         onClick={appointcreate}
                         loading={loadingappoint}>
                         <img style={{ width: "55px" }} src="./appoint.png" />
@@ -115,7 +116,7 @@ function Home() {
                     </LoadingButton>
 
                     <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }}
-                        variant="contained"
+                        variant="text"
                         onClick={CreateMecRecord}
                         loading={loadingMecRecord} >
                         <img style={{ width: "55px" }}src="./medical.png" />
@@ -123,7 +124,7 @@ function Home() {
                     </LoadingButton>
 
                     <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }}
-                        variant="contained"
+                        variant="text"
                         onClick={paymentcreate} loading={loadingpayment} >
                         <img style={{ width: "55px" }} src="./payment.png" />
                         ชำระเงิน
