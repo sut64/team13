@@ -127,7 +127,7 @@ export default function ButtonAppBar() {
             onClick={signout}
             variant="outlined"
             color="inherit">
-            Signout
+            ออกจากระบบ
           </Button>
         </Toolbar>
       </AppBar>
