@@ -15,6 +15,9 @@ import ListIcon from "@material-ui/icons/ListAltOutlined";
 import CreateIcon from "@material-ui/icons/AddCircleOutlineOutlined";
 import PaidIcon from '@mui/icons-material/Paid';
 import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
+import AssignmentOutlinedIcon from '@mui/icons-material/AssignmentOutlined';
+import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
+import ContentPasteSearchOutlinedIcon from '@mui/icons-material/ContentPasteSearchOutlined';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -110,10 +113,10 @@ export default function ButtonAppBar() {
             <MenuItem onClick={Home}><HomeIcon/>หน้าหลัก</MenuItem>
             <MenuItem onClick={UserList}><ListIcon/>รายชื่อผู้ป่วย</MenuItem>
             <MenuItem onClick={UserCreate}><CreateIcon/>บันทึกผู้ป่วยใหม่</MenuItem>
-            <MenuItem onClick={AppointList}><ListIcon/>ประวัติการนัดหมาย</MenuItem>
-            <MenuItem onClick={AppointCreate}><CreateIcon/>บันทึกการนัดหมาย</MenuItem>
+            <MenuItem onClick={AppointList}><AssignmentOutlinedIcon/>ประวัติการนัดหมาย</MenuItem>
+            <MenuItem onClick={AppointCreate}><BookmarkAddOutlinedIcon/>บันทึกการนัดหมาย</MenuItem>
             <MenuItem onClick={()=>{window.location.href = "/TreatmentList"}}>
-				<ListIcon/>ประวัติใบวินิจฉัย</MenuItem>
+				<ContentPasteSearchOutlinedIcon/>ประวัติใบวินิจฉัย</MenuItem>
             <MenuItem onClick={Paid}><PaidIcon/>ประวัติการชำระเงิน</MenuItem>
             <MenuItem onClick={PaymentCreate}><PointOfSaleIcon/>บันทึกการชำระเงิน</MenuItem>
           </Menu>
