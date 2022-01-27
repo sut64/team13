@@ -250,7 +250,7 @@ func SetupDatabase() {
 	patient3 := Patient{
 		Firstname: "สมชาย",
 		Lastname:  "มาอุดฟัน",
-		Birthday:  time.Date(20012, 1, 1, 0, 0, 0, 0, time.UTC),
+		Birthday:  time.Date(2012, 1, 1, 0, 0, 0, 0, time.UTC),
 		IDcard:    "1329900000005",
 		Tel:       "0934547915",
 		Wight:     65,

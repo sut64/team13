@@ -27,7 +27,6 @@ import ListIcon from "@material-ui/icons/ListAltOutlined";
 import SaveIcon from "@material-ui/icons/SaveAltOutlined";
 import CleaningServicesIcon from '@mui/icons-material/CleaningServices';
 
-
 function Alert(props: AlertProps): JSX.Element {
 
   return <MuiAlert elevation={6} variant="filled" {...props} />;
