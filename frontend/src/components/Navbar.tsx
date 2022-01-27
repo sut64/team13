@@ -20,6 +20,9 @@ import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
 import AssignmentOutlinedIcon from '@mui/icons-material/AssignmentOutlined';
 import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
 import ContentPasteSearchOutlinedIcon from '@mui/icons-material/ContentPasteSearchOutlined';
+import MedicationIcon from '@mui/icons-material/Medication';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -121,16 +124,22 @@ export default function ButtonAppBar() {
             TransitionComponent={Fade}
           >
             <MenuItem onClick={Home}><HomeIcon/>หน้าหลัก</MenuItem>
-
+            -------------------------------------
             <MenuItem onClick={PatientList}><ListIcon/>รายชื่อผู้ป่วย</MenuItem>
             <MenuItem onClick={PatientCreate}><CreateIcon/>บันทึกผู้ป่วยใหม่</MenuItem>
-            <MenuItem onClick={AppointList}><AssignmentOutlinedIcon/>ประวัติการนัดหมาย</MenuItem>
+            -------------------------------------
+            <br/>
+            -------------------------------------
+            <MenuItem onClick={()=>{window.location.href = "/TreatmentList"}}><ContentPasteSearchOutlinedIcon/>ประวัติใบวินิจฉัย</MenuItem>
+            -------------------------------------
+            <MenuItem onClick={AppointList}><AccessTimeIcon/>ประวัติการนัดหมาย</MenuItem>
             <MenuItem onClick={AppointCreate}><BookmarkAddOutlinedIcon/>บันทึกการนัดหมาย</MenuItem>
-            <MenuItem onClick={()=>{window.location.href = "/TreatmentList"}}>
-				<ContentPasteSearchOutlinedIcon/>ประวัติใบวินิจฉัย</MenuItem>
+            -------------------------------------
+            <MenuItem onClick={CreateMecRecord}><MedicationIcon/>บันทึกการจ่ายยา</MenuItem>
+            -------------------------------------
             <MenuItem onClick={Paid}><PaidIcon/>ประวัติการชำระเงิน</MenuItem>
             <MenuItem onClick={PaymentCreate}><PointOfSaleIcon/>บันทึกการชำระเงิน</MenuItem>
-            <MenuItem onClick={CreateMecRecord}><PointOfSaleIcon/>ssss</MenuItem>
+            
 
           </Menu>
 
@@ -150,6 +159,7 @@ export default function ButtonAppBar() {
             endIcon={<LogoutIcon />}
             onClick={signout}
             variant="outlined"
+
             color="inherit">
             ออกจากระบบ
           </Button>
