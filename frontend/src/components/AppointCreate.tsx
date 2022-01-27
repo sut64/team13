@@ -274,6 +274,8 @@ export default function Body() {
 
             Todo: pats.Todo ?? "",
 
+            Room: typeof pats.Room === "string" ? parseInt(pats.Room) : NaN,
+
             AppointTime: AddedTime
 
         };

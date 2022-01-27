@@ -168,7 +168,8 @@ function WatchAppointtList() {
                 </TableCell>
 
 
-                <TableCell align="left" width="25%">
+                <TableCell align="left" width="20%">
+
 
                   ทันตแพทย์
 
@@ -180,11 +181,20 @@ function WatchAppointtList() {
 
                 </TableCell>
 
-                <TableCell align="left" width="25%">
+
+                <TableCell align="left" width="20%">
+
 
                   เหตุที่นัด
 
                 </TableCell>
+
+                <TableCell align="left" width="10%">
+
+                  ห้อง
+
+                </TableCell>
+
 
               </TableRow>
 
@@ -202,7 +212,9 @@ function WatchAppointtList() {
 
                   <TableCell align="left">{moment(pats.AppointTime).format("YYYY-MM-DDTHH:mm")}</TableCell>
 
-                  <TableCell align="left">{pats.Todo}</TableCell>
+                  <TableCell align="left">{pats.RemedyType.Name}</TableCell>
+
+                  <TableCell align="left">{pats.Room}</TableCell>
 
                 </TableRow>
 
