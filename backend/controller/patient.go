@@ -69,7 +69,7 @@ func CreatePatient(c *gin.Context) {
 		Birthday:			patient.Birthday,
 		IDcard:  			patient.IDcard,
 		Tel:				patient.Tel,
-		Wight:				patient.Wight,
+		Weight:				patient.Weight,
 		Height:				patient.Height,
 		Time: 				time.Now(),	   		// 14: ดึงเวลาปัจจุบัน
 		Insurance:	 		insurance,         // โยงความสัมพันธ์กับ Entity insurance

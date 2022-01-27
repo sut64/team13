@@ -11,7 +11,7 @@ export interface PatientInterface {
     Birthday: Date;
     IDcard: string;
     Tel: string;
-    Wight : number;
+    Weight : number;
     Height : number;
     Time: Date;
     SexID: number;

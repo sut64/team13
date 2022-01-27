@@ -227,7 +227,7 @@ export default function PatientCreate(this: any) {
 
       Tel: pats.Tel ?? "",
 
-      Wight: typeof pats.Wight === "string" ? parseFloat(pats.Wight) : NaN,
+      Weight: typeof pats.Weight === "string" ? parseFloat(pats.Weight) : NaN,
 
       Height: typeof pats.Height === "string" ? parseFloat(pats.Height) : NaN,
 
@@ -457,7 +457,7 @@ export default function PatientCreate(this: any) {
             <TextField
               type="number"
               style={{ width: '110%' }}
-              id="Wight"
+              id="Weight"
               label="กรอกน้ำหนัก"
               variant="outlined"
               InputProps={{ inputProps: { min: 1, max: 999 } }}
