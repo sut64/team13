@@ -164,8 +164,8 @@ export default function CreateMecRecord() {
     }
     const getuser = async () => {
         let uid = localStorage.getItem("uid")
-        const apiUrl = `http://localhost:8080/user/pharmacist/${uid}`;
-        console.log("apiUrl", apiUrl)
+        const apiUrl = `http://localhost:8080/users/${uid}`;
+
         const requestOptions = {
             method: "GET",
             headers: {
@@ -176,7 +176,7 @@ export default function CreateMecRecord() {
         fetch(apiUrl, requestOptions)
             .then((response) => response.json())
             .then((res) => {
-                console.log("Combobox_Useronline", res)
+                console.log(res.data)
                 if (res.data) {
                     setuser(res.data)
                 } else {
@@ -283,12 +283,14 @@ export default function CreateMecRecord() {
                     <Grid item xs={12}>
                         <p>ชื่อผู้จ่ายยาและเวชภัณฑ์</p>
                         <Select
-                        style={{ width: 400 }}>
-                            <option>
-                            {user?.Firstname} {user?.Lastname}
-                            </option>
-
-                         </Select>
+                            style={{ width: 400 }}
+                            variant="outlined"
+                            defaultValue={0}
+                            value={user?.ID}
+                            disabled
+                        >
+                            <MenuItem value={0}>{user?.Firstname} {user?.Lastname}</MenuItem>
+                        </Select>
                     </Grid>
 
                     <Grid item xs={12}>

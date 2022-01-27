@@ -133,3 +133,19 @@ func ListTreatments(c *gin.Context) {
 
 	c.JSON(http.StatusOK, gin.H{"data": treatments})
 }
+
+func GetTreatments(c *gin.Context) {
+	var treatments entity.Treatment
+	id := c.Param("id")
+	if err := entity.DB().Preload("Screening").
+		Preload("Screening.Patient").
+		Raw("SELECT * FROM treatments WHERE id = ? ", id).Find(&treatments).Error; err != nil {
+
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+
+		return
+
+	}
+	c.JSON(http.StatusOK, gin.H{"data": treatments})
+
+}
