@@ -68,7 +68,6 @@ func main() {
 			protected.POST("/screening", controller.CreateScreening)
 			protected.GET("/screenings", controller.ListScreening)
 
-
 			// Treatments
 			protected.POST("/treatment", controller.CreateTreatment)
 			protected.GET("/treatments", controller.ListTreatments)
@@ -79,6 +78,13 @@ func main() {
 			protected.POST("/payments", controller.CreatePayment)
 			protected.PATCH("/payments", controller.UpdatePayment)
 			protected.DELETE("/payments/:id", controller.DeletePayment)
+
+			// MedRecord
+			protected.GET("/medrecords", controller.ListMedRecord)
+			protected.POST("/medsubmit", controller.CreateMedRecord)
+
+			// MedicalProduct
+			protected.GET("/medical_products", controller.ListMedicalProduct)
 		}
 	}
 
