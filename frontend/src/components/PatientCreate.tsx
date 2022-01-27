@@ -338,7 +338,7 @@ export default function PatientCreate(this: any) {
 
             <Button style={{ float: "right" }}
               component={RouterLink}
-              to="/list"
+              to="/Patientlist"
               variant="contained"
               color="primary">
               <ListIcon />รายชื่อผู้ป่วย

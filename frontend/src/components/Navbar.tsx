@@ -13,7 +13,7 @@ import LogoutIcon from "@material-ui/icons/ExitToAppOutlined";
 import HomeIcon from "@material-ui/icons/HomeOutlined";
 import ListIcon from "@material-ui/icons/ListAltOutlined";
 import CreateIcon from "@material-ui/icons/AddCircleOutlineOutlined";
-
+import Grid from "@material-ui/core/Grid";
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -43,12 +43,12 @@ const Home = () => {
   window.location.href = "/";
 };
 
-const UserList = () => {
-  window.location.href = "/list";
+const PatientList = () => {
+  window.location.href = "/Patientlist";
 };
 
-const UserCreate = () => {
-  window.location.href = "/create";
+const PatientCreate = () => {
+  window.location.href = "/Patientcreate";
 };
 
 const AppointList = () => {
@@ -108,19 +108,26 @@ export default function ButtonAppBar() {
             TransitionComponent={Fade}
           >
             <MenuItem onClick={Home}><HomeIcon/>หน้าหลัก</MenuItem>
-            <MenuItem onClick={UserList}><ListIcon/>รายชื่อผู้ป่วย</MenuItem>
-            <MenuItem onClick={UserCreate}><CreateIcon/>บันทึกผู้ป่วยใหม่</MenuItem>
+            <MenuItem onClick={PatientList}><ListIcon/>รายชื่อผู้ป่วย</MenuItem>
+            <MenuItem onClick={PatientCreate}><CreateIcon/>บันทึกผู้ป่วยใหม่</MenuItem>
             <MenuItem onClick={AppointList}><ListIcon/>ประวัติการนัดหมาย</MenuItem>
             <MenuItem onClick={AppointCreate}><CreateIcon/>บันทึกการนัดหมาย</MenuItem>
             <MenuItem onClick={()=>{window.location.href = "/TreatmentList"}}>
-				<ListIcon/>ประวัติใบวินิจฉัย</MenuItem>
+				    <ListIcon/>ประวัติใบวินิจฉัย</MenuItem>
             <MenuItem onClick={Paid}><ListIcon/>ประวัติการชำระเงิน</MenuItem>
             <MenuItem onClick={PaymentCreate}><CreateIcon/>บันทึกการชำระเงิน</MenuItem>
           </Menu>
 
-          <Typography variant="h5" className={classes.title}>
-            G13 คลินิกทันตกรรมฟันดี
-          </Typography>
+         <Grid item xs={12}>
+            <Button style={{ float: "left" }}
+              onClick={Home}
+              variant="text"
+              color="inherit">
+              <Typography variant="h5" className={classes.title}>
+                G13 คลินิกทันตกรรมฟันดี
+              </Typography>
+            </Button>
+        </Grid>
 
           <Button style={{ float: "right" }}
             endIcon={<LogoutIcon />}
