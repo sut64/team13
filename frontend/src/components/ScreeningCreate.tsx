@@ -114,7 +114,7 @@ function ScreeningCreate() {
   };
 
   const getPatient = async () => {
-    fetch(`${apiUrl}/patients`, requestOptions)
+    fetch(`${apiUrl}/patientscr`, requestOptions)
       .then((response) => response.json())
       .then((res) => {
         console.log(res.data)
