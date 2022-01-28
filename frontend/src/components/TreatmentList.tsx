@@ -204,8 +204,10 @@ export default function TreatmentList() {
 		.then((res) => {
 			console.log(res.data);
 			setNotify(true)
-			if (res.data) setMessage( { message:'Succesfully saved', level:'success' } );
-			else {
+			if (res.data) {
+				setMessage( { message:'Succesfully saved', level:'success' } );
+				getTreatments()
+			} else {
 				setMessage( { message:`Failed to save\n${res.error}`, level:'error' } );
 				console.log(res.error)
 			}
