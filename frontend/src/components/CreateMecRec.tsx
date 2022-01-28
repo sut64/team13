@@ -362,7 +362,7 @@ export default function CreateMecRecord() {
                         <p>คำแนะนำการใช้ยา</p>
                         <TextField
                             fullWidth
-                            id="Advicetext"
+                            id="AdviceText"
                             label="กรอกคำแนะนำ"
                             variant="outlined"
                             type="string"
