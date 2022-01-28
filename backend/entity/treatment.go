@@ -25,4 +25,6 @@ type Treatment struct {
 	// Remedy Type entity
 	RemedyTypeID *uint
 	RemedyType   RemedyType
+
+	MedRecords []MedRecord `gorm:"foreignKey:TreatmentID"`
 }

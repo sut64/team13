@@ -71,7 +71,7 @@ func main() {
 			// Treatments
 			protected.POST("/treatment", controller.CreateTreatment)
 			protected.GET("/treatments", controller.ListTreatments)
-			protected.GET("/treatments:id", controller.GetTreatments)
+			protected.GET("/treatments/:id", controller.GetTreatments)
 
 			// Payments
 			protected.GET("/payments", controller.ListPayment)
