@@ -25,7 +25,6 @@ function Home() {
     const classes = useStyles();
     const [loadingPatient, setLoadingPatient] = React.useState(false);
     const [loadingScreening, setLoadingScreening] = React.useState(false);
-    //const [loading, setLoading] = React.useState(false);
     const [loadingTreatment, setLoadingTreatment] = React.useState(false);
     const [loadingappoint, setLoadingappoint] = React.useState(false);
     const [loadingMecRecord, setLoadingMecRecord] = React.useState(false);
@@ -40,11 +39,6 @@ function Home() {
         window.location.href = "/ScreeningCreate";
         setLoadingScreening(true);
     };
-
-    /*const TreatmentList = () => {
-        window.location.href = "/TreatmentList";
-        setLoadingTreatment(true);
-    };*/
 
     const TreatmentList = () => {
         window.location.href = "/TreatmentList";
@@ -99,8 +93,7 @@ function Home() {
                         variant="text"
                         onClick={ScreeningCreate}
                         loading={loadingScreening}>
-                        <img style={{ width: "55px" }}
-                            src="./screening.png" />
+                        <img style={{ width: "55px" }} src="./screening.png" />
                         คัดกรองข้อมูล
                     </LoadingButton>
 
