@@ -30,6 +30,7 @@ func main() {
 			protected.POST("/job", controller.CreateJob)
 
 			// Patient
+			protected.GET("/patientscr", controller.PatientScreening)
 
 			protected.GET("/patients", controller.ListPatient)
 
