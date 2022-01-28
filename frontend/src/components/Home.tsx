@@ -12,18 +12,14 @@ import MedicationIcon from '@mui/icons-material/Medication';
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         //alignItems: "center", display: "flex",
-        container: { marginTop: theme.spacing(3), backgroundColor: "#F4EEDC", },
+        container: { marginTop: theme.spacing(3), backgroundColor: "#F4EEDC", fontFamily:'Itim',},
         buttonsize: { width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 10, },
         iconsize: { margin: 20, marginBottom: 100, color: "#EE1F12", size: "20px", fontSize: "large" },
         grids: { padding: theme.spacing(2), color: "#0B3C83" },
+        menugrid: { '& button': {fontFamily:'Itim'} },
         paper: { marginTop: 80, },
-
-
     })
 );
-
-
-
 
 function Home() {
     const classes = useStyles();
@@ -65,6 +61,9 @@ function Home() {
         setLoadingpayment(true);
     };
 
+	var btnStyle = {
+		width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, 
+		fontFamily:'Itim'}
     return (
 
         <div>
@@ -82,7 +81,7 @@ function Home() {
                     justifyContent="center"
                     alignItems="center">
 
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2,}}
+                    <LoadingButton sx={btnStyle}
                         variant="text" 
                         onClick={PatientCreate}
                         loading={loadingPatient}>
@@ -91,7 +90,7 @@ function Home() {
                         เวชระเบียน
                     </LoadingButton>
 
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }}
+                    <LoadingButton sx={btnStyle}
                         variant="text"
                         onClick={() => { window.location.href = "/" }} >
                         <img style={{ width: "55px" }}
@@ -99,7 +98,7 @@ function Home() {
                         คัดกรองข้อมูล
                     </LoadingButton>
 
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }}
+                    <LoadingButton sx={btnStyle}
                         variant="text"
                         onClick={TreatmentList}
                         loading={loadingTreatment}>
@@ -107,7 +106,7 @@ function Home() {
                         วินิจฉัย
                     </LoadingButton>
 
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }}
+                    <LoadingButton sx={btnStyle}
                         variant="text"
                         onClick={appointcreate}
                         loading={loadingappoint}>
@@ -115,7 +114,7 @@ function Home() {
                         การนัดหมาย
                     </LoadingButton>
 
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }}
+                    <LoadingButton sx={btnStyle}
                         variant="text"
                         onClick={CreateMecRecord}
                         loading={loadingMecRecord} >
@@ -123,7 +122,7 @@ function Home() {
                         ยาและเวชภัณฑ์
                     </LoadingButton>
 
-                    <LoadingButton sx={{ width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, }}
+                    <LoadingButton sx={btnStyle}
                         variant="text"
                         onClick={paymentcreate} loading={loadingpayment} >
                         <img style={{ width: "55px" }} src="./payment.png" />
@@ -134,10 +133,10 @@ function Home() {
 
                 <Paper className={classes.paper} >
                     <Grid className={classes.grids}>
-                        <h1 style={{ textAlign: "center", color: "#0B3C83" }}>ระบบทันตกรรม</h1>
+                        <h1 style={{ textAlign: "center", color: "#0B3C83"}}>ระบบทันตกรรม</h1>
                         <h3>เป้าหมายของการรีลิส</h3>
                         <h4>
-                            &nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;
                             ระบบทันตกรรมเป็นระบบที่ใช้จัดการข้อมูลในการทำงานภายในคลินิกทันตกรรมให้เป็นระบบมากยิ่งขึ้น โดยจะมีระบบย่อยสำหรับการใช้งานในแผนกต่างๆ ซึ่งเป็นการจัดการโดยบุคลากรของคลินิกทันตกรรม
                             เมื่อผู้ป่วยเข้ารับการรักษาที่คลินิกทันตกรรม พยาบาลจะมีการใช้ระบบย่อยระบบเวชระเบียนในการเพิ่มข้อมูลและแสดงรายชื่อผู้ป่วยที่เข้ารับการรักษาในคลินิกทันตกรรม หากผู้ป่วยมีข้อมูลในระบบเวชระเบียนของคลินิกแล้ว ผู้ช่วยทันตแพทย์จะทำการคัดกรองข้อมูลพื้นฐานของผู้ป่วย จากนั้นบันทึกข้อมูลด้วยระบบย่อยระบบคัดกรองข้อมูลพื้นฐานผู้ป่วยทันตกรรมก่อนการรับบริการ
                             หลังจากคัดกรองข้อมูลพื้นฐานของผู้ป่วยเรียบร้อย ทันตแพทย์จะเป็นผู้ตรวจวินิจฉัยและใช้ระบบย่อยระบบบันทึกข้อมูลการรักษาทางทันตกรรมในการบันทึกข้อมูลการวินิจฉัยในครั้งนั้นๆ และยังสามารถใช้ระบบย่อยระบบจัดการการนัดหมายในการบันทึกข้อมูลการนัดหมายผู้ป่วยได้อีกด้วย
