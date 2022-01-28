@@ -22,6 +22,7 @@ import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
 import ContentPasteSearchOutlinedIcon from '@mui/icons-material/ContentPasteSearchOutlined';
 import MedicationIcon from '@mui/icons-material/Medication';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import FactCheckOutlinedIcon from '@mui/icons-material/FactCheckOutlined';
 
 
 
@@ -61,6 +62,12 @@ const PatientList = () => {
 
 const PatientCreate = () => {
   window.location.href = "/Patientcreate";
+};
+const ScreeningCreate = () => {
+  window.location.href = "/ScreeningCreate";
+};
+const ScreeningList = () => {
+  window.location.href = "/ScreeningList";
 };
 
 const AppointList = () => {
@@ -128,7 +135,8 @@ export default function ButtonAppBar() {
             <MenuItem onClick={PatientList}><ListIcon/>รายชื่อผู้ป่วย</MenuItem>
             <MenuItem onClick={PatientCreate}><CreateIcon/>บันทึกผู้ป่วยใหม่</MenuItem>
             -------------------------------------
-            <br/>
+            <MenuItem onClick={ScreeningList}><FactCheckOutlinedIcon/>รายการข้อมูลผู้ป่วยคัดกรอง</MenuItem>
+            <MenuItem onClick={ScreeningCreate}><CreateIcon/>บันทึกข้อมูลการคัดกรองใหม่</MenuItem>
             -------------------------------------
             <MenuItem onClick={()=>{window.location.href = "/TreatmentList"}}><ContentPasteSearchOutlinedIcon/>ประวัติใบวินิจฉัย</MenuItem>
             -------------------------------------

@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
 function Home() {
     const classes = useStyles();
     const [loadingPatient, setLoadingPatient] = React.useState(false);
+    const [loadingScreening, setLoadingScreening] = React.useState(false);
     //const [loading, setLoading] = React.useState(false);
     const [loadingTreatment, setLoadingTreatment] = React.useState(false);
     const [loadingappoint, setLoadingappoint] = React.useState(false);
@@ -34,6 +35,10 @@ function Home() {
     const PatientCreate = () => {
         window.location.href = "/Patientcreate";
         setLoadingPatient(true);
+    };
+    const ScreeningCreate = () => {
+        window.location.href = "/ScreeningCreate";
+        setLoadingScreening(true);
     };
 
     /*const TreatmentList = () => {
@@ -92,7 +97,8 @@ function Home() {
 
                     <LoadingButton sx={btnStyle}
                         variant="text"
-                        onClick={() => { window.location.href = "/" }} >
+                        onClick={ScreeningCreate}
+                        loading={loadingScreening}>
                         <img style={{ width: "55px" }}
                             src="./screening.png" />
                         คัดกรองข้อมูล

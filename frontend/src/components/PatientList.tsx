@@ -168,7 +168,8 @@ function WatchPatientList(this: any) {
                                             Sex={pats.Sex}
                                             Job={pats.Job}
                                             Insurance={pats.Insurance}
-                                            Nurse={pats.Nurse}
+                                            Nurse={pats.Nurse} 
+                                            Appoints={[]}                                            
                                         />
                                     </TableCell>
      
