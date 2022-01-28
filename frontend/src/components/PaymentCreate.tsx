@@ -338,7 +338,7 @@ export default function Body() {
         />
       </Grid>
       <Grid item xs={6} >
-        <p>รารา(ตัวอักษร)</p>
+        <p>ราคา(ตัวอักษร)</p>
         <TextField style={{ width: 425 }}
           inputProps={{
             name: "Pricetext",
