@@ -100,7 +100,7 @@ function ScreeningList() {
                   สกุล
                 </TableCell>
                 <TableCell align="center" width="5%">
-                  อายุ
+                  วันเดือนปีเกิด
                 </TableCell>
                 <TableCell align="center" width="20%">
                   ยาที่ใช้
@@ -125,7 +125,7 @@ function ScreeningList() {
                 <TableCell align="center">{screening.Patient.Birthday}</TableCell>
                 <TableCell align="center">{screening.MedicalProduct.Name}</TableCell>
                 <TableCell align="center">{screening.Illnesses}</TableCell>
-                <TableCell align="center">{screening.Date}</TableCell>
+                <TableCell align="center">{screening.Scrdate}</TableCell>
                 <TableCell align="center">{screening.Queue}</TableCell>
 
                   

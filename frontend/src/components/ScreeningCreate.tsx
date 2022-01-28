@@ -54,7 +54,6 @@ const useStyles = makeStyles((theme: Theme) =>
 
 function ScreeningCreate() {
   const classes = useStyles();
-  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   const [users, setUsers] = useState<UserInterface[]>([]);
   const [patients, setPatients] = useState<PatientInterface[]>([]);
   const [medical_products, setMedicalProducts] = useState<MedicalProductInterface[]>([]);
@@ -92,11 +91,6 @@ function ScreeningCreate() {
 
   const handleAppointChange = (event: React.ChangeEvent<{ value: unknown }>) => {
     setAppointment(appointments?.find(a => a.ID == event.target.value ));
-  };
-
-  const handleDateChange = (date: Date | null) => {
-    console.log(date);
-    setSelectedDate(date);
   };
 
   const handleInputChange = (event: React.ChangeEvent<{ id?: string; value: any }>) => {
@@ -163,10 +157,10 @@ function ScreeningCreate() {
     let data = {
       MedicalProductID: convertType(screening.MedicalProductID),
       PatientID: convertType(screening.PatientID),
-      UserDentistassID: Number(localStorage.getItem("uid")),
+      DentistassID: Number(localStorage.getItem("uid")),
       Illnesses: screening.Illnesses,
-      Detail: screening.Date,
-      Queue: screening.Queue,
+      Scrdate: screening.Scrdate,
+      Queue: convertType(screening.Queue),
     };
 
     console.log(data)
@@ -314,7 +308,7 @@ function ScreeningCreate() {
           </Grid>
           <Grid item xs={4}>
             <FormControl fullWidth variant="outlined">
-              <p>อายุ</p>
+              <p>วันเดือนปีเกิด</p>
               <Select
                 native
                 value={screening.PatientID}
@@ -397,7 +391,7 @@ function ScreeningCreate() {
           <p>วันและเวลาที่คัดกรอง</p>
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <KeyboardDateTimePicker
-              name="PayTime"
+              name="Scrdate"
               value={AddedTime}
               onChange={handleAddedTime}
               minDate={new Date("2018-01-01T00:00")}
@@ -415,7 +409,7 @@ function ScreeningCreate() {
              <TextField 
                id="Queue" 
                variant="outlined" 
-               type="string" 
+               type="number" 
                size="medium" 
                //value={user.Current_medication || ""} 
                onChange={handleInputChange} 
