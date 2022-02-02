@@ -110,7 +110,7 @@ function WatchPaidList() {
                                     <TableCell align="left">{pats.ID}</TableCell>
                                     <TableCell align="left">{pats.Patient.Firstname}{pats.Patient.Lastname}</TableCell>
                                     <TableCell align="left">{pats.Financial.Firstname}</TableCell>
-                                    <TableCell align="left">{pats.Price}</TableCell>
+                                    <TableCell align="left">{pats.Price.toFixed(2)}</TableCell>
                                     <TableCell align="left">{pats.Pricetext}</TableCell>
                                     <TableCell align="left">{moment(pats.Paytime).format("dd MMMM yyyy hh:mm a")}</TableCell>
                                     <TableCell align="left">{pats.RemedyType.Name}</TableCell>
