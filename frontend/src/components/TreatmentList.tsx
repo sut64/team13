@@ -269,10 +269,10 @@ export default function TreatmentList() {
 			<Grid item xs={12} sx={{padding:'5px'}}>
 			<FormControl variant="standard" sx={{ width: '100%' }}
 			error={ _user.Role.Name !== "Dentist"}>
-			<InputLabel id="demo-simple-select-filled-label">ทันตแพทย์</InputLabel>
+			<InputLabel id="treatment-dentist">ทันตแพทย์</InputLabel>
 			<Select
-			labelId="demo-simple-select-filled-label"
-			id="demo-simple-select-filled"
+			labelId="treatment-dentist"
+			id="treatment-dentist"
 			value={_user.ID}
 			disabled
 			>
@@ -282,10 +282,10 @@ export default function TreatmentList() {
 			</Grid>
 			<Grid item xs={12} sx={{padding:'5px'}}>
 			<FormControl variant="standard" sx={{width: '100%'}}>
-			<InputLabel id="demo-simple-select-filled-label">ใบคัดกรอง</InputLabel>
+			<InputLabel id="treatment-screening">ใบคัดกรอง</InputLabel>
 			<Select
-			labelId="demo-simple-select-filled-label"
-			id="demo-simple-select-filled"
+			labelId="treatment-screening"
+			id="treatment-screening"
 			value={selectedScreening}
 			onChange={handleScreeningChange}
 			>
@@ -298,10 +298,10 @@ export default function TreatmentList() {
 			</Grid>
 			<Grid item xs={12} sx={{padding:'5px'}}>
 			<FormControl variant="standard" sx={{width: '100%'}}>
-			<InputLabel id="demo-simple-select-filled-label">ประเภทการรักษา</InputLabel>
+			<InputLabel id="treatment-remedy">ประเภทการรักษา</InputLabel>
 			<Select
-			labelId="demo-simple-select-filled-label"
-			id="demo-simple-select-filled"
+			labelId="treatment-remedy"
+			id="treatment-remedy"
 			value={selectedRemedy}
 			onChange={handleRemedyTypeChange}
 			>
@@ -312,19 +312,19 @@ export default function TreatmentList() {
 			</FormControl>
 			</Grid>
 			<Grid item xs={12} sx={{padding:'5px'}}>
-				<TextField id="standard-basic" label="ฟันที่รักษา" variant="standard" sx={{width: '100%'}}
+				<TextField id="treatment-tooth" label="ฟันที่รักษา" variant="standard" sx={{width: '100%'}}
 				value={data.toothNumber} onChange={handleDataChange("toothNumber")}
 				/> </Grid>
 			<Grid item xs={12} sx={{padding:'5px'}}>
-				<TextField id="standard-basic" label="วัสดุที่ใช้รักษา" variant="standard" sx={{width: '100%'}}
+				<TextField id="treatment-filling" label="วัสดุที่ใช้รักษา" variant="standard" sx={{width: '100%'}}
 				value={data.toothFilling} onChange={handleDataChange("toothFilling")}
 				/> </Grid>
 			<Grid item xs={12} sx={{padding:'5px'}}>
-				<TextField id="standard-basic" label="ใบสั่งยา" variant="standard" sx={{width: '100%'}} multiline maxRows={4}
+				<TextField id="treatment-pscr" label="ใบสั่งยา" variant="standard" sx={{width: '100%'}} multiline maxRows={4}
 				value={data.rawPrescription} onChange={handleDataChange("rawPrescription")}
 				/> </Grid>
 			<Grid item xs={12} sx={{padding:'5px'}}>
-				<TextField id="standard-basic" label="หมายเหตุใบสั่งยา" variant="standard" sx={{width: '100%'}} multiline maxRows={4}
+				<TextField id="treatment-pscr-note" label="หมายเหตุใบสั่งยา" variant="standard" sx={{width: '100%'}} multiline maxRows={4}
 				value={data.prescriptionInfo} onChange={handleDataChange("prescriptionInfo")}
 				/> </Grid>
 			<Grid item xs={12} sx={{padding:'5px'}}>
