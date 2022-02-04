@@ -19,5 +19,5 @@ export interface ScreeningInterface {
 
 	Illnesses		: string;
 	Queue			: number;
-	Scrdate			: Date;
+	Date			: Date;
 }
