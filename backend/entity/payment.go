@@ -10,7 +10,7 @@ type Payment struct {
 	gorm.Model
 
 	Price     float32
-	Pricetext string
+	Pricetext string `valid:"required~Pricetext cannot be blank"`
 	Paytime   time.Time
 	Note      string
 

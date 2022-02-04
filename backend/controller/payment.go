@@ -3,8 +3,9 @@ package controller
 import (
 	"net/http"
 
-	"github.com/sut64/team13/entity"
+	"github.com/asaskevich/govalidator"
 	"github.com/gin-gonic/gin"
+	"github.com/sut64/team13/entity"
 )
 
 // POST /watch_videos
@@ -46,13 +47,18 @@ func CreatePayment(c *gin.Context) {
 	}
 	// 11: สร้าง Payment
 	data := entity.Payment{
-		Financial :  financial,             // โยงความสัมพันธ์กับ Entity User
-		RemedyType:       remedytype,                  // โยงความสัมพันธ์กับ Entity Treatment
-		Patient:    patient,               // โยงความสัมพันธ์กับ Entity Patient
-		Price:	payment.Price,		//ตั้งค่าฟิลด์ price
-		Pricetext:	payment.Pricetext,		//ตั้งค่าฟิลด์ pricetext
-		Note: payment.Note,       //ตั้งค่าฟิลด์Note
-		Paytime: payment.Paytime, // ตั้งค่าฟิลด์ paytimeTime
+		Financial:  financial,         // โยงความสัมพันธ์กับ Entity User
+		RemedyType: remedytype,        // โยงความสัมพันธ์กับ Entity Treatment
+		Patient:    patient,           // โยงความสัมพันธ์กับ Entity Patient
+		Price:      payment.Price,     //ตั้งค่าฟิลด์ price
+		Pricetext:  payment.Pricetext, //ตั้งค่าฟิลด์ pricetext
+		Note:       payment.Note,      //ตั้งค่าฟิลด์Note
+		Paytime:    payment.Paytime,   // ตั้งค่าฟิลด์ paytimeTime
+	}
+
+	if _, err := govalidator.ValidateStruct(data); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 
 	// 13: บันทึก
