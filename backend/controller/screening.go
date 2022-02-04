@@ -7,8 +7,6 @@ import (
 	"github.com/gin-gonic/gin"
 
 	"net/http"
-
-	"time"
 )
 
 // POST /screening
@@ -59,7 +57,7 @@ func CreateScreening(c *gin.Context) {
 		// 3 type
 		Illnesses: screening_record.Illnesses, //อาการที่พบเบื้ิองต้น
 		Queue:     screening_record.Queue,     //ลำดับการเข้ารับการรักษา
-		Date:      time.Now(),                 //ดึงเวลาปัจจุบัน
+		Date:      screening_record.Date,      //ดึงเวลาปัจจุบัน
 
 	}
 	//ขั้นตอนการ validate ที่นำมาจาก unit test

@@ -23,13 +23,18 @@ import { PatientInterface } from "../models/IPat";
 import { MedicalProductInterface } from "../models/IMedicalProduct";
 import { AppointInterface } from "../models/IAppoint";
 import { ScreeningInterface } from "../models/IScreening";
+import TaskIcon from '@mui/icons-material/Task';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import ViewListIcon from '@mui/icons-material/ViewList';
+import PersonIcon from '@mui/icons-material/Person';
+import MedicationIcon from '@mui/icons-material/Medication';
 
 import {
   MuiPickersUtilsProvider,
   KeyboardDateTimePicker,
 } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
-import { TextField } from "@material-ui/core";
+import { MenuItem, TextField } from "@material-ui/core";
 import moment from "moment";
 import React from "react";
 
@@ -63,6 +68,7 @@ function ScreeningCreate() {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [Useronline, setUseronline] = React.useState<UserInterface>();
 
   const apiUrl = "http://localhost:8080";
   const requestOptions = {
@@ -138,11 +144,33 @@ function ScreeningCreate() {
         }
       });
   };
+  function getUseronline() {
+    const UserID = localStorage.getItem("uid")
+    const apiUrl = `http://localhost:8080/users/${UserID}`;
+    const requestOptions = {
+        method: "GET",
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            "Content-Type": "application/json",
+        },
+    };
+    fetch(apiUrl, requestOptions)
+        .then((response) => response.json())
+        .then((res) => {
+            console.log("Combobox_Useronline", res)
+            if (res.data) {
+                setUseronline(res.data);
+            } else {
+                console.log("else");
+            }
+        });
+    }
   
   useEffect(() => {
     getUsers();
     getPatient();
     getMedicalProduct();
+    getUseronline();
   }, []);
 
   const convertType = (data: string | number | undefined) => {
@@ -160,12 +188,13 @@ function ScreeningCreate() {
       PatientID: convertType(screening.PatientID),
       DentistassID: Number(localStorage.getItem("uid")),
       Illnesses: screening.Illnesses,
-      Scrdate: screening.Scrdate,
+      Date: AddedTime,
       Queue: convertType(screening.Queue),
     };
+    //real User Online
+
 
     console.log(data)
-
     const requestOptionsPost = {
       method: "POST",
       headers: { 
@@ -221,7 +250,7 @@ function ScreeningCreate() {
               variant="contained"
               color="primary"
             >
-              รายการข้อมูลผู้ป่วยคัดกรอง
+              <ViewListIcon/>  รายการข้อมูลผู้ป่วยคัดกรอง
             </Button>
           </Box>
         </Box>
@@ -229,7 +258,8 @@ function ScreeningCreate() {
         <Grid container spacing={3} className={classes.root}>
           <Grid item xs={6}>
             <FormControl fullWidth variant="outlined">
-              <p>หมายเลขประจำตัวผู้ป่วย</p>
+              <p style={{flexDirection: 'row', justifyContent:"space-between" }}> หมายเลขประจำตัวผู้ป่วย <PersonIcon/> </p>
+              
               <Select
                 native
                 value={screening.PatientID}
@@ -251,7 +281,7 @@ function ScreeningCreate() {
           </Grid>
           <Grid item xs={6}>
             <FormControl fullWidth variant="outlined">
-              <p>ยาที่ใช้ในปัจจุบัน</p>
+              <p>ยาที่ใช้ในปัจจุบัน <MedicationIcon/> </p>
               <Select
                 native
                 value={screening.MedicalProductID}
@@ -294,6 +324,7 @@ function ScreeningCreate() {
             <FormControl fullWidth variant="outlined">
               <p>สกุล</p>
               <Select
+                
                 native
                 value={screening.PatientID}
                 disabled
@@ -322,7 +353,8 @@ function ScreeningCreate() {
                 </option>
                 {patients.map((item: PatientInterface) => (
                   <option value={item.ID} key={item.ID}>
-                    {item.Birthday}
+                    {moment(item.Birthday).format("DD/MM/YYYY")} 
+                    
                   </option>
                 ))}
               </Select>
@@ -368,7 +400,7 @@ function ScreeningCreate() {
 
                 {appointments?.map((item: AppointInterface) => (
                   <option value={item.ID}>
-                    {moment(appointment?.AppointTime).format("YYYY-MM-DD HH:mm")}
+                    {moment(appointment?.AppointTime).format("DD/MM/YYYY HH:mm")}
                   </option>
                 ))} 
               </Select>
@@ -398,7 +430,8 @@ function ScreeningCreate() {
               value={AddedTime}
               onChange={handleAddedTime}
               minDate={new Date("2018-01-01T00:00")}
-              format="yyyy/MM/dd hh:mm a"
+              format="dd/MM/yyyy HH:mm"
+              //disabled
             />
           </MuiPickersUtilsProvider>
          </FormControl>
@@ -419,6 +452,19 @@ function ScreeningCreate() {
              /> 
            </FormControl> 
           </Grid> 
+
+          <Grid item xs={6}>
+              <p>ชื่อผู้บันทึกข้อมูล</p>
+              <Select
+              style={{ width: 400, color:"#799EF5"}}
+              variant="outlined"
+              defaultValue={0}
+              value={Useronline?.ID}
+              disabled
+              >
+                  <MenuItem value={0}>{Useronline?.Firstname} {Useronline?.Lastname}</MenuItem>
+                  </Select>
+            </Grid>
           <Grid item xs={12}>
             <Button
               style={{ float: "right" }}
@@ -426,16 +472,16 @@ function ScreeningCreate() {
               onClick={submit}
               color="primary"
             >
-              บันทึกข้อมูลผู้ป่วย
+              <TaskIcon/> บันทึกข้อมูลผู้ป่วย 
             </Button>
             <Button
-              style={{ float: "right" }}
+              style={{ float: "right", color:"red"}}
               variant="contained"
               component={RouterLink}
               to="/"
               color="inherit"
             >
-              ยกเลิก
+              <HighlightOffIcon/> ยกเลิก
             </Button>
           </Grid>
         </Grid>
