@@ -56,7 +56,7 @@ func TestTreatmentPass(t *testing.T) {
 	}
 }
 
-func TestTreatmentToothNumberNotInrange(t *testing.T) {
+func TestTreatmentToothNumberNotInRange(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	data := []Treatment{
@@ -112,7 +112,7 @@ func TestTreatmentToothFillingNotAnOption(t *testing.T) {
 	}
 }
 
-func TestTreatmentToothDateNotValid(t *testing.T) {
+func TestTreatmentDateNotValid(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	data := []Treatment{

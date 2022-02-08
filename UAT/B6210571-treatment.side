@@ -1,0 +1,808 @@
+{
+  "id": "892a2c0c-9990-43ff-9903-d01650af50db",
+  "version": "2.0",
+  "name": "B6210571-treatment",
+  "url": "http://localhost:3000/",
+  "tests": [{
+    "id": "f1b45ed6-0631-473d-848e-c10ddc227155",
+    "name": "B6210571 บันทึก treatment สำเร็จ",
+    "commands": [{
+      "id": "aac0b635-bfc8-4e9f-a97f-5add25e95db3",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eccce02c-9c36-4ebc-af04-fa2bca2b9429",
+      "comment": "",
+      "command": "click",
+      "target": "id=mui-3",
+      "targets": [
+        ["id=mui-3", "id"],
+        ["css=#mui-3", "css:finder"],
+        ["xpath=//button[@id='mui-3']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div[2]/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'วินิจฉัย')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "60475726-16d6-4fb2-b385-39dd532dd82f",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "css=.MuiInput-root > #treatment-screening",
+      "targets": [
+        ["css=.MuiInput-root > #treatment-screening", "css:finder"],
+        ["xpath=//div[@id='treatment-screening']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f8773ede-f6d2-406b-988b-937093f00118",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiBackdrop-root",
+      "targets": [
+        ["css=.MuiBackdrop-root", "css:finder"],
+        ["xpath=//div[@id='menu-']/div", "xpath:idRelative"],
+        ["xpath=//body/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f839a815-654f-4cbe-94a6-22793c21c3d6",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b9855dac-2afc-48f5-beeb-1c9dced553d5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiMenuItem-root:nth-child(4)",
+      "targets": [
+        ["css=.MuiMenuItem-root:nth-child(4)", "css:finder"],
+        ["xpath=//div[@id='menu-']/div[3]/ul/li[4]", "xpath:idRelative"],
+        ["xpath=//li[4]", "xpath:position"],
+        ["xpath=//li[contains(.,'12 สมชาย มาอุดฟัน')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d488c7ba-14ad-4d6f-8880-6f22d63a998f",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "css=.MuiInput-root > #treatment-remedy",
+      "targets": [
+        ["css=.MuiInput-root > #treatment-remedy", "css:finder"],
+        ["xpath=//div[@id='treatment-remedy']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[3]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7d6bdd41-b501-4b8c-9347-1dc5efafb767",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiBackdrop-root",
+      "targets": [
+        ["css=.MuiBackdrop-root", "css:finder"],
+        ["xpath=//div[@id='menu-']/div", "xpath:idRelative"],
+        ["xpath=//body/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7da1d898-d292-41f5-92be-419ec730a329",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f1fdc49-8494-4450-8e42-c83d895ef1ad",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiMenuItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiMenuItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'อุดฟัน')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c70a9567-cab1-4c14-8f04-b0e1313f7d11",
+      "comment": "",
+      "command": "click",
+      "target": "id=treatment-tooth",
+      "targets": [
+        ["id=treatment-tooth", "id"],
+        ["css=#treatment-tooth", "css:finder"],
+        ["xpath=//input[@id='treatment-tooth']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[4]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ed45d9d9-58aa-483b-acb6-c25d87ce98ca",
+      "comment": "",
+      "command": "type",
+      "target": "id=treatment-tooth",
+      "targets": [
+        ["id=treatment-tooth", "id"],
+        ["css=#treatment-tooth", "css:finder"],
+        ["xpath=//input[@id='treatment-tooth']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[4]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/input", "xpath:position"]
+      ],
+      "value": "15"
+    }, {
+      "id": "2d83cc19-28e6-4c50-b4cf-3fee2e6f8b7a",
+      "comment": "",
+      "command": "click",
+      "target": "id=treatment-filling",
+      "targets": [
+        ["id=treatment-filling", "id"],
+        ["css=#treatment-filling", "css:finder"],
+        ["xpath=//input[@id='treatment-filling']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[5]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b73d6943-6a49-4a95-ac07-85352dd9c7ea",
+      "comment": "",
+      "command": "type",
+      "target": "id=treatment-filling",
+      "targets": [
+        ["id=treatment-filling", "id"],
+        ["css=#treatment-filling", "css:finder"],
+        ["xpath=//input[@id='treatment-filling']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[5]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/input", "xpath:position"]
+      ],
+      "value": "Gold"
+    }, {
+      "id": "e174aa44-042c-46ea-98ea-b2b343e20d38",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-contained",
+      "targets": [
+        ["css=.MuiButton-contained", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[9]/button", "xpath:idRelative"],
+        ["xpath=//div[9]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e42e39f6-5e7a-45bd-94f9-461316e69e71",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": "Succesfully saved"
+    }]
+  }, {
+    "id": "997623e9-6598-43be-b81c-eb2d5b857677",
+    "name": "B6210571 หมายเลขฟันที่รักษาอยู่ระหว่าง 0-32",
+    "commands": [{
+      "id": "691d0458-ff7e-47ed-a23c-22939f08e567",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d1449865-e463-44a3-8ea2-0fbcb312142a",
+      "comment": "",
+      "command": "click",
+      "target": "css=#mui-3 > img",
+      "targets": [
+        ["css=#mui-3 > img", "css:finder"],
+        ["xpath=//button[@id='mui-3']/img", "xpath:idRelative"],
+        ["xpath=//button[3]/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8908bed2-9c89-45a2-a3f5-f518be876291",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "css=.MuiInput-root > #treatment-screening",
+      "targets": [
+        ["css=.MuiInput-root > #treatment-screening", "css:finder"],
+        ["xpath=//div[@id='treatment-screening']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5cb26271-46b4-4913-8d36-4b090d773d5e",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiBackdrop-root",
+      "targets": [
+        ["css=.MuiBackdrop-root", "css:finder"],
+        ["xpath=//div[@id='menu-']/div", "xpath:idRelative"],
+        ["xpath=//body/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "98453696-4d0c-432e-8f85-87e4d97e5674",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "63f6cfe4-5853-43a9-a872-70f59a66a6eb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiMenuItem-root:nth-child(3)",
+      "targets": [
+        ["css=.MuiMenuItem-root:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='menu-']/div[3]/ul/li[3]", "xpath:idRelative"],
+        ["xpath=//li[3]", "xpath:position"],
+        ["xpath=//li[contains(.,'11 สมหญิง ซิ่งรถไถ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6bf488b2-11b0-40bf-b525-d0c1e41999d1",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "css=.MuiInput-root > #treatment-remedy",
+      "targets": [
+        ["css=.MuiInput-root > #treatment-remedy", "css:finder"],
+        ["xpath=//div[@id='treatment-remedy']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[3]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1d31c443-5b26-40f0-9ca7-07f2d695e4ba",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiBackdrop-root",
+      "targets": [
+        ["css=.MuiBackdrop-root", "css:finder"],
+        ["xpath=//div[@id='menu-']/div", "xpath:idRelative"],
+        ["xpath=//body/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5596d6f4-11ed-44aa-afc8-2fca32f0e3ec",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4d64e323-7f5c-424f-8db4-45270e977b40",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiMenuItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiMenuItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'อุดฟัน')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "24bed005-ba53-4ad1-a185-d7084a1a6609",
+      "comment": "",
+      "command": "click",
+      "target": "id=treatment-tooth",
+      "targets": [
+        ["id=treatment-tooth", "id"],
+        ["css=#treatment-tooth", "css:finder"],
+        ["xpath=//input[@id='treatment-tooth']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[4]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "66f96c36-3742-4404-b084-4dbea4aa173e",
+      "comment": "",
+      "command": "type",
+      "target": "id=treatment-tooth",
+      "targets": [
+        ["id=treatment-tooth", "id"],
+        ["css=#treatment-tooth", "css:finder"],
+        ["xpath=//input[@id='treatment-tooth']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[4]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/input", "xpath:position"]
+      ],
+      "value": "-6"
+    }, {
+      "id": "ec1b7abe-9239-4cc4-a415-a613427c50b8",
+      "comment": "",
+      "command": "click",
+      "target": "id=treatment-filling",
+      "targets": [
+        ["id=treatment-filling", "id"],
+        ["css=#treatment-filling", "css:finder"],
+        ["xpath=//input[@id='treatment-filling']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[5]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5726aa4c-a994-4b5b-a277-8db01f7354b6",
+      "comment": "",
+      "command": "type",
+      "target": "id=treatment-filling",
+      "targets": [
+        ["id=treatment-filling", "id"],
+        ["css=#treatment-filling", "css:finder"],
+        ["xpath=//input[@id='treatment-filling']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[5]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/input", "xpath:position"]
+      ],
+      "value": "Gold"
+    }, {
+      "id": "77b85497-9230-4f7f-8582-3be6e2002caa",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-contained",
+      "targets": [
+        ["css=.MuiButton-contained", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[9]/button", "xpath:idRelative"],
+        ["xpath=//div[9]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b38e401d-65aa-4229-a694-c5be38e36214",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": "Failed to save tooth number must be in range(0,32)"
+    }]
+  }, {
+    "id": "28e35943-3c94-4556-8b33-0dc54248a169",
+    "name": "ฺB6210571 วัสดุที่รักษาฟันถูกต้อง",
+    "commands": [{
+      "id": "c6c795c5-c191-4986-8b4e-a44685c760f1",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a1a662b1-2f89-4315-b38b-0dcd5e7019b3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1366x768",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "420f6237-e228-4688-8bf4-076fe3fbfcc8",
+      "comment": "",
+      "command": "click",
+      "target": "id=mui-3",
+      "targets": [
+        ["id=mui-3", "id"],
+        ["css=#mui-3", "css:finder"],
+        ["xpath=//button[@id='mui-3']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div[2]/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'วินิจฉัย')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7ef6d5a6-4481-4e23-b4fd-2558d099cab0",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "css=.MuiInput-root > #treatment-screening",
+      "targets": [
+        ["css=.MuiInput-root > #treatment-screening", "css:finder"],
+        ["xpath=//div[@id='treatment-screening']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "521eda18-08f7-41a2-9834-282ce753ab95",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiBackdrop-root",
+      "targets": [
+        ["css=.MuiBackdrop-root", "css:finder"],
+        ["xpath=//div[@id='menu-']/div", "xpath:idRelative"],
+        ["xpath=//body/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bf02c7fd-6af3-4c8b-bf91-2e5ffad9a208",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc4237fb-4167-4f75-ac9e-7b98c571ce8c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiMenuItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiMenuItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'10 สมรศรี สิริกิต')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "61ff65dc-7c20-4169-b09f-f2620ef8f3bd",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "css=.MuiInput-root > #treatment-remedy",
+      "targets": [
+        ["css=.MuiInput-root > #treatment-remedy", "css:finder"],
+        ["xpath=//div[@id='treatment-remedy']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[3]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cbc7e678-3464-4830-bd3d-ca0d2d5500bf",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiBackdrop-root",
+      "targets": [
+        ["css=.MuiBackdrop-root", "css:finder"],
+        ["xpath=//div[@id='menu-']/div", "xpath:idRelative"],
+        ["xpath=//body/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b289cb99-d5cd-4892-8e53-17ff5a673a5b",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "440c399f-63db-4f6f-b59e-48a6e85e6e9d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiMenuItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiMenuItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'อุดฟัน')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d6f70b2f-a8f5-4259-8a02-e4b7ed434e31",
+      "comment": "",
+      "command": "click",
+      "target": "id=treatment-tooth",
+      "targets": [
+        ["id=treatment-tooth", "id"],
+        ["css=#treatment-tooth", "css:finder"],
+        ["xpath=//input[@id='treatment-tooth']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[4]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fcd7580d-7b34-4a12-9802-55ca9ce57e8e",
+      "comment": "",
+      "command": "type",
+      "target": "id=treatment-tooth",
+      "targets": [
+        ["id=treatment-tooth", "id"],
+        ["css=#treatment-tooth", "css:finder"],
+        ["xpath=//input[@id='treatment-tooth']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[4]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/input", "xpath:position"]
+      ],
+      "value": "21"
+    }, {
+      "id": "e8fd9c4e-a619-4706-a652-12ee861b23e2",
+      "comment": "",
+      "command": "click",
+      "target": "id=treatment-filling",
+      "targets": [
+        ["id=treatment-filling", "id"],
+        ["css=#treatment-filling", "css:finder"],
+        ["xpath=//input[@id='treatment-filling']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[5]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7e00b061-65b6-4df2-ab87-929aa9f9e323",
+      "comment": "",
+      "command": "type",
+      "target": "id=treatment-filling",
+      "targets": [
+        ["id=treatment-filling", "id"],
+        ["css=#treatment-filling", "css:finder"],
+        ["xpath=//input[@id='treatment-filling']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[5]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/input", "xpath:position"]
+      ],
+      "value": "Paper"
+    }, {
+      "id": "d64e0d5c-6b8d-47f6-a194-647d4c2256bc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-contained",
+      "targets": [
+        ["css=.MuiButton-contained", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[9]/button", "xpath:idRelative"],
+        ["xpath=//div[9]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7238e320-715f-49f3-92bc-ddc7cf65ba41",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": "Failed to save \"Paper\" is not an option for tooth filling"
+    }]
+  }, {
+    "id": "70050fc8-cd9b-40c1-b29b-d83e87969eb4",
+    "name": "B6210571 วันเวลาไม่เป็นอนาคตและไม่ล่าช้าเกิน 24 ชม",
+    "commands": [{
+      "id": "0e829810-9c77-4bf7-9e67-2a4d971244fc",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "45b99b43-fe41-4b01-980f-2ae070b627be",
+      "comment": "",
+      "command": "click",
+      "target": "id=mui-3",
+      "targets": [
+        ["id=mui-3", "id"],
+        ["css=#mui-3", "css:finder"],
+        ["xpath=//button[@id='mui-3']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div[2]/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'วินิจฉัย')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f11f143-0e8c-4e83-992e-be06b1df5d05",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "css=.MuiInput-root > #treatment-screening",
+      "targets": [
+        ["css=.MuiInput-root > #treatment-screening", "css:finder"],
+        ["xpath=//div[@id='treatment-screening']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "341882bd-b698-4855-9d57-a92eba37a614",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiBackdrop-root",
+      "targets": [
+        ["css=.MuiBackdrop-root", "css:finder"],
+        ["xpath=//div[@id='menu-']/div", "xpath:idRelative"],
+        ["xpath=//body/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9224a0ed-334b-41d1-9fab-253da12a714f",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a55ac169-668e-45a7-93c9-42cb89237e3f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiMenuItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiMenuItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'10 สมรศรี สิริกิต')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "79e5c297-252e-4e16-bd15-2e86d7ba21ae",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "css=.MuiInput-root > #treatment-remedy",
+      "targets": [
+        ["css=.MuiInput-root > #treatment-remedy", "css:finder"],
+        ["xpath=//div[@id='treatment-remedy']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[3]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3d8e97b-3a00-4991-9205-eb02f8fe4858",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiBackdrop-root",
+      "targets": [
+        ["css=.MuiBackdrop-root", "css:finder"],
+        ["xpath=//div[@id='menu-']/div", "xpath:idRelative"],
+        ["xpath=//body/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f27c68e1-ff20-4c17-ab1a-286ab3761f13",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ade96ce4-1e2f-4f48-a712-0c0b67d3acfa",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiMenuItem-root:nth-child(4)",
+      "targets": [
+        ["css=.MuiMenuItem-root:nth-child(4)", "css:finder"],
+        ["xpath=//div[@id='menu-']/div[3]/ul/li[4]", "xpath:idRelative"],
+        ["xpath=//li[4]", "xpath:position"],
+        ["xpath=//li[contains(.,'เอ็กซ์เรย์')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f4b335b-9fa4-4857-9af4-cd2734b05d90",
+      "comment": "",
+      "command": "click",
+      "target": "id=treatment-filling",
+      "targets": [
+        ["id=treatment-filling", "id"],
+        ["css=#treatment-filling", "css:finder"],
+        ["xpath=//input[@id='treatment-filling']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[5]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "96a4f793-1b61-49ba-9211-ff72b734b13a",
+      "comment": "",
+      "command": "type",
+      "target": "id=treatment-filling",
+      "targets": [
+        ["id=treatment-filling", "id"],
+        ["css=#treatment-filling", "css:finder"],
+        ["xpath=//input[@id='treatment-filling']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[5]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/input", "xpath:position"]
+      ],
+      "value": "None"
+    }, {
+      "id": "526d7f75-20a1-43c9-81f7-d2c141c826fa",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-i4bv87-MuiSvgIcon-root > path",
+      "targets": [
+        ["css=.css-i4bv87-MuiSvgIcon-root > path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "a8e4ce7e-ccd1-4f2d-a0e5-b5287ccb2f11",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-mvmu1r:nth-child(2) > div:nth-child(1) > .MuiButtonBase-root",
+      "targets": [
+        ["css=.css-mvmu1r:nth-child(2) > div:nth-child(1) > .MuiButtonBase-root", "css:finder"],
+        ["xpath=(//button[@type='button'])[16]", "xpath:attributes"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'6')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a8e9b070-da17-4f8e-a9b2-ba59d1b9057e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-1umqo6f",
+      "targets": [
+        ["css=.css-1umqo6f", "css:finder"],
+        ["xpath=//div[2]/div/div[2]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "34bf8fe7-a848-4776-af7f-2634c0a9f8f0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.css-1umqo6f",
+      "targets": [
+        ["css=.css-1umqo6f", "css:finder"],
+        ["xpath=//div[2]/div/div[2]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "679e20cc-e74c-4b0a-9806-0b59bd806e0c",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiButton-contained",
+      "targets": [
+        ["css=.MuiButton-contained", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[9]/button", "xpath:idRelative"],
+        ["xpath=//div[9]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "04278a9d-7066-4f8f-ac15-3df32d71f0d3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-contained",
+      "targets": [
+        ["css=.MuiButton-contained", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div[9]/button", "xpath:idRelative"],
+        ["xpath=//div[9]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "35591ac9-4e85-46f6-bae0-721d535e9bca",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": "Failed to save incorrect date please check"
+    }]
+  }],
+  "suites": [{
+    "id": "c4d6c88a-0ffb-4153-8353-1c88b5620801",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["f1b45ed6-0631-473d-848e-c10ddc227155"]
+  }],
+  "urls": ["http://localhost:3000/"],
+  "plugins": []
+}

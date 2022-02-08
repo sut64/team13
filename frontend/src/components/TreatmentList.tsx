@@ -273,6 +273,7 @@ export default function TreatmentList() {
 			<Select
 			labelId="treatment-dentist"
 			id="treatment-dentist"
+			label="ทันตแพทย์"
 			value={_user.ID}
 			disabled
 			>
@@ -286,9 +287,11 @@ export default function TreatmentList() {
 			<Select
 			labelId="treatment-screening"
 			id="treatment-screening"
+			label="ใบคัดกรอง"
 			value={selectedScreening}
 			onChange={handleScreeningChange}
 			>
+			<MenuItem value="">กรุณาเลือกใบคัดกรอง</MenuItem>
 			{screenings.map((scr:ScreeningInterface)=>(
 				<MenuItem value={scr.ID}> 
 				{scr.Queue+" "+scr.Patient.Firstname+" "+scr.Patient.Lastname} </MenuItem>
@@ -302,9 +305,11 @@ export default function TreatmentList() {
 			<Select
 			labelId="treatment-remedy"
 			id="treatment-remedy"
+			label="ประเภทการรักษา"
 			value={selectedRemedy}
 			onChange={handleRemedyTypeChange}
 			>
+			<MenuItem value="">กรุณาเลือกประเภทการรักษา</MenuItem>
 			{remedyTypes.map((rmd:RemedyInterface)=>(
 				<MenuItem value={rmd.ID}> {rmd.Name} </MenuItem>
 			))}
