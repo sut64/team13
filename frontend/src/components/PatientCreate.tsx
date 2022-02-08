@@ -250,71 +250,34 @@ export default function PatientCreate(this: any) {
     };
     console.log("Error Chack Sex", data.SexID, "\nError Chack Job", data.JobID, "\nError Chack Insurance", data.InsuranceID)
     console.log("Error User",data.NurseID)
-    if (!/\S/.test(data.Firstname)) {
-      setErrorMessage("กรุณากรอกชื่อ")
-      setError(true)
-    } else if (!/\S/.test(data.Lastname)) {
-      setErrorMessage("กรุณากรอกนามสกุล")
-      setError(true)
-    } else if (isNaN(data.SexID)) {
-      setErrorMessage("กรุณาเลือกเพศ")
-      setError(true)
-    } else if (!/^\d{13}$/.test(data.IDcard)) {
-      setErrorMessage("เลขบัตรประชาชนไม่ถูกต้อง")
-      setError(true)
-    } else if (!/^\d{10}$/.test(data.Tel) && data.Tel != "") {
-      setErrorMessage("เบอร์โทรไม่ถูกต้อง")
-      setError(true)
-    } else if (isNaN(data.JobID)) {
-      setErrorMessage("กรุณาเลือกอาชีพ")
-      setError(true)
-    } else if (isNaN(data.InsuranceID)) {
-      setErrorMessage("กรุณาเลือกสิทธิในการรักษา")
-      setError(true)
-    }
-    else {
+
 
       console.log("Data", data)
 
       const apiUrl = "http://localhost:8080/patient";
-
       const requestOptions = {
-
         method: "POST",
-
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
           "Content-Type": "application/json",
         },
-
         body: JSON.stringify(data),
-
       };
-
       fetch(apiUrl, requestOptions)
-
         .then((response) => response.json())
-
         .then((res) => {
           console.log("Res", res)
           if (res.data) {
-
+            setErrorMessage("")
             setSuccess(true);
-
           } else {
-            if (res.error == "UNIQUE constraint failed: patients.idcard") {
-              setErrorMessage("เลขบัตรประจำตัวประชาชนซ้ำ")
-            } else if (res.error == "Only Nurses") {
-              setErrorMessage("Only Nurses")
-            } else {
-              setErrorMessage("บันทึกข้อมูลไม่สำเร็จ")
-            }
+            setErrorMessage(res.error)
             setError(true)
           }
           
         });
-    }
-
+    
+        
   }
 
 
@@ -327,7 +290,7 @@ export default function PatientCreate(this: any) {
       </Snackbar>
       <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="error">
-          {ErrorMessage}
+          บันทึกข้อมูลไม่สำเร็จ: {ErrorMessage}
         </Alert>
       </Snackbar>
 
@@ -335,11 +298,8 @@ export default function PatientCreate(this: any) {
         <Box display="flex"> <Box flexGrow={1}>
           <Typography
             component="h2"
-
             variant="h5"
-
             color="primary"
-
             gutterBottom
           >
             บันทึกเวชระเบียน

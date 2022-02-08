@@ -1,13 +1,13 @@
 package controller
 
 import (
+	"net/http"
 	"time"
 
+	"github.com/gin-gonic/gin"
 	"github.com/sut64/team13/entity"
 
-	"github.com/gin-gonic/gin"
-
-	"net/http"
+	"github.com/asaskevich/govalidator"
 )
 
 // POST /pat
@@ -39,12 +39,6 @@ func CreatePatient(c *gin.Context) {
 		return
 	}
 
-	// 11: ค้นหา insurance ด้วย id
-	if tx := entity.DB().Where("id = ?", patient.InsuranceID).First(&insurance); tx.RowsAffected == 0 {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Insurance not found"})
-		return
-	}
-
 	// 12: ค้นหา sex ด้วย id
 	if tx := entity.DB().Where("id = ?", patient.SexID).First(&sex); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Sex not found"})
@@ -54,6 +48,12 @@ func CreatePatient(c *gin.Context) {
 	// 13: ค้นหา job ด้วย id
 	if tx := entity.DB().Where("id = ?", patient.JobID).First(&job); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Job not found"})
+		return
+	}
+
+	// 11: ค้นหา insurance ด้วย id
+	if tx := entity.DB().Where("id = ?", patient.InsuranceID).First(&insurance); tx.RowsAffected == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Insurance not found"})
 		return
 	}
 
@@ -67,11 +67,17 @@ func CreatePatient(c *gin.Context) {
 		Weight:    patient.Weight,
 		Height:    patient.Height,
 		Time:      time.Now(), // 14: ดึงเวลาปัจจุบัน
-		Insurance: insurance,  // โยงความสัมพันธ์กับ Entity insurance
-		Job:       job,        // โยงความสัมพันธ์กับ Entity job
 		Sex:       sex,        // โยงความสัมพันธ์กับ Entity sex
+		Job:       job,        // โยงความสัมพันธ์กับ Entity job
+		Insurance: insurance,  // โยงความสัมพันธ์กับ Entity insurance
 		Nurse:     nurse,      // โยงความสัมพันธ์กับ Entity user
 
+	}
+
+	// Validation
+	if _, err := govalidator.ValidateStruct(wp); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 
 	// 16: บันทึก
