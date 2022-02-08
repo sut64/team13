@@ -308,13 +308,30 @@ export default function Body() {
                     setSuccess(true);
 
                 } else {
+                    setError(true)
+                    setErrorMessage(res.error)
+
                     if (res.error == "Only dentist can save appointments !!") {
                         setErrorMessage("ผู้บันทึกข้อมูลไม่ใช่ทันตแพทย์")
+                    } else if (res.error == "Todo cannot be blank") {
+                        setErrorMessage("กรุณากรอกการปฏิบัติตัวก่อนเข้ารับการรักษา")
+                    } else if (res.error == "Room cannot be negative number") {
+                        setErrorMessage("ห้องที่เข้ารับการรักษาห้ามติดลบ")
+                    } else if (res.error == "Appoint time not be a past") {
+                        setErrorMessage("ไม่สามารถนัดหมายในวันและเวลาที่เป็นอดีต")
+                    } else if (res.error == "Appoint time not be a past;Room cannot be negative number") {
+                        setErrorMessage("ไม่สามารถนัดหมายในวันและเวลาที่เป็นอดีต และ ห้องที่เข้ารับการรักษาห้ามติดลบ")
+                    } else if (res.error == "Appoint time not be a past;Todo cannot be blank") {
+                        setErrorMessage("ไม่สามารถนัดหมายในวันและเวลาที่เป็นอดีต และ กรุณากรอกการปฏิบัติตัวก่อนเข้ารับการรักษา")
+                    } else if (res.error == ";Room cannot be negative number;Todo cannot be blank") {
+                        setErrorMessage("ไห้องที่เข้ารับการรักษาห้ามติดลบ และ กรุณากรอกการปฏิบัติตัวก่อนเข้ารับการรักษา")
+                    } else if (res.error == "Appoint time not be a past;Room cannot be negative number;Todo cannot be blank") {
+                        setErrorMessage("ไม่สามารถนัดหมายในวันและเวลาที่เป็นอดีต, ห้องที่เข้ารับการรักษาห้ามติดลบ และ กรุณากรอกการปฏิบัติตัวก่อนเข้ารับการรักษา")
                     } else {
-                        setErrorMessage("บันทึกข้อมูลไม่สำเร็จ")
+                        setErrorMessage(res.error)
                     }
 
-                    setError(true)
+                    
 
                 }
 
@@ -342,7 +359,7 @@ export default function Body() {
 
                 <Alert onClose={handleClose} severity="error">
 
-                    {ErrorMessage}
+                    บันทึกข้อมูลไม่สำเร็จ : {ErrorMessage}
 
                 </Alert>
 
@@ -505,4 +522,3 @@ export default function Body() {
         </Container>
     )
 }
-

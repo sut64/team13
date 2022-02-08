@@ -11,11 +11,11 @@ import { CleaningServicesSharp } from "@mui/icons-material";
 import MedicationIcon from '@mui/icons-material/Medication';
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        container: { marginTop: theme.spacing(3), backgroundColor: "#F4EEDC", fontFamily:'Itim',},
+        container: { marginTop: theme.spacing(3), backgroundColor: "#c1d8de", fontFamily:'IBM Plex Sans Thai Looped',},
         buttonsize: { width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 10, },
         iconsize: { margin: 20, marginBottom: 100, color: "#EE1F12", size: "20px", fontSize: "large" },
         grids: { padding: theme.spacing(2), color: "#0B3C83" },
-        menugrid: { '& button': {fontFamily:'Itim'} },
+        menugrid: { '& button': {fontFamily:'IBM Plex Sans Thai Looped'} },
         paper: { marginTop: 80, },
     })
 );
@@ -62,7 +62,7 @@ function Home() {
 
 	var btnStyle = {
 		width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 2, 
-		fontFamily:'Itim'}
+		fontFamily:'IBM Plex Sans Thai Looped'}
     return (
 
         <div>
