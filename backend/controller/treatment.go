@@ -6,37 +6,11 @@ package controller
 
 import (
 	"net/http"
-	"time"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 	"github.com/sut64/team13/entity"
 )
-
-// available tooth filling
-var tooth_filling = map[string]bool{
-	"Gold":          true,
-	"Silver":        true,
-	"Composites":    true,
-	"Ceramics":      true,
-	"Glass ionomer": true,
-}
-
-// tooth number validation
-func trm_tooth_number_validation(number int) bool {
-	return number >= 0 && number <= 32
-}
-
-// tooth fillling validation
-func trm_tooth_filling_validation(filling string) bool {
-	return tooth_filling[filling]
-}
-
-// date validation
-func trm_date_validation(date time.Time) bool {
-	current_time := time.Now()
-	check_time := current_time.Add(-24 * time.Hour)
-	return date.After(check_time) && date.Before(current_time)
-}
 
 // POST /treatment
 func CreateTreatment(c *gin.Context) {
@@ -49,6 +23,8 @@ func CreateTreatment(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
+
+	treatment.ToothFilling = strings.TrimSpace(treatment.ToothFilling)
 
 	if tx := entity.DB().Where("id = ?", treatment.DentistID).First(&user); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "No user found with association ID"})
@@ -72,27 +48,8 @@ func CreateTreatment(c *gin.Context) {
 		return
 	}
 
-	// TODO: change validation to go playground validation or something
-	// validation:
-	// tooth number (int)
-	if trm_tooth_number_validation(treatment.ToothNumber) != true {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "unable to validate data --> ToothNumber [allow int 0-32]"})
-		return
-	}
-	// tooth filling (string) actually!
-	if trm_tooth_filling_validation(treatment.ToothFilling) != true {
-		allow_string := ""
-		for key := range tooth_filling {
-			allow_string += "\"" + key + "\", "
-		}
-		c.JSON(http.StatusBadRequest, gin.H{"error": "unable to validate data --> ToothFilling [allow one of " +
-			allow_string[:len(allow_string)-2] + "]"})
-		return
-	}
-	// date (date time) untest
-	if trm_date_validation(treatment.Date) != true {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "unable to validate data --> Date [allow " +
-			time.Now().Add(-24*time.Hour).String() + "to" + time.Now().String() + "]"})
+	if _, err := treatment.Validation(); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
@@ -102,14 +59,10 @@ func CreateTreatment(c *gin.Context) {
 		ToothNumber:      treatment.ToothNumber,
 		ToothFilling:     treatment.ToothFilling,
 		Date:             treatment.Date,
-		// create with assosiation ---
-		// TODO:
-		// screening entity
-		Screening: screening,
-		// remedytype entity
+		// create with assosiation --
+		Screening:  screening,
 		RemedyType: remedytype,
-		// user w/Role dentist entity
-		Dentist: user,
+		Dentist:    user,
 	}
 
 	if err := entity.DB().Create(&data).Error; err != nil {
