@@ -14,17 +14,17 @@ type Payment struct {
 	Pricetext string    `valid:"required~Pricetext cannot be blank"`
 	Paytime   time.Time `valid:"past~Pay time must be a past date"`
 
-	Note string
+	Note string `gorm:"references:id" valid:"-"`
 
 	PatientID *uint
-	Patient   Patient
+	Patient   Patient `gorm:"references:id" valid:"-"`
 
 	FinancialID *uint
-	Financial   User
+	Financial   User `gorm:"references:id" valid:"-"`
 
 	// remedytype entity
 	RemedyTypeID *uint
-	RemedyType   RemedyType
+	RemedyType   RemedyType `gorm:"references:id" valid:"-"`
 }
 
 func init() {
