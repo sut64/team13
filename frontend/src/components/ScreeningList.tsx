@@ -99,7 +99,7 @@ function ScreeningList() {
                 <TableCell align="center" width="16%">
                   สกุล
                 </TableCell>
-                <TableCell align="center" width="5%">
+                <TableCell align="center" width="15%">
                   วันเดือนปีเกิด
                 </TableCell>
                 <TableCell align="center" width="20%">
@@ -108,11 +108,11 @@ function ScreeningList() {
                 <TableCell align="center" width="15%">
                   อาการที่พบ
                 </TableCell>
-                <TableCell align="center" width="20%">
-                  รายละเอียดเพิ่มเติม
-                </TableCell>
-                <TableCell align="center" width="10%">
+                <TableCell align="center" width="5%">
                   คิว
+                </TableCell>
+                <TableCell align="center" width="15%">
+                  วันที่บันทึก
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -122,11 +122,12 @@ function ScreeningList() {
                 <TableCell align="center">{screening.ID}</TableCell>
                 <TableCell align="center">{screening.Patient.Firstname} </TableCell>  
                 <TableCell align="center">{screening.Patient.Lastname}</TableCell>
-                <TableCell align="center">{screening.Patient.Birthday}</TableCell>
+                <TableCell align="center">{moment(screening.Patient.Birthday).format("DD/MM/YYYY")}</TableCell>   
                 <TableCell align="center">{screening.MedicalProduct.Name}</TableCell>
                 <TableCell align="center">{screening.Illnesses}</TableCell>
-                <TableCell align="center">{screening.Scrdate}</TableCell>
                 <TableCell align="center">{screening.Queue}</TableCell>
+                <TableCell align="center">{moment(screening.Date).format("DD/MM/YYYY HH:mm")}</TableCell>
+                
 
                   
                 </TableRow>

@@ -1,13 +1,12 @@
 package controller
 
 import (
+	"github.com/asaskevich/govalidator"
 	"github.com/sut64/team13/entity"
 
 	"github.com/gin-gonic/gin"
 
 	"net/http"
-
-	"time"
 )
 
 // POST /screening
@@ -58,8 +57,13 @@ func CreateScreening(c *gin.Context) {
 		// 3 type
 		Illnesses: screening_record.Illnesses, //อาการที่พบเบื้ิองต้น
 		Queue:     screening_record.Queue,     //ลำดับการเข้ารับการรักษา
-		Date:      time.Now(),                 //ดึงเวลาปัจจุบัน
+		Date:      screening_record.Date,      //ดึงเวลาปัจจุบัน
 
+	}
+	//ขั้นตอนการ validate ที่นำมาจาก unit test
+	if _, err := govalidator.ValidateStruct(scr); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 	//13:บันทึก()
 	if err := entity.DB().Create(&scr).Error; err != nil {

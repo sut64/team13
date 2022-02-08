@@ -169,6 +169,7 @@ export default function Body() {
   const [pats, setPaid] = React.useState<Partial<PaymentInterface>>({});
   const [success, setSuccess] = React.useState(false);
   const [error, setError] = React.useState(false);
+  
   const handleClose = (event?: React.SyntheticEvent, reason?: string) => {
     if (reason === "clickaway") {
       return;
@@ -185,7 +186,7 @@ export default function Body() {
     console.log("ID", id)
     setPaid({ ...pats, [id]: value });
   };
-  const [ErrorMessage, setErrorMessage] = React.useState<String>();
+  const [ErrorMessage, setErrorMessage] = React.useState("");
   function submit() {
     let data = {
       PatientID: typeof pats.PatientID === "string" ? parseInt(pats.PatientID) : NaN,
@@ -212,8 +213,10 @@ export default function Body() {
         console.log("Res", res)
         if (res.data) {
           setSuccess(true);
+          setErrorMessage("")
         } else {
           setError(true)
+          setErrorMessage(res.error)
         }
       });
   }
@@ -227,7 +230,7 @@ export default function Body() {
       </Snackbar>
       <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="error">
-          บันทึกข้อมูลไม่สำเร็จ
+          บันทึกข้อมูลไม่สำเร็จ : {ErrorMessage}
         </Alert>
       </Snackbar>
       <Paper className={classes.paper}>
