@@ -1,8 +1,7 @@
 package controller
 
 import (
-	"time"
-
+	"github.com/asaskevich/govalidator"
 	"github.com/sut64/team13/entity"
 
 	"github.com/gin-gonic/gin"
@@ -70,8 +69,13 @@ func CreateMedRecord(c *gin.Context) {
 		Pharmacist:     pharmacist,     // โยงความสัมพันธ์กับ Entity User
 		MedicalProduct: medicalProduct, // โยงความสัมพันธ์กับ Entity MedicalProduct
 		Amount:         medRecord.Amount,
-		Datetime:       time.Now(), //ดึงเวลาปัจจุบัน
+		Datetime:       medRecord.Datetime, //ดึงเวลาปัจจุบัน
 		AdviceText:     medRecord.AdviceText,
+	}
+
+	if _, err := govalidator.ValidateStruct(mr); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 
 	// 15.บันทึก
