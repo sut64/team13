@@ -6,7 +6,6 @@ package controller
 
 import (
 	"net/http"
-	"strings"
 
 	"github.com/gin-gonic/gin"
 	"github.com/sut64/team13/entity"
@@ -23,8 +22,6 @@ func CreateTreatment(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-
-	treatment.ToothFilling = strings.TrimSpace(treatment.ToothFilling)
 
 	if tx := entity.DB().Where("id = ?", treatment.DentistID).First(&user); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "No user found with association ID"})
