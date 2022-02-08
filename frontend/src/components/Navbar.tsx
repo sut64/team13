@@ -131,20 +131,20 @@ export default function ButtonAppBar() {
             TransitionComponent={Fade}
           >
             <MenuItem onClick={Home}><HomeIcon/>หน้าหลัก</MenuItem>
-            -------------------------------------
+            ------------------------------------------------------------
             <MenuItem onClick={PatientList}><ListIcon/>รายชื่อผู้ป่วย</MenuItem>
             <MenuItem onClick={PatientCreate}><CreateIcon/>บันทึกผู้ป่วยใหม่</MenuItem>
-            -------------------------------------
+            ------------------------------------------------------------
             <MenuItem onClick={ScreeningList}><FactCheckOutlinedIcon/>รายการข้อมูลผู้ป่วยคัดกรอง</MenuItem>
             <MenuItem onClick={ScreeningCreate}><CreateIcon/>บันทึกข้อมูลการคัดกรองใหม่</MenuItem>
-            -------------------------------------
+            ------------------------------------------------------------
             <MenuItem onClick={()=>{window.location.href = "/TreatmentList"}}><ContentPasteSearchOutlinedIcon/>ประวัติใบวินิจฉัย</MenuItem>
-            -------------------------------------
+            ------------------------------------------------------------
             <MenuItem onClick={AppointList}><AccessTimeIcon/>ประวัติการนัดหมาย</MenuItem>
             <MenuItem onClick={AppointCreate}><BookmarkAddOutlinedIcon/>บันทึกการนัดหมาย</MenuItem>
-            -------------------------------------
+            ------------------------------------------------------------
             <MenuItem onClick={CreateMecRecord}><MedicationIcon/>บันทึกการจ่ายยา</MenuItem>
-            -------------------------------------
+            ------------------------------------------------------------
             <MenuItem onClick={Paid}><PaidIcon/>ประวัติการชำระเงิน</MenuItem>
             <MenuItem onClick={PaymentCreate}><PointOfSaleIcon/>บันทึกการชำระเงิน</MenuItem>
             

@@ -13,9 +13,13 @@ func TestPatientCorrect(t *testing.T) {
 
 	// ข้อมูลถูกต้องหมดทุก field
 	patient := Patient{
-		Birthday: time.Now().AddDate(0, 0, -1),
-		IDcard:   "1329901010000",
-		Height:   175.5,
+		Firstname: "Test",
+		Lastname:  "A",
+		Birthday:  time.Now().AddDate(0, 0, -1),
+		IDcard:    "1329901010000",
+		Tel:       "0902571569",
+		Weight:    70.2,
+		Height:    175.5,
 	}
 	// ตรวจสอบด้วย govalidator
 	ok, err := govalidator.ValidateStruct(patient)
@@ -27,13 +31,69 @@ func TestPatientCorrect(t *testing.T) {
 	g.Expect(err).To(BeNil())
 }
 
+func TestPatientFirstnameNotblank(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	patient := Patient{
+		Firstname: "",
+		Lastname:  "A",
+		Birthday:  time.Now().AddDate(0, 0, -1),
+		IDcard:    "1329901010000",
+		Tel:       "0902571569",
+		Weight:    70.2,
+		Height:    175.5,
+	}
+
+	ok, err := govalidator.ValidateStruct(patient)
+
+	// ok ต้องไม่เป็นค่า true แปลว่าต้องจับ error ได้
+	g.Expect(ok).ToNot(BeTrue())
+
+	// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
+	g.Expect(err).ToNot(BeNil())
+
+	// err.Error ต้องมี error message แสดงออกมา
+	g.Expect(err.Error()).To(Equal("Firstname must not be blank"))
+
+}
+
+func TestPatientLastnameNotblank(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	patient := Patient{
+		Firstname: "Test",
+		Lastname:  "",
+		Birthday:  time.Now().AddDate(0, 0, -1),
+		IDcard:    "1329901010000",
+		Tel:       "0902571569",
+		Weight:    70.2,
+		Height:    175.5,
+	}
+
+	ok, err := govalidator.ValidateStruct(patient)
+
+	// ok ต้องไม่เป็นค่า true แปลว่าต้องจับ error ได้
+	g.Expect(ok).ToNot(BeTrue())
+
+	// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
+	g.Expect(err).ToNot(BeNil())
+
+	// err.Error ต้องมี error message แสดงออกมา
+	g.Expect(err.Error()).To(Equal("Lastname must not be blank"))
+
+}
+
 func TestPatientBirthdayMustPast(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	patient := Patient{
-		Birthday: time.Now().AddDate(0, 0, 1),
-		IDcard:   "1329901010000",
-		Height:   175.5,
+		Firstname: "Test",
+		Lastname:  "A",
+		Birthday:  time.Now().AddDate(0, 0, 1),
+		IDcard:    "1329901010000",
+		Tel:       "0902571569",
+		Weight:    70.2,
+		Height:    175.5,
 	}
 
 	ok, err := govalidator.ValidateStruct(patient)
@@ -61,9 +121,13 @@ func TestPatientIDcardPattren(t *testing.T) {
 
 	for _, fixture := range fixtures {
 		patient := Patient{
-			Birthday: time.Now().AddDate(0, 0, -1),
-			IDcard:   fixture,
-			Height:   175.5,
+			Firstname: "Test",
+			Lastname:  "A",
+			Birthday:  time.Now().AddDate(0, 0, -1),
+			IDcard:    fixture,
+			Tel:       "0902571569",
+			Weight:    70.2,
+			Height:    175.5,
 		}
 
 		ok, err := govalidator.ValidateStruct(patient)
@@ -75,12 +139,84 @@ func TestPatientIDcardPattren(t *testing.T) {
 		g.Expect(err).ToNot(BeNil())
 
 		// err.Error ต้องมี error message แสดงออกมา
-		//g.Expect(err.Error()).To(Equal("IDcard Invalid format"))
 		if err.Error() == "IDcard Invalid format" {
 			g.Expect(err.Error()).To(Equal("IDcard Invalid format"))
 		} else if err.Error() == "IDcard cannot be blank" {
 			g.Expect(err.Error()).To(Equal("IDcard cannot be blank"))
 		}
+	}
+}
+
+func TestPatientTelPattren(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	fixtures := []string{
+		"few",
+		"090123456789",
+		"0901234",
+	}
+
+	for _, fixture := range fixtures {
+		patient := Patient{
+			Firstname: "Test",
+			Lastname:  "A",
+			Birthday:  time.Now().AddDate(0, 0, -1),
+			IDcard:    "1329900100100",
+			Tel:       fixture,
+			Weight:    70.2,
+			Height:    175.5,
+		}
+
+		ok, err := govalidator.ValidateStruct(patient)
+
+		// ok ต้องไม่เป็นค่า true แปลว่าต้องจับ error ได้
+		g.Expect(ok).ToNot(BeTrue())
+
+		// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
+		g.Expect(err).ToNot(BeNil())
+
+		// err.Error ต้องมี error message แสดงออกมา
+		g.Expect(err.Error()).To(Equal("Tel Invalid format"))
+
+	}
+}
+
+func TestPatientWeight(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	fixtures := []float32{
+		0,
+		-5,
+		-99,
+	}
+
+	for _, fixture := range fixtures {
+		patient := Patient{
+			Firstname: "Test",
+			Lastname:  "A",
+			Birthday:  time.Now().AddDate(0, 0, -1),
+			IDcard:    "1329901010000",
+			Tel:       "0902571569",
+			Weight:    fixture,
+			Height:    175.5,
+		}
+
+		ok, err := govalidator.ValidateStruct(patient)
+
+		// ok ต้องไม่เป็นค่า true แปลว่าต้องจับ error ได้
+		g.Expect(ok).ToNot(BeTrue())
+
+		// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
+		g.Expect(err).ToNot(BeNil())
+
+		// err.Error ต้องมี error message แสดงออกมา
+		//g.Expect(err.Error()).To(Equal("Height number >= 1, required~Amount must not be zero"))
+		if err.Error() == "Weight must not be zero" {
+			g.Expect(err.Error()).To(Equal("Weight must not be zero"))
+		} else if err.Error() == "Weight must not be negotive" {
+			g.Expect(err.Error()).To(Equal("Weight must not be negotive"))
+		}
+
 	}
 }
 
@@ -95,9 +231,13 @@ func TestPatientHeight(t *testing.T) {
 
 	for _, fixture := range fixtures {
 		patient := Patient{
-			Birthday: time.Now().AddDate(0, 0, -1),
-			IDcard:   "1329901010000",
-			Height:   fixture,
+			Firstname: "Test",
+			Lastname:  "A",
+			Birthday:  time.Now().AddDate(0, 0, -1),
+			IDcard:    "1329901010000",
+			Tel:       "0902571569",
+			Weight:    70.2,
+			Height:    fixture,
 		}
 
 		ok, err := govalidator.ValidateStruct(patient)

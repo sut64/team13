@@ -32,26 +32,26 @@ type Sex struct {
 
 type Patient struct {
 	gorm.Model
-	Firstname string    //`valid:"required~Firstname cannot be blank"`
-	Lastname  string    //`valid:"required~Lastname cannot be blank"`
+	Firstname string    `valid:"required~Firstname must not be blank"`
+	Lastname  string    `valid:"required~Lastname must not be blank"`
 	Birthday  time.Time `valid:"past~Birthday must be in the past"`
 	IDcard    string    `gorm:"uniqueIndex" valid:"matches(^\\d{13}$)~IDcard Invalid format,required~IDcard cannot be blank"`
-	Tel       string    `valid:"matches(^\\d{10}$)~Tel Invalid format,required~Tel cannot be blank"`
+	Tel       string    `valid:"matches(^\\d{10}$)~Tel Invalid format"`
 	Weight    float32   `valid:"minamount~Weight must not be negotive, required~Weight must not be zero"`
 	Height    float32   `valid:"minamount~Height must not be negotive, required~Height must not be zero"`
 	Time      time.Time
 
 	NurseID *uint
-	Nurse   User
+	Nurse   User `gorm:"references:id" valid:"-"`
 
 	JobID *uint
-	Job   Job
+	Job   Job `gorm:"references:id" valid:"-"`
 
 	InsuranceID *uint
-	Insurance   Insurance
+	Insurance   Insurance `gorm:"references:id" valid:"-"`
 
 	SexID *uint
-	Sex   Sex
+	Sex   Sex `gorm:"references:id" valid:"-"`
 
 	Payments   []Payment   `gorm:"foreignKey:PatientID"`
 	Appoints   []Appoint   `gorm:"foreignKey:PatientID"`

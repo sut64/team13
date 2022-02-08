@@ -22,7 +22,6 @@ const useStyles = makeStyles((theme: Theme) =>
         container: { marginTop: theme.spacing(2) },
         paper: { padding: theme.spacing(2), color: theme.palette.text.secondary },
         table: { minWidth: 20 },
-        //dig: {backgroundImage: "url(https://i.imgur.com/HeGEEbu.jpg)"},
         HeadDig : {color : "#6699FF" ,backgroundColor: "#F5FFFA"},
 
     }));
@@ -39,30 +38,32 @@ export default function DataPatient(pats: PatientInterface ) {
         setOpen(false);
     };
 
-    const [Age, setAge] = React.useState<number>();
-    const [BMI, setBMI] = React.useState<number>(0);
+    const [Age, setAge] = React.useState<number>(NaN);
+    const [BMI, setBMI] = React.useState<number>(NaN);
 
     function getAge() {
         var currentDate = new Date();
         var currentYear = currentDate.getFullYear();
         console.log("Date",currentDate,currentYear,parseInt(moment(pats.Birthday).format("YYYY")))
         setAge(currentYear - parseInt(moment(pats.Birthday).format("YYYY")));
+        console.log("Age",Age)
     }
 
     function getBMI() {
         setBMI( pats.Weight/((pats.Height*pats.Height)/10000) ) ;
+        console.log("BMI",BMI)
     }
 
     useEffect(() => {
         getAge();
         getBMI();
       }, []);
-      
+
     return (
         <div>
 
             <IconButton onClick={handleClickOpen}>
-                <ContentPasteSearchIcon  sx={{ fontSize: 30, color: blue[600] }}/>
+                <ContentPasteSearchIcon  sx={{ fontSize: 30, color: "#3366CC" }}/>
             </IconButton>
             <Dialog
                 open={open}
