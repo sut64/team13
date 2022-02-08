@@ -3,6 +3,7 @@ package controller
 import (
 	"net/http"
 
+	"github.com/asaskevich/govalidator"
 	"github.com/gin-gonic/gin"
 	"github.com/sut64/team13/entity"
 )
@@ -54,6 +55,12 @@ func CreateAppoint(c *gin.Context) {
 		Room:        appoint.Room,
 		Todo:        appoint.Todo,
 		AppointTime: appoint.AppointTime, // ตั้งค่าฟิลด์ Time
+	}
+
+	// : ขั้นตอนการ validate ข้อมูล
+	if _, err := govalidator.ValidateStruct(ap); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 
 	// 13: บันทึก

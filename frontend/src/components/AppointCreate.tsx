@@ -315,6 +315,7 @@ export default function Body() {
                     }
 
                     setError(true)
+                    setErrorMessage(res.error)
 
                 }
 
@@ -342,7 +343,7 @@ export default function Body() {
 
                 <Alert onClose={handleClose} severity="error">
 
-                    {ErrorMessage}
+                    บันทึกข้อมูลไม่สำเร็จ : {ErrorMessage}
 
                 </Alert>
 
