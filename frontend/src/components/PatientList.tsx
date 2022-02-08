@@ -17,7 +17,11 @@ import CreateIcon from "@material-ui/icons/AddCircleOutlineOutlined";
 import IconButton from '@mui/material/IconButton';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { PatientInterface } from "../models/IPat";
-import DataPatient from './PatientData';
+import PatientData from './PatientData';
+import PatientUpdate from './PatientUpdate';
+import SearchIcon from '@mui/icons-material/Search';
+import TextField from '@mui/material/TextField';
+import Checkbox from "@material-ui/core/Checkbox";
 
 const useStyles = makeStyles((theme: Theme) =>
 
@@ -26,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) =>
         container: { marginTop: theme.spacing(2) },
         table: { minWidth: 500 },
         tableSpace: { marginTop: 20 },
-        Font: {fontSize: '16px'},
+        Font: { fontSize: '16px' },
 
     })
 
@@ -36,6 +40,20 @@ function WatchPatientList(this: any) {
     const classes = useStyles();
     const [pats, setWatchPatient] = React.useState<PatientInterface[]>([]);
     const [DeleteValue, setDeleteValue] = React.useState(false);
+    const [Search, setSearch] = React.useState<String>();
+    const [Searchtable, setSearchtable] = React.useState<PatientInterface[]>([]);
+
+    const [num, setnum] = React.useState<number[]>([1, 3]);
+
+
+    const handleSearchChange = (
+        event: React.ChangeEvent<{ id?: string; value: any }>
+    ) => {
+        const id = event.target.id
+        const { value } = event.target;
+        console.log("ID", id, "Value", value)
+        setSearch(value)
+    };
 
     const getWatchPatient = async () => {
         const apiUrl = "http://localhost:8080/patients";
@@ -87,7 +105,7 @@ function WatchPatientList(this: any) {
     useEffect(() => {
         getWatchPatient();
     }, [DeleteValue]);
-    
+
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -97,6 +115,7 @@ function WatchPatientList(this: any) {
     const handleClose = () => {
         setOpen(false);
     };
+
 
 
     return (
@@ -125,6 +144,17 @@ function WatchPatientList(this: any) {
                         </Button>
                     </Box>
                 </Box>
+                <Box >
+                    <SearchIcon sx={{ width: "30px", height: "30px", marginTop: 2 }} />
+                    <TextField style={{ width: '30%' }}
+                        id="Search"
+                        label="Search"
+                        variant="standard"
+                        type="string"
+                        onChange={handleSearchChange}
+
+                    />
+                </Box>
 
 
                 <TableContainer component={Paper} className={classes.tableSpace} >
@@ -132,26 +162,30 @@ function WatchPatientList(this: any) {
                     <Table className={classes.table} aria-label="simple table" >
                         <TableHead>
                             <TableRow >
-                                <TableCell align="center" width="4%" className = {classes.Font}>ID</TableCell>
-                                <TableCell align="left" width="5%" className = {classes.Font}>ชื่อ</TableCell>
-                                <TableCell align="left" width="5%" className = {classes.Font}>นามสกุล</TableCell>
-                                <TableCell align="left" width="5%" className = {classes.Font}>รหัสบัตรประชาชน</TableCell>
-                                <TableCell align="center" width="1%" className = {classes.Font}>ข้อมูล</TableCell>
-            
-                                <TableCell align="center" width="1%" className = {classes.Font}>นำออก</TableCell>
+                                
+                                <TableCell align="center" width="4%" className={classes.Font}>ID</TableCell>
+                                <TableCell align="left" width="5%" className={classes.Font}>ชื่อ</TableCell>
+                                <TableCell align="left" width="5%" className={classes.Font}>นามสกุล</TableCell>
+                                <TableCell align="left" width="5%" className={classes.Font}>รหัสบัตรประชาชน</TableCell>
+                                <TableCell align="center" width="1%" className={classes.Font}>ข้อมูล</TableCell>
+                                <TableCell align="center" width="1%" className={classes.Font}>แก้ไข</TableCell>
+                                <TableCell align="center" width="1%" className={classes.Font}>นำออก</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
-
                             {pats.map((pats: PatientInterface) => (
 
-                                <TableRow key={pats.ID} >
+                                <TableRow
+                                    key={pats.ID}
+
+                                    style={{ backgroundColor: "#FFFFFF" }}
+                                >
                                     <TableCell align="center">{pats.ID}</TableCell>
                                     <TableCell align="left">{pats.Firstname}</TableCell>
                                     <TableCell align="left">{pats.Lastname}</TableCell>
                                     <TableCell align="left">{pats.IDcard}</TableCell>
                                     <TableCell align="center">
-                                        <DataPatient
+                                        <PatientData
                                             ID={pats.ID}
                                             Firstname={pats.Firstname}
                                             Lastname={pats.Lastname}
@@ -168,17 +202,40 @@ function WatchPatientList(this: any) {
                                             Sex={pats.Sex}
                                             Job={pats.Job}
                                             Insurance={pats.Insurance}
-                                            Nurse={pats.Nurse} 
-                                            Appoints={[]}                                            
+                                            Nurse={pats.Nurse}
+                                            Appoints={[]}
                                         />
                                     </TableCell>
-     
+                                    <TableCell align="center">
+                                        <PatientUpdate
+                                            ID={pats.ID}
+                                            Firstname={pats.Firstname}
+                                            Lastname={pats.Lastname}
+                                            Birthday={pats.Birthday}
+                                            IDcard={pats.IDcard}
+                                            Tel={pats.Tel}
+                                            Weight={pats.Weight}
+                                            Height={pats.Height}
+                                            Time={pats.Time}
+                                            SexID={pats.SexID}
+                                            JobID={pats.JobID}
+                                            InsuranceID={pats.InsuranceID}
+                                            NurseID={pats.NurseID}
+                                            Sex={pats.Sex}
+                                            Job={pats.Job}
+                                            Insurance={pats.Insurance}
+                                            Nurse={pats.Nurse}
+                                            Appoints={[]}
+                                        />
+                                    </TableCell>
+
                                     <TableCell align="center">
                                         <IconButton onClick={() => DeletePatient(pats.ID)} >
-                                            <DeleteOutlineIcon sx={{ fontSize: 35, color: blue[600] }} />
+                                            <DeleteOutlineIcon sx={{ fontSize: 35, color: "#3366CC" }} />
                                         </IconButton>
                                     </TableCell>
                                 </TableRow>
+
                             ))}
                         </TableBody>
                     </Table>

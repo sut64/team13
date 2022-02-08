@@ -11,7 +11,6 @@ import { CleaningServicesSharp } from "@mui/icons-material";
 import MedicationIcon from '@mui/icons-material/Medication';
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        //alignItems: "center", display: "flex",
         container: { marginTop: theme.spacing(3), backgroundColor: "#F4EEDC", fontFamily:'Itim',},
         buttonsize: { width: '280px', height: '200px', backgroundColor: '#FFFFFF', fontSize: "20px", color: "#0B3C83", margin: 10, },
         iconsize: { margin: 20, marginBottom: 100, color: "#EE1F12", size: "20px", fontSize: "large" },
@@ -35,6 +34,7 @@ function Home() {
         window.location.href = "/Patientcreate";
         setLoadingPatient(true);
     };
+    
     const ScreeningCreate = () => {
         window.location.href = "/ScreeningCreate";
         setLoadingScreening(true);
