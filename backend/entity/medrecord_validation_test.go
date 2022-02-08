@@ -19,7 +19,6 @@ func TestMedRecordPass(t *testing.T) {
 	}
 	// ตรวจสอบด้วย govalidator
 	ok, err := govalidator.ValidateStruct(MedRecord)
-
 	// ok ต้องเป็น true แปลว่าไม่มี error
 	g.Expect(ok).To(BeTrue())
 

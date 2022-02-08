@@ -10,7 +10,7 @@ import (
 type Payment struct {
 	gorm.Model
 
-	Price     float32   `valid:"positive~Price cannot be negative"`
+	Price     float32   `valid:"payment_positive~Price cannot be negative"`
 	Pricetext string    `valid:"required~Pricetext cannot be blank"`
 	Paytime   time.Time `valid:"past~Pay time must be a past date"`
 
@@ -38,7 +38,7 @@ func init() {
 		now := time.Now()
 		return now.Before(time.Time(t))
 	})
-	govalidator.CustomTypeTagMap.Set("positive", func(i interface{}, context interface{}) bool {
+	govalidator.CustomTypeTagMap.Set("payment_positive", func(i interface{}, context interface{}) bool {
 		num := i
 		return num.(float32) >= 0
 	})
