@@ -1,7 +1,7 @@
 package entity
 
 import (
-	"fmt"
+	//"fmt"
 	"testing"
 	"time"
 
@@ -80,7 +80,7 @@ func TestTreatmentToothNumberNotInRange(t *testing.T) {
 		OK, err := v.Validation()
 		g.Expect(OK).NotTo(BeTrue())
 		g.Expect(err).NotTo(BeNil())
-		g.Expect(err.Error()).To(Equal("tooth number must be in range(0,32)"))
+		g.Expect(err.Code).To(Equal("E03V3"))
 	}
 }
 
@@ -108,7 +108,7 @@ func TestTreatmentToothFillingNotAnOption(t *testing.T) {
 		OK, err := v.Validation()
 		g.Expect(OK).NotTo(BeTrue())
 		g.Expect(err).NotTo(BeNil())
-		g.Expect(err.Error()).To(Equal(fmt.Sprintf("\"%s\" is not an option for tooth filling", v.ToothFilling)))
+		g.Expect(err.Code).To(Equal("E03V4"))
 	}
 }
 
@@ -136,6 +136,6 @@ func TestTreatmentDateNotValid(t *testing.T) {
 		OK, err := v.Validation()
 		g.Expect(OK).NotTo(BeTrue())
 		g.Expect(err).NotTo(BeNil())
-		g.Expect(err.Error()).To(Equal("incorrect date please check"))
+		g.Expect(err.Code).To(Equal("E03V5"))
 	}
 }

@@ -1,7 +1,7 @@
 package entity
 
 import (
-	"errors"
+	// "errors"
 	"fmt"
 	"strings"
 	"time"
@@ -41,10 +41,19 @@ var tooth_filling = map[string]bool{
 	"Glass ionomer": true,
 }
 
-func (t *Treatment) Validation() (bool, error) {
+type TreatmentValidationError struct {
+	Code  string
+	Value string
+}
+
+func (e *TreatmentValidationError) Error() string {
+	return fmt.Sprintf("%s:%s", e.Code, e.Value)
+}
+
+func (t *Treatment) Validation() (bool, *TreatmentValidationError) {
 
 	if !(t.ToothNumber >= 0 && t.ToothNumber <= 32) {
-		return false, errors.New("tooth number must be in range(0,32)")
+		return false, &TreatmentValidationError{"E03V3", "tooth number must be in range(0,32)"}
 	}
 
 	t.ToothFilling = strings.TrimSpace(t.ToothFilling)
@@ -53,14 +62,14 @@ func (t *Treatment) Validation() (bool, error) {
 	}
 
 	if !tooth_filling[t.ToothFilling] {
-		return false, errors.New(fmt.Sprintf("\"%s\" is not an option for tooth filling", t.ToothFilling))
+		return false, &TreatmentValidationError{"E03V4", fmt.Sprintf("\"%s\" is not an option for tooth filling", t.ToothFilling)}
 	}
 
 	{
 		current_time := time.Now()
 		check_time := current_time.Add(-24 * time.Hour)
 		if !(t.Date.After(check_time) && t.Date.Before(current_time)) {
-			return false, errors.New("incorrect date please check")
+			return false, &TreatmentValidationError{"E03V5", "incorrect date please check"}
 		}
 	}
 
