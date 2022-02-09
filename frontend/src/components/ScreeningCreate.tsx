@@ -215,6 +215,9 @@ function ScreeningCreate() {
         console.log("บันทึกไม่ได้")
         setError(true);
         setErrorMessage(res.error);
+        if (res.error == "UNIQUE constraint failed: screenings.queue"){
+            setErrorMessage("Queue cannot be the same value")
+        }
       }
     });
   }
