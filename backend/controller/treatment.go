@@ -46,7 +46,7 @@ func CreateTreatment(c *gin.Context) {
 	}
 
 	if _, err := treatment.Validation(); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err})
 		return
 	}
 
