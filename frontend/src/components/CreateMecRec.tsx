@@ -66,6 +66,7 @@ export default function CreateMecRecord() {
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
     const [warning, setWarning] = useState(false);
+    const [errorMassage, setErrorMassage] = useState("");
 
     //SyntheticEvent เช็คเกิดการ reaction กับหน้าจอ
     const handleClose = (event?: React.SyntheticEvent, reason?: string) => {
@@ -194,7 +195,7 @@ export default function CreateMecRecord() {
             MedicalProductID: MedRecord.MedicalProductID,
             AdviceText: MedRecord.AdviceText ?? "",
         }
-        if (data.Amount <= 0 || !data.Amount || !data.MedicalProductID || !data.TreatmentID) {
+        if (!data.Amount || !data.MedicalProductID || !data.TreatmentID) {
             setWarning(true)
         }
         else {
@@ -211,9 +212,11 @@ export default function CreateMecRecord() {
                 if (res.data) {
                     console.log("บันทึกได้")
                     setSuccess(true);
+                    setErrorMassage("")
                 } else {
                     console.log("บันทึกไม่ได้")
                     setError(true);
+                    setErrorMassage(res.error)
                 }
             });
         }
@@ -232,7 +235,7 @@ export default function CreateMecRecord() {
             </Snackbar>
             <Snackbar open={error} autoHideDuration={2000} onClose={handleClose}>
                 <Alert onClose={handleClose} severity="error">
-                    บันทึกข้อมูลไม่สำเร็จ
+                    บันทึกข้อมูลไม่สำเร็จ: {errorMassage}
                 </Alert>
             </Snackbar>
 
