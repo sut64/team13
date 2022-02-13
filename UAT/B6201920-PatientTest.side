@@ -7,21 +7,21 @@
     "id": "31cf87af-2fcc-4ad5-9ce2-0e05ac4f7685",
     "name": "B6201920 - บันทึกสำเร็จ",
     "commands": [{
-      "id": "c828bdfc-3cfa-43f2-9eea-73eac48fc04a",
+      "id": "d313cf1c-3793-401b-a30a-e54a4dce9f6a",
       "comment": "",
       "command": "open",
       "target": "/",
       "targets": [],
       "value": ""
     }, {
-      "id": "36562ff6-1a77-4acb-ae26-52f0b9d6ff65",
+      "id": "c8d43151-9fb2-4323-8aed-f5d2dfe76f13",
       "comment": "",
       "command": "setWindowSize",
       "target": "1029x931",
       "targets": [],
       "value": ""
     }, {
-      "id": "e795ee02-2260-4733-b63c-e8e72cf5f53e",
+      "id": "b4368940-4c07-4e8b-b51c-1d5f0a83da01",
       "comment": "",
       "command": "click",
       "target": "id=mui-1",
@@ -35,7 +35,7 @@
       ],
       "value": ""
     }, {
-      "id": "674eccb9-064b-4031-9e9f-8472dec4ccbb",
+      "id": "21aa88a9-ee1e-4a5a-8aa2-b3ae1df520ab",
       "comment": "",
       "command": "click",
       "target": "id=Firstname",
@@ -48,7 +48,7 @@
       ],
       "value": ""
     }, {
-      "id": "ed7ee819-f036-410c-9170-d9e836afdd8c",
+      "id": "1704ad70-23ad-477b-be2f-e4ae0693e569",
       "comment": "",
       "command": "type",
       "target": "id=Firstname",
@@ -59,9 +59,9 @@
         ["xpath=//div[@id='root']/div/div[2]/div/div[2]/div/div/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "test"
+      "value": "พัชรชาติ"
     }, {
-      "id": "a4e5c9c8-a53d-4019-abd8-d77088837173",
+      "id": "eeaa41ea-e066-43f9-97db-fd1a571bbc78",
       "comment": "",
       "command": "click",
       "target": "id=Lastname",
@@ -74,7 +74,7 @@
       ],
       "value": ""
     }, {
-      "id": "7f904d4d-e74e-44bb-880b-e1bfe715fe90",
+      "id": "3597b330-a300-4f65-a015-6b52ebe0fafa",
       "comment": "",
       "command": "type",
       "target": "id=Lastname",
@@ -85,9 +85,9 @@
         ["xpath=//div[@id='root']/div/div[2]/div/div[2]/div[2]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[2]/div/div/input", "xpath:position"]
       ],
-      "value": "a"
+      "value": "จิรศรีโสภา"
     }, {
-      "id": "e9539d77-a490-4669-8c18-6c94d5576be7",
+      "id": "70f21cb0-f2e2-49bd-b3f6-e5de2bfd2afa",
       "comment": "",
       "command": "click",
       "target": "name=SexID",
@@ -100,14 +100,14 @@
       ],
       "value": ""
     }, {
-      "id": "78db5882-8ee7-4129-9dc7-3e6c99ab930a",
+      "id": "38c5fb58-3bc9-4b49-a8d8-6235f0ed7854",
       "comment": "",
       "command": "select",
       "target": "name=SexID",
       "targets": [],
       "value": "label=ชาย"
     }, {
-      "id": "66bccea7-34e1-44f0-b1b2-0c4eb74c6180",
+      "id": "31122b51-08c1-4fe0-8431-1b46b683f95a",
       "comment": "",
       "command": "click",
       "target": "id=IDcard",
@@ -120,7 +120,7 @@
       ],
       "value": ""
     }, {
-      "id": "9c6635b6-86e9-422c-8539-f5d184b9c5b4",
+      "id": "236f7868-14b7-4a1e-a190-ba8db8862c48",
       "comment": "",
       "command": "type",
       "target": "id=IDcard",
@@ -131,9 +131,9 @@
         ["xpath=//div[@id='root']/div/div[2]/div/div[2]/div[4]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[4]/div/div/input", "xpath:position"]
       ],
-      "value": "1329901010001"
+      "value": "1329901010009"
     }, {
-      "id": "cd23d6ef-7b6b-4891-a34b-8b082786cd11",
+      "id": "860eafd0-c98a-4bea-b52c-1fa37fb02ed1",
       "comment": "",
       "command": "click",
       "target": "id=Tel",
@@ -146,7 +146,7 @@
       ],
       "value": ""
     }, {
-      "id": "c7a3a33a-ace0-4bde-9ae4-629c1f61baf8",
+      "id": "1403d564-5bc3-4aa3-aa70-093e6125be82",
       "comment": "",
       "command": "type",
       "target": "id=Tel",
@@ -159,7 +159,7 @@
       ],
       "value": "0902571569"
     }, {
-      "id": "92e10390-6e0b-4450-8881-64b22216336f",
+      "id": "b5faefda-91ff-4a30-8f1e-9ff0b893d39e",
       "comment": "",
       "command": "click",
       "target": "name=JobID",
@@ -172,14 +172,14 @@
       ],
       "value": ""
     }, {
-      "id": "e46afcd9-afed-4131-adf2-695a2f793115",
+      "id": "e8ea3a46-fd2a-4a0d-b0e7-6808a93cb7eb",
       "comment": "",
       "command": "select",
       "target": "name=JobID",
       "targets": [],
       "value": "label=ราชการ"
     }, {
-      "id": "fe09aa02-6389-4790-a459-db1d06c9dba2",
+      "id": "111409c3-f22a-497b-9c02-48aeb54b3798",
       "comment": "",
       "command": "click",
       "target": "id=Weight",
@@ -192,7 +192,7 @@
       ],
       "value": ""
     }, {
-      "id": "afa4bba2-de37-4c5b-a5b2-ad43001d97ce",
+      "id": "6b2467e1-8ba5-412b-9514-46c811fd8928",
       "comment": "",
       "command": "type",
       "target": "id=Weight",
@@ -205,7 +205,7 @@
       ],
       "value": "50"
     }, {
-      "id": "3bbed7ab-5dbe-4e20-8e40-795e5c941d9d",
+      "id": "29cd18af-362c-4f80-a881-8c28d080058a",
       "comment": "",
       "command": "click",
       "target": "id=Height",
@@ -218,16 +218,7 @@
       ],
       "value": ""
     }, {
-      "id": "de565fff-a403-43b3-b491-9c62b778cbac",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
-      "targets": [
-        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
-      ],
-      "value": ""
-    }, {
-      "id": "347bc1a0-e5e8-4c91-b0b3-e9c0bc7377cc",
+      "id": "24305cf0-c44c-4f4d-8176-fe749e5c5a31",
       "comment": "",
       "command": "type",
       "target": "id=Height",
@@ -240,36 +231,16 @@
       ],
       "value": "175"
     }, {
-      "id": "3cea4105-ab66-4778-a5ed-bc7fba21124a",
+      "id": "e42781a3-98b0-481e-aea4-f09c099a6e07",
       "comment": "",
       "command": "click",
-      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
+      "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
       "targets": [
-        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
+        ["css=.MuiInputAdornment-root .MuiSvgIcon-root", "css:finder"]
       ],
       "value": ""
     }, {
-      "id": "3902a6c2-4197-467e-b31f-6d8d2ad15a15",
-      "comment": "",
-      "command": "mouseOut",
-      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
-      "targets": [
-        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
-      ],
-      "value": ""
-    }, {
-      "id": "3f13228b-612e-4a1e-b553-f58f198d931b",
-      "comment": "",
-      "command": "click",
-      "target": "css=.MuiPickersToolbarText-toolbarBtnSelected",
-      "targets": [
-        ["css=.MuiPickersToolbarText-toolbarBtnSelected", "css:finder"],
-        ["xpath=//h4", "xpath:position"],
-        ["xpath=//h4[contains(.,'Thu, Feb 10')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "7d2321e7-8938-4a03-b0b2-ec18f9ac3030",
+      "id": "9c50b937-e871-43ea-86eb-8e2214e0175c",
       "comment": "",
       "command": "click",
       "target": "css=.MuiTypography-subtitle1",
@@ -280,7 +251,7 @@
       ],
       "value": ""
     }, {
-      "id": "c89c1076-4a2a-4d91-869c-57465de65d98",
+      "id": "640d8f48-734a-477c-ab2d-3e8308966774",
       "comment": "",
       "command": "click",
       "target": "css=.MuiTypography-root:nth-child(120)",
@@ -290,18 +261,7 @@
       ],
       "value": ""
     }, {
-      "id": "da9edde7-a6ac-42ae-8ff4-af1619719b2a",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.MuiTypography-h4",
-      "targets": [
-        ["css=.MuiTypography-h4", "css:finder"],
-        ["xpath=//h4", "xpath:position"],
-        ["xpath=//h4[contains(.,'Thu, Feb 10')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "019f42fb-5106-447f-bb3a-4f3866a3c124",
+      "id": "39a67ed2-4f23-4fdd-a294-d3927363823c",
       "comment": "",
       "command": "mouseOver",
       "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
@@ -312,7 +272,7 @@
       ],
       "value": ""
     }, {
-      "id": "5f712f7a-47cd-440a-ae5d-c92c8477a798",
+      "id": "f7141ed3-35aa-41b4-a6b6-d2281d469358",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
@@ -323,7 +283,18 @@
       ],
       "value": ""
     }, {
-      "id": "fff05e7d-d4fc-4c24-a862-e17839e44413",
+      "id": "703e2f82-875a-478e-810a-f00563ef397a",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label", "css:finder"],
+        ["xpath=//div[2]/button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c94aecc7-da01-492e-b6c1-259877c21e2d",
       "comment": "",
       "command": "click",
       "target": "name=InsuranceID",
@@ -336,26 +307,34 @@
       ],
       "value": ""
     }, {
-      "id": "18bda579-3c56-48eb-a876-7142ec600f71",
+      "id": "33accad2-1a69-4115-b6e5-e7034819adaf",
       "comment": "",
       "command": "select",
       "target": "name=InsuranceID",
       "targets": [],
-      "value": "label=สิทธิสวัสดิการข้าราชการ"
+      "value": "label=สิทธิประกันสังคม"
     }, {
-      "id": "5059af74-45e0-4556-9ceb-5bac9f979825",
+      "id": "e5f7a26c-acfc-4db1-84d9-2b147f94c336",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,105)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a7a76a20-13d2-4fe0-8c07-53e51d4263a2",
       "comment": "",
       "command": "click",
-      "target": "css=.MuiGrid-root > .MuiButtonBase-root:nth-child(1) > .MuiButton-label",
+      "target": "css=.MuiGrid-root > .MuiButton-contained:nth-child(1)",
       "targets": [
-        ["css=.MuiGrid-root > .MuiButtonBase-root:nth-child(1) > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div/div[2]/div/div[2]/div[13]/button/span", "xpath:idRelative"],
-        ["xpath=//div[13]/button/span", "xpath:position"],
-        ["xpath=//span[contains(.,'บันทึก')]", "xpath:innerText"]
+        ["css=.MuiGrid-root > .MuiButton-contained:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/div[2]/div[13]/button", "xpath:idRelative"],
+        ["xpath=//div[13]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'บันทึก')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "f64a078b-a1ce-4607-bcf7-d6608f549f62",
+      "id": "4ceec48e-1432-4879-ac2f-105e4a05f86b",
       "comment": "",
       "command": "click",
       "target": "css=.MuiAlert-root",
@@ -366,7 +345,7 @@
       ],
       "value": ""
     }, {
-      "id": "79f7df98-4e0d-45ae-a569-967151b1ec61",
+      "id": "8487385f-3994-4930-bd11-af71dbfada49",
       "comment": "",
       "command": "assertText",
       "target": "css=.MuiAlert-message",
@@ -376,6 +355,45 @@
         ["xpath=//div[2]/div/div/div[2]", "xpath:position"]
       ],
       "value": "บันทึกข้อมูลสำเร็จ"
+    }, {
+      "id": "8fdc1012-6ede-40bf-ac6c-d0c300e66d67",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=รายชื่อผู้ป่วย",
+      "targets": [
+        ["linkText=รายชื่อผู้ป่วย", "linkText"],
+        ["css=.MuiTypography-root > .MuiButtonBase-root", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/h2/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Patientlist')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'รายชื่อผู้ป่วย')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3849576c-315e-4532-b580-525a572056ed",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c6be6012-843f-4101-9276-3ee8a04b5997",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiTableRow-root:nth-child(4) > .MuiTableCell-root > .MuiButtonBase-root > .MuiSvgIcon-root",
+      "targets": [
+        ["css=.MuiTableRow-root:nth-child(4) > .MuiTableCell-root > .MuiButtonBase-root > .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "d448ecd7-bda2-410c-828d-84cbe6c84fda",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiTableRow-root:nth-child(4) > .MuiTableCell-root > .MuiButtonBase-root > .MuiSvgIcon-root",
+      "targets": [
+        ["css=.MuiTableRow-root:nth-child(4) > .MuiTableCell-root > .MuiButtonBase-root > .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
     }]
   }, {
     "id": "31327453-627b-49de-b560-eaf5e98e9964",
@@ -760,21 +778,21 @@
     "id": "96fc6399-8dc9-478b-9e45-fd95255022dc",
     "name": "B6201920 - ฺวันเกิดไม่เป็นอดีต",
     "commands": [{
-      "id": "efca1d0c-bf33-487a-8120-6c6262ba6154",
+      "id": "c8b0a2ff-c7ed-4b9c-ab1b-1ff35071712e",
       "comment": "",
       "command": "open",
       "target": "/",
       "targets": [],
       "value": ""
     }, {
-      "id": "0b61a498-3a2f-4c61-8619-0ec6ee7469c8",
+      "id": "18ecbd7e-399e-4e91-a735-a182db0f0a7d",
       "comment": "",
       "command": "setWindowSize",
       "target": "1029x931",
       "targets": [],
       "value": ""
     }, {
-      "id": "749ebe4a-ae3f-49f7-8a83-658d285cefc6",
+      "id": "a6b61451-0d94-4dec-96f4-a2324f524c56",
       "comment": "",
       "command": "click",
       "target": "id=mui-1",
@@ -788,7 +806,7 @@
       ],
       "value": ""
     }, {
-      "id": "61215261-791e-4a20-a14a-8c8670a3a8ae",
+      "id": "c584fe35-a372-48fa-8f57-713e13d32776",
       "comment": "",
       "command": "click",
       "target": "id=Firstname",
@@ -801,7 +819,7 @@
       ],
       "value": ""
     }, {
-      "id": "06ba5843-267e-49ef-bb04-34728c7f32f0",
+      "id": "41c36a04-34ec-4475-9adb-151ebb6a180b",
       "comment": "",
       "command": "type",
       "target": "id=Firstname",
@@ -812,9 +830,9 @@
         ["xpath=//div[@id='root']/div/div[2]/div/div[2]/div/div/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "test"
+      "value": "พัชรชาติ"
     }, {
-      "id": "30f0bbe1-d23c-40ee-9977-890a0f9d73e2",
+      "id": "cae9d635-2f4e-4798-81fa-d20a77e60b6a",
       "comment": "",
       "command": "click",
       "target": "id=Lastname",
@@ -827,7 +845,7 @@
       ],
       "value": ""
     }, {
-      "id": "31a777b7-365b-4151-946b-7671f37e0252",
+      "id": "ba3adad3-2ddf-4fa9-a9e8-3ed2a6fc33f4",
       "comment": "",
       "command": "type",
       "target": "id=Lastname",
@@ -838,9 +856,9 @@
         ["xpath=//div[@id='root']/div/div[2]/div/div[2]/div[2]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[2]/div/div/input", "xpath:position"]
       ],
-      "value": "c"
+      "value": "จิรศรีโสภา"
     }, {
-      "id": "155150dd-d324-48f3-9444-c3b12d930c17",
+      "id": "e7b395a6-b0ac-4d7e-b98f-1afe5e2b44d1",
       "comment": "",
       "command": "click",
       "target": "name=SexID",
@@ -853,14 +871,14 @@
       ],
       "value": ""
     }, {
-      "id": "07b986e3-f01b-4bba-8f8f-5e8de6e99a31",
+      "id": "d4f162f5-ab01-4d3a-90ca-3459d7700457",
       "comment": "",
       "command": "select",
       "target": "name=SexID",
       "targets": [],
       "value": "label=ชาย"
     }, {
-      "id": "30e8af1a-6c0e-4d4d-994f-6d97d5575252",
+      "id": "2c3d650d-6c31-43e1-b555-0a06483c94c4",
       "comment": "",
       "command": "click",
       "target": "id=IDcard",
@@ -873,7 +891,7 @@
       ],
       "value": ""
     }, {
-      "id": "2a166760-c5ee-451d-8220-3eb0e9793f1e",
+      "id": "56841325-7381-47cb-9ee8-a589df02e795",
       "comment": "",
       "command": "type",
       "target": "id=IDcard",
@@ -884,9 +902,9 @@
         ["xpath=//div[@id='root']/div/div[2]/div/div[2]/div[4]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[4]/div/div/input", "xpath:position"]
       ],
-      "value": "1329901010003"
+      "value": "1329910102222"
     }, {
-      "id": "558564f3-4aef-46e0-81a7-f2bd7731d305",
+      "id": "4625fc86-7d94-4122-978c-f004cdd307dd",
       "comment": "",
       "command": "click",
       "target": "id=Tel",
@@ -899,7 +917,7 @@
       ],
       "value": ""
     }, {
-      "id": "630cf79d-5657-44b7-b5e5-d3d482ae5ee3",
+      "id": "20538e30-d5d2-484f-b18c-9b034365a797",
       "comment": "",
       "command": "type",
       "target": "id=Tel",
@@ -912,7 +930,7 @@
       ],
       "value": "0902571569"
     }, {
-      "id": "a8498608-63e3-415c-92d3-3a50d8f099c8",
+      "id": "34235f65-c191-4c46-981c-b6c907c2f705",
       "comment": "",
       "command": "click",
       "target": "name=JobID",
@@ -925,14 +943,14 @@
       ],
       "value": ""
     }, {
-      "id": "01096c1b-5062-429d-86a5-29d10865e269",
+      "id": "50c407fa-6276-432c-8f04-f56d10f423c8",
       "comment": "",
       "command": "select",
       "target": "name=JobID",
       "targets": [],
       "value": "label=ราชการ"
     }, {
-      "id": "d3a68c10-d47e-4ae2-9128-c0f5b8c400fa",
+      "id": "16a93a21-348c-4382-838d-fa9b9f9c2940",
       "comment": "",
       "command": "click",
       "target": "id=Weight",
@@ -945,7 +963,7 @@
       ],
       "value": ""
     }, {
-      "id": "b42ccdf8-c758-402f-84d0-f948b34f4dfe",
+      "id": "7d0ae144-900f-4b6c-836f-af9dafa0e1d7",
       "comment": "",
       "command": "type",
       "target": "id=Weight",
@@ -958,7 +976,7 @@
       ],
       "value": "50"
     }, {
-      "id": "ed3bffa9-5e92-45b8-8fec-049ad082d793",
+      "id": "78e78bee-e78a-446d-ab93-a9f4f6b89152",
       "comment": "",
       "command": "click",
       "target": "id=Height",
@@ -971,7 +989,7 @@
       ],
       "value": ""
     }, {
-      "id": "a6c50789-20ba-48f2-aaed-2641e7de0650",
+      "id": "289c70cb-6d9a-4081-aab7-c820f18f88a0",
       "comment": "",
       "command": "mouseOver",
       "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
@@ -980,7 +998,7 @@
       ],
       "value": ""
     }, {
-      "id": "63e17b86-b802-4fba-b051-e3ffd41d7da8",
+      "id": "7ef78d20-4f7b-44fd-91ad-8cb773e403fb",
       "comment": "",
       "command": "type",
       "target": "id=Height",
@@ -993,7 +1011,7 @@
       ],
       "value": "175"
     }, {
-      "id": "873b02b8-57ce-441f-8ab1-b24ed3aa4a11",
+      "id": "734a5939-a25f-47b9-a522-b771ff1dc907",
       "comment": "",
       "command": "click",
       "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
@@ -1002,7 +1020,7 @@
       ],
       "value": ""
     }, {
-      "id": "dc7ff7de-9ab0-45e1-9d2d-7fe097b85b22",
+      "id": "43492c41-1636-4004-9475-b1db77444a96",
       "comment": "",
       "command": "mouseOut",
       "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
@@ -1011,40 +1029,39 @@
       ],
       "value": ""
     }, {
-      "id": "3b69df00-cb38-4b39-8bdc-99b2899dc5dd",
+      "id": "f1798b97-2aa6-4e11-a9f9-e03c7f13ff37",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiTypography-subtitle1",
+      "targets": [
+        ["css=.MuiTypography-subtitle1", "css:finder"],
+        ["xpath=//h6", "xpath:position"],
+        ["xpath=//h6[contains(.,'2022')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9fb5f8fd-b40f-4d6a-b204-0898bded6654",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiTypography-root:nth-child(126)",
+      "targets": [
+        ["css=.MuiTypography-root:nth-child(126)", "css:finder"],
+        ["xpath=//div[126]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2822794d-278b-4269-bb43-7dc9691ebb99",
       "comment": "",
       "command": "mouseOver",
-      "target": "css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(2) .MuiTypography-root",
+      "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
       "targets": [
-        ["css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(2) .MuiTypography-root", "css:finder"],
-        ["xpath=//div[5]/div[2]/button/span/p", "xpath:position"],
-        ["xpath=//p[contains(.,'28')]", "xpath:innerText"]
+        ["css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label", "css:finder"],
+        ["xpath=//div[2]/button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'OK')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "adecf435-6d9a-4e80-8c07-2a9d1127fa1b",
-      "comment": "",
-      "command": "click",
-      "target": "css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(2) .MuiTypography-root",
-      "targets": [
-        ["css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(2) .MuiTypography-root", "css:finder"],
-        ["xpath=//div[5]/div[2]/button/span/p", "xpath:position"],
-        ["xpath=//p[contains(.,'28')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "a4a5b282-48a9-4e75-b5f9-e93b726b6ec2",
-      "comment": "",
-      "command": "mouseOut",
-      "target": "css=.MuiPickersDay-daySelected .MuiTypography-root",
-      "targets": [
-        ["css=.MuiPickersDay-daySelected .MuiTypography-root", "css:finder"],
-        ["xpath=//div[5]/div[2]/button/span/p", "xpath:position"],
-        ["xpath=//p[contains(.,'28')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "a1b294ef-a935-4769-92ca-1751e195d97d",
+      "id": "4e1ef808-948f-43ba-baac-9daaeec178d5",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
@@ -1055,7 +1072,18 @@
       ],
       "value": ""
     }, {
-      "id": "e3e44315-c266-4485-aebc-1206ebd6832c",
+      "id": "e6f8bcea-1b1b-4c3d-88b1-d3b4abb841e2",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label", "css:finder"],
+        ["xpath=//div[2]/button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9fcf72d7-4dc3-4411-8c40-83e8e5ff1e98",
       "comment": "",
       "command": "click",
       "target": "name=InsuranceID",
@@ -1068,26 +1096,21 @@
       ],
       "value": ""
     }, {
-      "id": "5b6d4131-d65c-439e-87dd-57c85a3b2281",
+      "id": "25a49dbe-7299-4f9d-8510-43f643e0c1ac",
       "comment": "",
       "command": "select",
       "target": "name=InsuranceID",
       "targets": [],
-      "value": "label=สิทธิสวัสดิการข้าราชการ"
+      "value": "label=สิทธิประกันสังคม"
     }, {
-      "id": "869b019b-635c-4dc6-a284-a707a73147d1",
+      "id": "24e9c1a1-3f69-4e65-a684-eb31d1b318d5",
       "comment": "",
-      "command": "mouseOver",
-      "target": "css=.MuiGrid-root > .MuiButtonBase-root:nth-child(1) > .MuiButton-label",
-      "targets": [
-        ["css=.MuiGrid-root > .MuiButtonBase-root:nth-child(1) > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div/div[2]/div/div[2]/div[13]/button/span", "xpath:idRelative"],
-        ["xpath=//div[13]/button/span", "xpath:position"],
-        ["xpath=//span[contains(.,'บันทึก')]", "xpath:innerText"]
-      ],
+      "command": "runScript",
+      "target": "window.scrollTo(0,105)",
+      "targets": [],
       "value": ""
     }, {
-      "id": "3ab92ae4-aa4f-4a56-beb2-e532e5819be5",
+      "id": "c0b21c3f-54af-48a2-8fe2-dbd6ad2b8d90",
       "comment": "",
       "command": "click",
       "target": "css=.MuiGrid-root > .MuiButtonBase-root:nth-child(1) > .MuiButton-label",
@@ -1099,19 +1122,7 @@
       ],
       "value": ""
     }, {
-      "id": "69f3264b-897e-4489-8c91-361aeddc0925",
-      "comment": "",
-      "command": "mouseOut",
-      "target": "css=.MuiGrid-root > .MuiButtonBase-root:nth-child(1) > .MuiButton-label",
-      "targets": [
-        ["css=.MuiGrid-root > .MuiButtonBase-root:nth-child(1) > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div/div[2]/div[2]/div[2]/div[13]/button/span", "xpath:idRelative"],
-        ["xpath=//div[13]/button/span", "xpath:position"],
-        ["xpath=//span[contains(.,'บันทึก')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "32302202-7212-496b-9c81-51aeda9787fa",
+      "id": "242bae08-40bf-484a-a2d9-c7aec9204fc9",
       "comment": "",
       "command": "click",
       "target": "css=.MuiAlert-root",
@@ -1122,7 +1133,7 @@
       ],
       "value": ""
     }, {
-      "id": "b07d7d15-879d-41d5-b74c-4f961de71dba",
+      "id": "3fbce132-a3a8-4206-ae1b-4690d3b444c9",
       "comment": "",
       "command": "assertText",
       "target": "css=.MuiAlert-message",
