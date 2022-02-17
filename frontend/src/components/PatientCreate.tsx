@@ -542,7 +542,6 @@ export default function PatientCreate(this: any) {
               <CleaningServicesIcon />เคลีย
             </Button>
 
-
           </Grid>
 
         </Grid>
