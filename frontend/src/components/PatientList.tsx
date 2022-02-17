@@ -18,7 +18,6 @@ import IconButton from '@mui/material/IconButton';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { PatientInterface } from "../models/IPat";
 import PatientData from './PatientData';
-import PatientUpdate from './PatientUpdate';
 import SearchIcon from '@mui/icons-material/Search';
 import TextField from '@mui/material/TextField';
 import Checkbox from "@material-ui/core/Checkbox";
@@ -144,17 +143,7 @@ function WatchPatientList(this: any) {
                         </Button>
                     </Box>
                 </Box>
-                <Box >
-                    <SearchIcon sx={{ width: "30px", height: "30px", marginTop: 2 }} />
-                    <TextField style={{ width: '30%' }}
-                        id="Search"
-                        label="Search"
-                        variant="standard"
-                        type="string"
-                        onChange={handleSearchChange}
 
-                    />
-                </Box>
 
 
                 <TableContainer component={Paper} className={classes.tableSpace} >
@@ -168,7 +157,6 @@ function WatchPatientList(this: any) {
                                 <TableCell align="left" width="5%" className={classes.Font}>นามสกุล</TableCell>
                                 <TableCell align="left" width="5%" className={classes.Font}>รหัสบัตรประชาชน</TableCell>
                                 <TableCell align="center" width="1%" className={classes.Font}>ข้อมูล</TableCell>
-                                <TableCell align="center" width="1%" className={classes.Font}>แก้ไข</TableCell>
                                 <TableCell align="center" width="1%" className={classes.Font}>นำออก</TableCell>
                             </TableRow>
                         </TableHead>
@@ -186,28 +174,6 @@ function WatchPatientList(this: any) {
                                     <TableCell align="left">{pats.IDcard}</TableCell>
                                     <TableCell align="center">
                                         <PatientData
-                                            ID={pats.ID}
-                                            Firstname={pats.Firstname}
-                                            Lastname={pats.Lastname}
-                                            Birthday={pats.Birthday}
-                                            IDcard={pats.IDcard}
-                                            Tel={pats.Tel}
-                                            Weight={pats.Weight}
-                                            Height={pats.Height}
-                                            Time={pats.Time}
-                                            SexID={pats.SexID}
-                                            JobID={pats.JobID}
-                                            InsuranceID={pats.InsuranceID}
-                                            NurseID={pats.NurseID}
-                                            Sex={pats.Sex}
-                                            Job={pats.Job}
-                                            Insurance={pats.Insurance}
-                                            Nurse={pats.Nurse}
-                                            Appoints={[]}
-                                        />
-                                    </TableCell>
-                                    <TableCell align="center">
-                                        <PatientUpdate
                                             ID={pats.ID}
                                             Firstname={pats.Firstname}
                                             Lastname={pats.Lastname}
