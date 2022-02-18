@@ -17,7 +17,7 @@ func TestTreatmentPass(t *testing.T) {
 			PrescriptionNote: "", // allow empty
 			ToothNumber:      0,
 			ToothFilling:     "Ceramics",
-			Date:             time.Now(),
+			Date:             time.Now().Add(-1 * time.Second),
 		},
 		{
 			PrescriptionRaw:  "Para",
