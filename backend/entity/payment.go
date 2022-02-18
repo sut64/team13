@@ -33,11 +33,7 @@ func init() {
 		now := time.Now()
 		return now.After(t)
 	})
-	govalidator.CustomTypeTagMap.Set("future", func(i interface{}, context interface{}) bool {
-		t := i.(time.Time)
-		now := time.Now()
-		return now.Before(time.Time(t))
-	})
+
 	govalidator.CustomTypeTagMap.Set("payment_positive", func(i interface{}, context interface{}) bool {
 		num := i
 		return num.(float32) >= 0
