@@ -39,11 +39,9 @@ function WatchPatientList(this: any) {
     const classes = useStyles();
     const [pats, setWatchPatient] = React.useState<PatientInterface[]>([]);
     const [DeleteValue, setDeleteValue] = React.useState(false);
+/*  
     const [Search, setSearch] = React.useState<String>();
     const [Searchtable, setSearchtable] = React.useState<PatientInterface[]>([]);
-
-    const [num, setnum] = React.useState<number[]>([1, 3]);
-
 
     const handleSearchChange = (
         event: React.ChangeEvent<{ id?: string; value: any }>
@@ -53,7 +51,7 @@ function WatchPatientList(this: any) {
         console.log("ID", id, "Value", value)
         setSearch(value)
     };
-
+*/
     const getWatchPatient = async () => {
         const apiUrl = "http://localhost:8080/patients";
         const requestOptions = {
@@ -77,12 +75,6 @@ function WatchPatientList(this: any) {
 
     };
 
-    function getAge(birthYear: number) {
-        var currentDate = new Date();
-        var currentYear = currentDate.getFullYear();
-        return currentYear - birthYear;
-    }
-
     function DeletePatient(DeleteUserID: number) {
 
         const apiUrl = `http://localhost:8080/patient/${DeleteUserID}`;
@@ -104,18 +96,6 @@ function WatchPatientList(this: any) {
     useEffect(() => {
         getWatchPatient();
     }, [DeleteValue]);
-
-    const [open, setOpen] = React.useState(false);
-
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
-
-
 
     return (
         <div>

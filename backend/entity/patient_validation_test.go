@@ -151,7 +151,7 @@ func TestPatientTelPattren(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	fixtures := []string{
-		"few",
+		"fewza12345",
 		"090123456789",
 		"0901234",
 	}
@@ -181,7 +181,7 @@ func TestPatientTelPattren(t *testing.T) {
 	}
 }
 
-func TestPatientWeight(t *testing.T) {
+func TestPatientWeightNotNegotive(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	fixtures := []float32{
@@ -220,7 +220,7 @@ func TestPatientWeight(t *testing.T) {
 	}
 }
 
-func TestPatientHeight(t *testing.T) {
+func TestPatientHeighNotNegotive(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	fixtures := []float32{

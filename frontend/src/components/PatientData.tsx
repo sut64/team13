@@ -4,15 +4,11 @@ import IconButton from '@mui/material/IconButton';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import { grey } from '@mui/material/colors';
-import { blue } from '@mui/material/colors';
 import ContentPasteSearchIcon from '@mui/icons-material/ContentPasteSearch';
 import { PatientInterface } from '../models/IPat';
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import moment from 'moment';
-import { color } from '@mui/system';
 import { useEffect } from "react";
 
 const useStyles = makeStyles((theme: Theme) =>
