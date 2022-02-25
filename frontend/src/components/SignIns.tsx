@@ -110,7 +110,7 @@ function SignIn() {
             required
             fullWidth
             id="Username"
-            label="Username"
+            label="ชื่อผู้ใช้"
             name="Username"
             autoComplete="username"
             autoFocus
@@ -123,7 +123,7 @@ function SignIn() {
             required
             fullWidth
             name="Password"
-            label="Password"
+            label="รหัสผ่าน"
             type="password"
             id="Password"
             autoComplete="current-password"
